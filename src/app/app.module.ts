@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
@@ -14,15 +16,24 @@ import {MatIconModule} from '@angular/material/icon'
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBadgeModule} from '@angular/material/badge';
+import { HomeComponent } from './home/home.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {ImageSizerDirective} from './image-sizer.directive'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    ImageSizerDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+    ]),
     BrowserAnimationsModule,
     MatSliderModule,
     MatCardModule,
@@ -32,7 +43,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatIconModule,
     LayoutModule,
     MatSidenavModule,
-    MatBadgeModule
+    MatBadgeModule,
+
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

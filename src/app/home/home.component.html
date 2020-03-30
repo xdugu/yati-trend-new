@@ -1,0 +1,6 @@
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="homeSlidesConfig.slick" 
+    style="width: 60%; margin: auto" appImageSizer>
+    <div ngxSlickItem *ngFor="let slide of homeSlidesConfig.images" class="slide">
+        <img [src]="slide" alt="" width="100%" >
+    </div>
+</ngx-slick-carousel>
