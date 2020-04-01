@@ -1,6 +1,12 @@
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="homeSlidesConfig.slick" 
+<!--ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="homeSlidesConfig.slick" 
     style="width: 60%; margin: auto" appImageSizer>
     <div ngxSlickItem *ngFor="let slide of homeSlidesConfig.images" class="slide">
         <img [src]="slide" alt="" width="100%" >
     </div>
-</ngx-slick-carousel>
+</ngx-slick-carousel-->
+<div class="w3-container w3-margin-top">
+    <img src="assets/images/home/group.jpg" class="w3-mobile w3-left" style="width:60%">
+    <span class="w3-display-container w3-mobile w3-right" style="width: 35%; height: 300px">
+        <span class="w3-display-middle">Some Text to show</span>
+    </span>
+</div>
