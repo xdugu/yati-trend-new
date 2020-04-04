@@ -8,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   homeSlidesConfig = {
       slick: {
-        "slidesToShow": 2, "slidesToScroll": 1, "arrows": true
-      },
-      images:[
-        "assets/images/home/img1.jpg",
-        "assets/images/home/img2.jpg",
-        "assets/images/home/img3.jpg",
+        "slidesToShow": 3, "slidesToScroll": 1, "arrows": false, "dots": false,
+        "infinite": false,
+        responsive:[
+          {
+            breakpoint: 600,
+            settings:{
+              "slidesToShow": 2, "slidesToScroll": 1, "arrows": true, "dots": true
+            }
+          }
       ]
+      },
+
     }
   
   constructor() { }

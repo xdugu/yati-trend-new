@@ -1,12 +1,44 @@
-<!--ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="homeSlidesConfig.slick" 
-    style="width: 60%; margin: auto" appImageSizer>
-    <div ngxSlickItem *ngFor="let slide of homeSlidesConfig.images" class="slide">
-        <img [src]="slide" alt="" width="100%" >
+
+<h1 class="mat-h1 w3-center">Welcome to the home of African-European Fashion</h1>
+<div [appFitToChild]="main_img" class="w3-row w3-padding">
+    <img #main_img src="assets/images/home/group.jpg" class="w3-mobile w3-col" style="width:60%">
+    <div class="w3-mobile w3-rest w3-center w3-display-container mat-h2 w3-theme w3-text-white">
+        <span class="w3-display-middle" style="width: 90%">	  
+            Explore Afropean fashion <br><br>
+            Shop the look <br><br>
+            Orders above ‎€120 get FREE Shipping in Europe<br><br>
+            <a  mat-raised-button color="accent">Shop Now</a>
+        </span>
     </div>
-</ngx-slick-carousel-->
-<div class="w3-container w3-margin-top">
-    <img src="assets/images/home/group.jpg" class="w3-mobile w3-left" style="width:60%">
-    <span class="w3-display-container w3-mobile w3-right" style="width: 35%; height: 300px">
-        <span class="w3-display-middle">Some Text to show</span>
-    </span>
+</div>
+
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="homeSlidesConfig.slick" 
+    style="width: 100%;" class="w3-padding" appImageSizer>
+    <div ngxSlickItem class="w3-display-container" >
+        <img src="assets/images/home/main_blouse.jpg" style="width: 100%">
+        <a  class="w3-display-bottommiddle w3-button w3-round w3-theme w3-hover-purple" 
+            style="margin-bottom: 30px;">Blouses</a>
+    </div>
+    <div ngxSlickItem class="w3-display-container">
+        <img src="assets/images/home/main_skirt.jpg"  style="width: 100%">
+        <a class="w3-display-bottommiddle w3-button w3-round  w3-theme" style="margin-bottom: 30px;">Skirts</a>
+    </div>
+    <div ngxSlickItem class="w3-display-container" >
+        <img src="assets/images/home/main_jumpsuit.jpg" style="width: 100%">
+        <a class="w3-display-bottommiddle w3-button w3-round  w3-theme" style="margin-bottom: 30px;">Jumpsuits</a>
+    </div>
+</ngx-slick-carousel>
+
+<div>
+    <h2 class="mat-h2 w3-center">About Us</h2>
+    <div class="w3-padding">
+        <img src="assets/images/home/about_pic.jpg" style="width: 25%" class="w3-left w3-mobile">
+        <p style="width: 72%;" class="w3-right w3-mobile">
+            Yati-Trend clothes are designed to merge African and European Fashion.<br><br>
+            My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.
+            Our designs are made to fuse the african flare and color into european clothing.<br><br>
+            The aim with the clothes we design is to encourage people to be more open to wearing coloured and patterned clothes which shows uniqueness and confidence . . .
+            <br><br> <a mat-flat-button color="accent">Read More</a>
+        </p>
+    </div>
 </div>

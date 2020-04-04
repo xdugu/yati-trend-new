@@ -7,12 +7,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .slick-prev:before, .slick-next:before{
 	color:goldenrod !important;
-	font-size: 35px;
+	font-size: 25px;
+}
+
+.w3-theme{
+   background-color: goldenrod;
+}
+
+.w3-text-theme{
+   color: goldenrod;
 }
 	
 .slick-prev {
   z-index: 1;
+  left: 10px;
 }
   .slick-next {
   z-index: 1;
+  right: 10px;
 }

@@ -18,7 +18,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBadgeModule} from '@angular/material/badge';
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import {ImageSizerDirective} from './image-sizer.directive'
+import {ImageSizerDirective} from './image-sizer.directive';
+import { FitToChildDirective } from './fit-to-child.directive'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {ImageSizerDirective} from './image-sizer.directive'
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    ImageSizerDirective
+    ImageSizerDirective,
+    FitToChildDirective
   ],
   imports: [
     BrowserModule,
