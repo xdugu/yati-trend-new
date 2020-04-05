@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -19,7 +20,11 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {ImageSizerDirective} from './image-sizer.directive';
-import { FitToChildDirective } from './fit-to-child.directive'
+import { FitToChildDirective } from './fit-to-child.directive';
+import { CategoriesComponent } from './categories/categories.component'
+import {ApiManagerService} from './api-manager.service';
+import {ShopSpineService} from './shop-spine.service'
+import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.component'
 
 
 @NgModule({
@@ -28,14 +33,18 @@ import { FitToChildDirective } from './fit-to-child.directive'
     HeaderComponent,
     HomeComponent,
     ImageSizerDirective,
-    FitToChildDirective
+    FitToChildDirective,
+    CategoriesComponent,
+    CurrencyChooserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      {path:'category', component: CategoriesComponent}
     ]),
+    HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatCardModule,
@@ -49,7 +58,7 @@ import { FitToChildDirective } from './fit-to-child.directive'
 
     SlickCarouselModule
   ],
-  providers: [],
+  providers: [ ApiManagerService, ShopSpineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
