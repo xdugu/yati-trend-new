@@ -24,7 +24,9 @@ import { FitToChildDirective } from './fit-to-child.directive';
 import { CategoriesComponent } from './categories/categories.component'
 import {ApiManagerService} from './api-manager.service';
 import {ShopSpineService} from './shop-spine.service'
-import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.component'
+import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.component';
+import { LazyLoadDirective } from './lazy-load.directive';
+import { ProductComponent } from './product/product.component'
 
 
 @NgModule({
@@ -36,13 +38,16 @@ import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.co
     FitToChildDirective,
     CategoriesComponent,
     CurrencyChooserComponent,
+    LazyLoadDirective,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      {path:'category', component: CategoriesComponent}
+      {path:'category/:category', component: CategoriesComponent},
+      {path:'product/:product', component: ProductComponent}
     ]),
     HttpClientModule,
     BrowserAnimationsModule,

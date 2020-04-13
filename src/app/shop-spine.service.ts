@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import { HttpClient} from '@angular/common/http';
 
 export enum APP_EVENT_TYPES{
   none,
@@ -23,18 +24,14 @@ the master component */
 
 export class ShopSpineService {
   private childEvents = new BehaviorSubject<AppEvent>(new AppEvent(APP_EVENT_TYPES.none, ''));
-  private shopConfig = {
-    currency:{
-       chosen: "HUF",
-       available: ["HUF", "EUR"]
-    }
-  }
+  private shopConfig = null;
 
-  constructor() { }
+  constructor(private http : HttpClient) { 
+  }
 
   // function called by children to register event
   emitEvent(msg: AppEvent){
-    this.shopConfig.currency.chosen = msg.eventValue;
+    this.shopConfig.shopping.currency.chosen = msg.eventValue;
     this.childEvents.next(msg)
   }
 
@@ -44,6 +41,16 @@ export class ShopSpineService {
   } 
 
   getConfig(){
-    return this.shopConfig;
+    return new Observable(subscriber =>{
+        if(this.shopConfig != null){
+          subscriber.next(this.shopConfig);
+        } else{
+           // get configuration file (which is a json)
+            this.http.get('assets/config.json').subscribe(resp =>{
+              this.shopConfig = resp;
+              subscriber.next(this.shopConfig);
+          });
+        }
+    })
   }
 }

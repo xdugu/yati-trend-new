@@ -1,1 +1,34 @@
-<app-currency-chooser></app-currency-chooser>
+<div *ngIf="config != null">
+<app-currency-chooser (currencyChange)="onCurrencyChange($event)"
+                      [chosen]="config.shopping.currency.chosen"
+                      [available] = "config.shopping.currency.available">
+</app-currency-chooser>
+
+<div id="product-shelf-placeholder" class="w3-container" style="padding:0;margin:0; width:100%" >
+    <a  *ngFor="let product of category.items" 
+        [routerLink]="['/product', product.ItemId]" 
+        class="w3-left w3-center w3-large w3-mobile my-product" 
+		style="margin-top:2vh;cursor:pointer; width: 50%" >
+
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="categoryConfig" 
+        style="width: 100%;" class="w3-padding" appImageSizer>
+        <div  ngxSlickItem style="width:100%; overflow-y:hidden;">
+            <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + product.Images.list[0].name" style="width:100%; height:auto;"> 
+        </div>
+        <div  ngxSlickItem style="width:100%; overflow-y:hidden;">
+            <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + product.Images.list[1].name" style="width:100%; height:auto;">
+        </div>
+    </ngx-slick-carousel>
+    <div class="description w3-padding">{{product.Title.en}}</div>
+    <div *ngIf="product.Price.original.discountEnabled">
+        <span class="price theme-color w3-small w3-text-red" style="text-decoration: line-through;">
+            {{product.Price.original.huf}}
+        </span>
+        <span class="w3-small">(-{{product.Price.original.discountPercentage}}%)</span>
+    </div>
+    <div class="price w3-padding theme-color">
+        {{product.Price[config.shopping.currency.chosen.toLowerCase()]}}
+    </div>
+	</a>
+</div>
+</div>

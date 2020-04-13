@@ -1,11 +1,10 @@
-Showing something
-<div class="w3-center" style="height: 300px">
+<div class="w3-center">
 	<span class="w3-white w3-padding w3-round-large hoverable">
         <span class="w3-button" 
-            *ngFor="let currencyName of currency.available; last as isLast"
-            (click)="changeCurrency(currencyName)">
-            <span  [ngClass]="{'w3-tag w3-theme': currencyName == currency.chosen}">
-                {{currencyName}}
+            *ngFor="let name of available; last as isLast"
+            (click)="onCurrencyChange(name)">
+            <span  [ngClass]="{'w3-tag w3-theme': name == chosen}">
+                {{name}}
             </span>
             <!-- Don't show seperator on last item-->
             <span *ngIf="!isLast">|</span> 

@@ -1,0 +1,12 @@
+<div *ngIf="config != null">
+    <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
+                          [chosen]="config.shopping.currency.chosen"
+                          [available] = "config.shopping.currency.available">
+    </app-currency-chooser>
+
+    <div>
+        <img [appLazyLoad]="config.imgSrc + product.item.Images.path + product.item.Images.list[0].name"
+            style="width: 50%">
+    </div>
+
+</div>

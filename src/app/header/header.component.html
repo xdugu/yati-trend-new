@@ -1,7 +1,7 @@
 <header [ngSwitch]="screenState">
     <mat-toolbar color="primary" *ngSwitchCase="'wide_screen'" class="center">
-            <a mat-button color="accent" [routerLink]="['/category']" 
-                [queryParams]="{storeId: 'YatiTrend', category: 'Womens'}">Clothing
+            <a mat-button color="accent" [routerLink]="['/category', 'Womens']">
+                Clothing
             </a>
             <button mat-button color="accent">Accessories</button>   
             <span class="fill-remaining-space"></span>
