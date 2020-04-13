@@ -1,12 +1,74 @@
-<div *ngIf="config != null">
-    <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
-                          [chosen]="config.shopping.currency.chosen"
-                          [available] = "config.shopping.currency.available">
-    </app-currency-chooser>
+<div *ngIf="config != null && product.item != null">
 
-    <div>
-        <img [appLazyLoad]="config.imgSrc + product.item.Images.path + product.item.Images.list[0].name"
-            style="width: 50%">
+    <div class="w3-row">
+        <div class="w3-col l8">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slickConfig" 
+                style="width: 100%;" class="w3-padding" appImageSizer>
+                <div  ngxSlickItem *ngFor="let imgName of product.item.Images.list" style="width:100%; overflow-y:hidden;">
+                    <img class="shop_img" [appLazyLoad]="config.imgSrc + product.item.Images.path + imgName.name" style="width:100%; height:auto;"> 
+                </div>
+            </ngx-slick-carousel>
+        </div>
+        <div class="w3-col l4 w3-container">
+            <div class="w3-margin-top">{{product.item.Title.en}}</div>
+            <div>{{product.item.Price[config.shopping.currency.chosen.toLowerCase()]}} {{config.shopping.currency.chosen}}</div>
+            <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
+                [chosen]="config.shopping.currency.chosen"
+                [available] = "config.shopping.currency.available">
+            </app-currency-chooser>
+            <button mat-raised-button color="primary" class="w3-margin-top">Add To Basket</button><br>
+            <div style="height: 10px"></div>
+            <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Description
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div [innerHtml]="product.item.Description.en"></div>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Size Chart
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div style="overflow-x:auto">
+                        <table class="w3-table w3-striped">
+                        <tr><th>Size</th><th>Height(cm)</th><th>Bust(cm)</th><th>Waist(cm)</th><th>Hips(cm)</th></tr>
+                        <tr><td>S</td><td>162-168</td><td>88</td><td>66</td><td>92</td> </tr>
+                        <tr><td>M</td><td>166-172</td><td>92</td><td>70</td><td>96</td> </tr>
+                        <tr><td>L</td><td>173-176</td><td>96</td><td>74</td><td>100</td> </tr>		
+                        </table>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>Shipping</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div>
+                        We ship our products with the help of GLS (internationally as well) and Foxpost.<br>
+                        <u>Countries we ship to:</u> Hungary, Austria, Germany, United Kingdom.
+                            In case of other countries, please contact us and we will try to find a way for you.
+                        <b>Accepted and confirmed orders are shipped between 2-5 working days.</b> If the item is
+                        out of stock, it may take 1-2 weeks to purchase.<br><br>
+                        <b> GLS:</b><br>
+                        Home delivery fee:<b>1750 Ft ~ 5,5 euro</b><br>
+                        Pay on delivery fee:<b>+445 Ft ~ 1,4 euro</b>	<br>
+                        <b>International shipping:</b><br>
+                        - Austria, Germany €11<br>
+                        - United Kingdom: €13<br><br>
+                        <b> Foxpost</b><br>
+                        Terminal delivery fee: <b>700 Ft ~ 2, 2 euro</b><br>
+                        Pay on delivery: <b>+125 Ft ~ 0,4 euro</b><br>
+                        <b>Important to note: At the terminals you can only pay by credit/debit card.</b>
+                        <b>Home delivery</b><br>
+                        Home delivery fee: <b>1250 Ft ~ 4 euro</b><br>
+                        Pay on delivery fee: <b>+125 Ft ~ 0,4 euro</b><br>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
     </div>
 
 </div>

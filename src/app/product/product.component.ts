@@ -11,16 +11,37 @@ import {HttpParams} from '@angular/common/http';
 })
 export class ProductComponent implements OnInit {
 
+  // will store the general store config
   config = null;
 
+  slickConfig = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: false,
+    lazyLoad: 'ondemand',
+    arrows: true,
+    responsive: [
+    {
+      breakpoint: 600, // mobile breakpoint
+      settings: {
+        slidesToShow: 1
+      }
+    }
+    ]	
+};
+
+  //will store product information
   product = {
-    pathId: null,
-    item: null
+    pathId: null, //at the moment, the id of the product
+    item: null // will contain the data directly from the server
   }
   constructor(private shopService : ShopSpineService, 
               private apiService : ApiManagerService,
               private routeInfo: ActivatedRoute) { 
-        
+      
+      // get params of current route
       this.routeInfo.paramMap.subscribe(param =>{
         // get the route information
         this.product.pathId = param.get('product');
@@ -31,6 +52,8 @@ export class ProductComponent implements OnInit {
           this.getProduct();
        });
 
+       // listen to changes that might affect data
+       // at the moment, listens to the all events, will restrict when needed
        this.shopService.childEventListener().subscribe(() => {
           this.shopService.getConfig().subscribe(evt =>{
             this.config = evt;

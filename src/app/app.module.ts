@@ -17,6 +17,8 @@ import {MatIconModule} from '@angular/material/icon'
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatExpansionModule} from '@angular/material/expansion'
+
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {ImageSizerDirective} from './image-sizer.directive';
@@ -27,6 +29,7 @@ import {ShopSpineService} from './shop-spine.service'
 import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.component';
 import { LazyLoadDirective } from './lazy-load.directive';
 import { ProductComponent } from './product/product.component'
+
 
 
 @NgModule({
@@ -60,7 +63,7 @@ import { ProductComponent } from './product/product.component'
     LayoutModule,
     MatSidenavModule,
     MatBadgeModule,
-
+    MatExpansionModule,
     SlickCarouselModule
   ],
   providers: [ ApiManagerService, ShopSpineService],
