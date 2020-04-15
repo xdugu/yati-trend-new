@@ -1,0 +1,49 @@
+<div *ngIf="config != null && basket !=null" class="w3-container">
+    <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
+                    [chosen]="config.preferences.currency.chosen"
+                    [available] = "config.preferences.currency.available">
+    </app-currency-chooser>
+    <div class="w3-row w3-container">
+        <div class="w3-col l6">
+            <div *ngFor="let item of basket.Items; index as i; trackBy: basketTrackFn" class="w3-padding w3-card w3-margin-top">
+                <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px">
+                <span>{{item.Title.en}}</span>
+                <div><button mat-raised-button (click)="changeQuantity(i, -1)">-</button>
+                    {{item.Quantity}}
+                    <button mat-raised-button (click)="changeQuantity(i, 1)">+</button>
+                </div>
+                <div>{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity}}</div>
+                <button mat-button (click)="removeItem(i)">Remove</button>
+            </div>
+        </div>
+        <div class="w3-col l6 w3-padding" *ngIf="basket.Items.length > 0">
+            <mat-form-field>
+                <mat-label>Select Country</mat-label>
+                <mat-select matNativeControl [(value)]="config.preferences.countryCode" (selectionChange)="onCountryChange($event)">
+                  <mat-option value="">Please choose a country</mat-option>
+                  <mat-option value="HU">Hungary</mat-option>
+                  <mat-option value="DE">Germany</mat-option>
+                </mat-select>
+            </mat-form-field><br><br>
+
+            <div *ngIf="basket.hasOwnProperty('Costs') && config.preferences.countryCode.length == 2">
+                <label>Choose a courier</label>
+                <mat-radio-group
+                    [value]="config.preferences.deliveryMethod" (change)="onCourierChange($event)">
+                <mat-radio-button 
+                    *ngFor="let courier of basket.Costs | keyvalue" 
+                    [value]="courier.key">
+                    {{courier.key}}
+                </mat-radio-button>
+                </mat-radio-group>
+
+                <br>
+                <b>Delivery:</b> {{basket.Costs[config.preferences.deliveryMethod].delivery}}<br>
+                <b>Discount:</b> {{basket.Costs[config.preferences.deliveryMethod].discount}}<br>
+                <b>Subtotal:</b> {{basket.Costs[config.preferences.deliveryMethod].subTotal}}<br>
+                <b>Total:</b> {{basket.Costs[config.preferences.deliveryMethod].total}}
+            </div>
+            
+        </div>
+    </div>  
+</div>

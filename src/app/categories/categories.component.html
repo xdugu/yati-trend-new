@@ -1,7 +1,7 @@
 <div *ngIf="config != null">
 <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
-                      [chosen]="config.shopping.currency.chosen"
-                      [available] = "config.shopping.currency.available">
+                      [chosen]="config.preferences.currency.chosen"
+                      [available] = "config.preferences.currency.available">
 </app-currency-chooser>
 
 <div id="product-shelf-placeholder" class="w3-container" style="padding:0;margin:0; width:100%" >
@@ -27,7 +27,7 @@
         <span class="w3-small">(-{{product.Price.original.discountPercentage}}%)</span>
     </div>
     <div class="price w3-padding theme-color">
-        {{product.Price[config.shopping.currency.chosen.toLowerCase()]}}
+        {{product.Price[config.preferences.currency.chosen.toLowerCase()]}}
     </div>
 	</a>
 </div>

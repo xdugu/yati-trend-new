@@ -7,17 +7,23 @@
         "country":"default", "number":null, "postCode":null, "countryCode":null, "dogsName":null, 
         "lang":"hu"
         },
-        "currency": {
-			"chosen": "HUF",
-			"available": ["HUF", "EUR"]
-		},
+        "currency": "",
         "paymentMethod":"payBeforeDelivery",
         "paymentType":"bankTransfer", 
-        "lastBasketSize": 0,
         "deliveryMethod": ""
+    },
+    "preferences":{
+        "currency":{
+			"chosen": "HUF",
+			"available": ["HUF", "EUR"]
+        },
+        "countryCode": null,
+        "paymentMethod":"payBeforeDelivery",
+        "paymentType":"bankTransfer", 
+        "deliveryMethod": null
     },
     "homePage":[
         
     ],
-    "version": 7
+    "version": 8
 }

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -17,7 +18,10 @@ import {MatIconModule} from '@angular/material/icon'
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBadgeModule} from '@angular/material/badge';
-import {MatExpansionModule} from '@angular/material/expansion'
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -28,7 +32,8 @@ import {ApiManagerService} from './api-manager.service';
 import {ShopSpineService} from './shop-spine.service'
 import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.component';
 import { LazyLoadDirective } from './lazy-load.directive';
-import { ProductComponent } from './product/product.component'
+import { ProductComponent } from './product/product.component';
+import { BasketComponent } from './basket/basket.component'
 
 
 
@@ -43,14 +48,16 @@ import { ProductComponent } from './product/product.component'
     CurrencyChooserComponent,
     LazyLoadDirective,
     ProductComponent,
+    BasketComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      {path: '', component: HomeComponent },
       {path:'category/:category', component: CategoriesComponent},
-      {path:'product/:product', component: ProductComponent}
+      {path:'product/:product', component: ProductComponent},
+      {path:'basket', component: BasketComponent},
     ]),
     HttpClientModule,
     BrowserAnimationsModule,
@@ -64,6 +71,10 @@ import { ProductComponent } from './product/product.component'
     MatSidenavModule,
     MatBadgeModule,
     MatExpansionModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    MatRadioModule,
+    FormsModule,
     SlickCarouselModule
   ],
   providers: [ ApiManagerService, ShopSpineService],

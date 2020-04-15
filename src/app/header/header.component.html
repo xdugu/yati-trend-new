@@ -5,7 +5,11 @@
             </a>
             <button mat-button color="accent">Accessories</button>   
             <span class="fill-remaining-space"></span>
-            <button mat-icon-button><mat-icon color="accent">shopping_basket</mat-icon></button>
+            <a mat-icon-button [routerLink]="['/basket']">
+                <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
+                    shopping_basket
+                </mat-icon>
+            </a>
             <button mat-button color="accent">Blog</button>
             <button mat-button color="accent">About Us</button>
             <button mat-button color="accent" >Contact</button>
@@ -15,7 +19,11 @@
         <button mat-button color="accent">Clothing</button>
         <button mat-button color="accent">Accessories</button>
         <span class="fill-remaining-space"></span> 
-        <button mat-icon-button><mat-icon color="accent">shopping_basket</mat-icon></button>
+        <a mat-icon-button [routerLink]="['/basket']">
+            <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
+                shopping_basket
+            </mat-icon>
+        </a>
         <button mat-button color="accent">Blog</button>
         <button mat-icon-button><mat-icon color="accent" [matMenuTriggerFor]="appMenu">
             more_vert</mat-icon>
@@ -25,8 +33,8 @@
     <!-- Mobile Screens-->
     <mat-toolbar color="primary" *ngSwitchDefault>
         <button mat-icon-button class="mobile-header-icon"><mat-icon color="accent">email</mat-icon></button>
-        <a mat-icon-button class="mobile-header-icon">
-            <mat-icon color="accent" matBadge="2" matBadgePosition="below after" >
+        <a mat-icon-button [routerLink]="['/basket']" class="mobile-header-icon">
+            <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
                 shopping_basket
             </mat-icon>
         </a>

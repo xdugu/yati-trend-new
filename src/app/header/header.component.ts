@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {BasketService} from '../basket.service';
+import {ShopSpineService, APP_EVENT_TYPES} from'../shop-spine.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +9,15 @@ import { BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  screenState = 'mobile'
-
+  screenState = 'mobile';
+  basketNumber = 0;
   // creating event emitter to parent to tell what to do with the sidenav
   @Output() sideNavOpenEvent = new EventEmitter<boolean>();
 
   constructor(
-    public breakpointObserver: BreakpointObserver
+    public breakpointObserver: BreakpointObserver,
+    private shopService : ShopSpineService,
+    private basketService: BasketService
   ) {
     // checking for screen of mobile
       breakpointObserver.observe([
@@ -48,7 +52,18 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    // get the initial number of items in basket
+     this.basketService.getBasketCount().subscribe((num : number) =>{
+        this.basketNumber = num;
+     })
+     // subscribe to event about a change in the number of items in basket
+     this.shopService.childEventListener().subscribe(evt =>{
+        if(evt.eventType == APP_EVENT_TYPES.basketNumber){
+           this.basketNumber = evt.eventValue;
+        }
+     })
   }
+
 
   // function is called when menu is requested to be shown
   showMenu(){

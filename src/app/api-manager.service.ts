@@ -31,4 +31,14 @@ export class ApiManagerService {
     })
     return resp;
   }
+
+  post(mode: API_MODE, method: API_METHOD, restOfPath: string, params: HttpParams, body : any): Observable<Object>{
+    let header = new HttpHeaders();
+    
+    let resp = this.http.post(`${this.endPoint}/${mode}/${method}/${restOfPath}`, JSON.stringify(body), {
+        headers: header,
+    });
+
+    return resp;
+  }
 }

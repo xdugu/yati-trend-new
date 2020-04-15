@@ -11,12 +11,22 @@
         </div>
         <div class="w3-col l4 w3-container">
             <div class="w3-margin-top">{{product.item.Title.en}}</div>
-            <div>{{product.item.Price[config.shopping.currency.chosen.toLowerCase()]}} {{config.shopping.currency.chosen}}</div>
+            <div #price>{{product.item.Price[config.preferences.currency.chosen.toLowerCase()]}} {{config.preferences.currency.chosen}}</div>
             <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
-                [chosen]="config.shopping.currency.chosen"
-                [available] = "config.shopping.currency.available">
+                [chosen]="config.preferences.currency.chosen"
+                [available] = "config.preferences.currency.available">
             </app-currency-chooser>
-            <button mat-raised-button color="primary" class="w3-margin-top">Add To Basket</button><br>
+            <mat-form-field *ngFor="let variant of product.item.Variants.variants; index as i">
+                <mat-label>{{variant.text.en}}</mat-label>
+                <mat-select matNativeControl [(value)]="pickedSpec[i]" (selectionChange)="updateProductPrice(price)">
+                  <mat-option *ngFor="let option of variant.options; index as subIndex" [value]="option" 
+                    [disabled]="product.item.TrackStock && product.item.Variants.combinations[subIndex].quantity == 0">
+                    {{option.text.en}}
+                    <span *ngIf="product.item.TrackStock && product.item.Variants.combinations[subIndex].quantity == 0">(Out Of Stock)</span>
+                  </mat-option>
+                </mat-select>
+            </mat-form-field><br>
+            <button mat-raised-button color="primary" (click)="addToBasket()" class="w3-margin-top">Add To Basket</button><br>
             <div style="height: 10px"></div>
             <mat-accordion>
                 <mat-expansion-panel>
@@ -68,6 +78,7 @@
                     </div>
                 </mat-expansion-panel>
             </mat-accordion>
+            <div style="height:500px"></div>
         </div>
     </div>
 
