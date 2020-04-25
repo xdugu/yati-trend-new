@@ -93,6 +93,6 @@ export class BasketComponent implements OnInit {
     // called when there is a change in the selected courier
     onCourierChange(event : MatRadioChange){      
       this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, event.value))
-}
+   }
 
 }

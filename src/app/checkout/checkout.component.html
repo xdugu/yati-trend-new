@@ -1,0 +1,62 @@
+<div class="w3-content"  style="max-width: 1200px">
+    <form class="w3-container w3-center"  #checkoutForm="ngForm">
+        <h2>Contact Information</h2>
+        <p>
+            <mat-form-field appearance="legacy">
+            <mat-label>Name</mat-label>
+            <input matInput required id="name" name="name" type="text"
+                    [(ngModel)]="customer.name" #name="ngModel">
+            <mat-error [hidden]="name.valid || name.pristine">Name is required</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input matInput required id="email" name="email" type="email"
+                    [(ngModel)]="customer.email" #email="ngModel">
+            <mat-error [hidden]="email.valid || email.pristine">Email is required</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <mat-label>Phone Number</mat-label>
+            <input matInput required id="number" name="number" type="tel"
+                [(ngModel)]="customer.number" #number="ngModel">
+                <mat-error [hidden]="number.valid || number.pristine">Phone number is required</mat-error>
+            </mat-form-field>
+        </p>
+
+        <h2>Shipping Details</h2>
+        <p>
+            <mat-form-field appearance="legacy">
+            <mat-label>Address Line 1</mat-label>
+            <input matInput required id="address1" name="address1" type="text"
+                [(ngModel)]="customer.address1" #address1="ngModel">
+                <mat-error [hidden]="address1.valid || address1.pristine">Address is required</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <mat-label>Address Line 2</mat-label>
+            <input matInput  id="address2" name="address2" type="text"
+                [(ngModel)]="customer.address2">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <mat-label>City/Town</mat-label>
+            <input matInput required id="city" name="city" type="text"
+                [(ngModel)]="customer.city" #city="ngModel">
+                <mat-error [hidden]="city.valid || city.pristine">City is required</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <mat-label>PostCode</mat-label>
+            <input matInput required id="postCode" name="postCode" type="text"
+                [(ngModel)]="customer.postCode" #postCode="ngModel">
+                <mat-error [hidden]="postCode.valid || postCode.pristine">Post code is required</mat-error>
+            </mat-form-field>
+        </p>
+    </form>
+</div>

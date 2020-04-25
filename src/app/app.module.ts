@@ -22,6 +22,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatFormFieldModule, MatFormField} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -33,7 +35,8 @@ import {ShopSpineService} from './shop-spine.service'
 import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.component';
 import { LazyLoadDirective } from './lazy-load.directive';
 import { ProductComponent } from './product/product.component';
-import { BasketComponent } from './basket/basket.component'
+import { BasketComponent } from './basket/basket.component';
+import { CheckoutComponent } from './checkout/checkout.component'
 
 
 
@@ -49,6 +52,7 @@ import { BasketComponent } from './basket/basket.component'
     LazyLoadDirective,
     ProductComponent,
     BasketComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import { BasketComponent } from './basket/basket.component'
       {path:'category/:category', component: CategoriesComponent},
       {path:'product/:product', component: ProductComponent},
       {path:'basket', component: BasketComponent},
+      {path:'checkout', component: CheckoutComponent},
     ]),
     HttpClientModule,
     BrowserAnimationsModule,
@@ -75,6 +80,8 @@ import { BasketComponent } from './basket/basket.component'
     MatSelectModule,
     MatRadioModule,
     FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     SlickCarouselModule
   ],
   providers: [ ApiManagerService, ShopSpineService],
