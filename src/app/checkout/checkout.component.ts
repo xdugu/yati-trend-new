@@ -12,6 +12,7 @@ export class CheckoutComponent implements OnInit {
   constructor(private shopService : ShopSpineService) { }
   
   customer : any;
+  termsAccepted = false;
 
   ngOnInit(): void {
      this.shopService.getCustomerDetails().subscribe(customerDetails =>{

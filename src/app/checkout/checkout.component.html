@@ -1,5 +1,5 @@
-<div class="w3-content"  style="max-width: 1200px">
-    <form class="w3-container w3-center"  #checkoutForm="ngForm">
+<div class="w3-content"  style="max-width: 1200px; overflow: hidden;" >
+    <form class="w3-center"  #checkoutForm="ngForm">
         <h2>Contact Information</h2>
         <p>
             <mat-form-field appearance="legacy">
@@ -58,5 +58,8 @@
                 <mat-error [hidden]="postCode.valid || postCode.pristine">Post code is required</mat-error>
             </mat-form-field>
         </p>
+        
+        <mat-checkbox [hidden]="checkoutForm.invalid" [(ngModel)]="termsAccepted" [ngModelOptions]="{standalone: true}" color="primary" >I accept the terms and conditions for this sale</mat-checkbox><br><br>
+        <button *ngIf="termsAccepted" mat-raised-button color="primary" >Proceed to checkout</button>
     </form>
 </div>

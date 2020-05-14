@@ -21,8 +21,7 @@
                 <mat-label>Select Country</mat-label>
                 <mat-select matNativeControl [(value)]="config.preferences.countryCode" (selectionChange)="onCountryChange($event)">
                   <mat-option value="">Please choose a country</mat-option>
-                  <mat-option value="HU">Hungary</mat-option>
-                  <mat-option value="DE">Germany</mat-option>
+                  <mat-option *ngFor="let countryCode of basket.Costs | keyvalue" value="{{countryCode.key}}">{{countryCode.key}}</mat-option>
                 </mat-select>
             </mat-form-field><br><br>
 
@@ -31,17 +30,18 @@
                 <mat-radio-group
                     [value]="config.preferences.deliveryMethod" (change)="onCourierChange($event)">
                 <mat-radio-button 
-                    *ngFor="let courier of basket.Costs | keyvalue" 
+                    *ngFor="let courier of basket.Costs[config.preferences.countryCode] | keyvalue" 
                     [value]="courier.key">
                     {{courier.key}}
                 </mat-radio-button>
-                </mat-radio-group>
+                </mat-radio-group><br>
 
-                <br>
-                <b>Delivery:</b> {{basket.Costs[config.preferences.deliveryMethod].delivery}}<br>
-                <b>Discount:</b> {{basket.Costs[config.preferences.deliveryMethod].discount}}<br>
-                <b>Subtotal:</b> {{basket.Costs[config.preferences.deliveryMethod].subTotal}}<br>
-                <b>Total:</b> {{basket.Costs[config.preferences.deliveryMethod].total}}
+                <span *ngIf="config.preferences.deliveryMethod != null">
+                    <b>Delivery:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()]}}<br>
+                    <b>Discount:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()]}}<br>
+                    <b>Subtotal:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()]}}<br>
+                    <b>Total:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()]}}
+                </span>
             </div>
             
         </div>

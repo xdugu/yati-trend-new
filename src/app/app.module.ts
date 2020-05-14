@@ -24,6 +24,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule, MatFormField} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -82,6 +83,7 @@ import { CheckoutComponent } from './checkout/checkout.component'
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
     SlickCarouselModule
   ],
   providers: [ ApiManagerService, ShopSpineService],

@@ -57,9 +57,9 @@ export class BasketComponent implements OnInit {
 
    // processBasket
    private processBasket(basket : any){
-      if(basket.hasOwnProperty('Costs')){
-          this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, Object.keys(basket.Costs)[0]))
-      }
+      // if(basket.hasOwnProperty('Costs')){
+      //     this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, Object.keys(basket.Costs)[0]))
+      // }
       this.basket = basket;
    }
     // function called by view for a change in currency

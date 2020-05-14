@@ -87,9 +87,7 @@ export class BasketService {
              itemId: itemId,
              basketId: this.basketId,
              storeId: config.storeId,
-             combination: combination,
-             countryCode: this.config.preferences.countryCode,
-             currency: this.config.preferences.currency.chosen
+             combination: combination
           }).subscribe((evt : any) => {
              this.basketId = evt.BasketId;
              localStorage.setItem('basketId', this.basketId);
