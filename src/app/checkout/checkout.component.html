@@ -5,7 +5,7 @@
             <mat-form-field appearance="legacy">
             <mat-label>Name</mat-label>
             <input matInput required id="name" name="name" type="text"
-                    [(ngModel)]="customer.name" #name="ngModel">
+                    [(ngModel)]="customer.firstName" #name="ngModel">
             <mat-error [hidden]="name.valid || name.pristine">Name is required</mat-error>
             </mat-form-field>
         </p>
@@ -60,6 +60,6 @@
         </p>
         
         <mat-checkbox [hidden]="checkoutForm.invalid" [(ngModel)]="termsAccepted" [ngModelOptions]="{standalone: true}" color="primary" >I accept the terms and conditions for this sale</mat-checkbox><br><br>
-        <button *ngIf="termsAccepted" mat-raised-button color="primary" >Proceed to checkout</button>
+        <button *ngIf="termsAccepted" mat-raised-button color="primary" (click)="proceedToPayment()">Proceed to payment</button>
     </form>
 </div>

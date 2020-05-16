@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>
+    <span *ngIf="data.paymentType == 'bankTransfer'">Bank Transfer</span>
+    <span *ngIf="data.paymentType == 'payOnDelivery'">Pay On Delvery</span>
+</h1>
+<div mat-dialog-content>
+   <span *ngIf="data.paymentType == 'bankTransfer'">
+       Please confirm that you want to pay by bank transfer. We will send an email
+       to confirm our bank details. On receipt of the payment, your ordered items
+       will be shipped to you
+   </span>
+   <span *ngIf="data.paymentType == 'payOnDelivery'">
+       Please confirm that you want to pay on delivery of the item(s). payment on delivery
+       incurs an additional delivery cost of
+        {{data.costs[data.countryCode][data.courier].payOnDelivery.delivery[data.currency.toLowerCase()] - 
+            data.costs[data.countryCode][data.courier].payBeforeDelivery.delivery[data.currency.toLowerCase()]}}
+   </span>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Back</button>
+  <button mat-button  [mat-dialog-close]="'Confirmed'" cdkFocusInitial>Confirm</button>
+</div>

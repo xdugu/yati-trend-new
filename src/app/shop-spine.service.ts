@@ -100,7 +100,7 @@ export class ShopSpineService {
 
 
 
-  // returns th current config and preferences
+  // returns the current config and preferences
   getConfig(){
     return new Observable(subscriber =>{
         if(this.shopConfig != null){
@@ -123,8 +123,8 @@ export class ShopSpineService {
                   this.shopConfig = {preferences: config.preferences};
                   localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
                   localStorage.setItem('version', config.version.toString());
-                  this.customerDetails = config.shopping;
-                  localStorage.setItem('shopping', JSON.stringify(config.shopping));
+                  this.customerDetails = config.shopping.contact;
+                  localStorage.setItem('shopping', JSON.stringify(config.shopping.contact));
                   this.configVersion = config.version;
               }
               this.shopConfig['imgSrc'] = config.imgSrc;

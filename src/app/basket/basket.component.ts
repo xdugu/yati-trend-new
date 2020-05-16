@@ -55,11 +55,11 @@ export class BasketComponent implements OnInit {
     })
    }
 
-   // processBasket
+   // processBasket - called to update delivery courier based on receiving a new basket
    private processBasket(basket : any){
-      // if(basket.hasOwnProperty('Costs')){
-      //     this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, Object.keys(basket.Costs)[0]))
-      // }
+       if(basket.hasOwnProperty('Costs') && this.config.preferences.countryCode != null){
+           this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, Object.keys(basket.Costs[this.config.preferences.countryCode])[0]))
+       }
       this.basket = basket;
    }
     // function called by view for a change in currency
@@ -70,7 +70,7 @@ export class BasketComponent implements OnInit {
 
     // to prevent a dom re-draw of the basket list, this function assigns a unique id
     // to each item in the basket based on a few unique properties of the basket item
-    basketTrackFn(index, item){
+    basketTrackFn(index : number, item : any){
        let finalCombi = '';
        if(item.hasOwnProperty('Combination')){
             item.Combination.forEach(combi =>{

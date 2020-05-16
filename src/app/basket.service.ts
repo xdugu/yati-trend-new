@@ -141,7 +141,31 @@ export class BasketService {
       })
     }
   
- 
+  // final step to be called to process customer order
+  order(paymentType : string, comments: any, details : any){
+    return new Observable(sub => {
+        this.shopService.getCustomerDetails().subscribe((cust : any) => {
+          cust.countryCode = this.config.preferences.countryCode;
+          this.apiService.post(API_MODE.OPEN, API_METHOD.UPDATE, 'basket/order', new HttpParams(), {
+             orderDetails: {
+                "contact": cust,
+                "currency": this.config.preferences.currency.chosen,
+                "paymentMethod": paymentType ? 'payOnDelivery' : 'payBeforeDelivery',
+                "paymentType": paymentType, 
+                "deliveryMethod": this.config.preferences.deliveryMethod,
+                "comments": comments,
+                "paymentDetails": details
+             },
+             basketId: this.basketId,
+             storeId: this.config.storeId
+          }).subscribe(()=>{
+            // return true that success in order
+             sub.next(true);
+          }) 
+        })
+        
+    });
+  }
 
   // returns the current website config
   getConfig(){

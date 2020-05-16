@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -22,9 +23,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
-import {MatFormFieldModule, MatFormField} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -37,7 +39,8 @@ import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.co
 import { LazyLoadDirective } from './lazy-load.directive';
 import { ProductComponent } from './product/product.component';
 import { BasketComponent } from './basket/basket.component';
-import { CheckoutComponent } from './checkout/checkout.component'
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ReviewComponent, DialogConfirmPaymentMethod } from './review/review.component'
 
 
 
@@ -54,6 +57,8 @@ import { CheckoutComponent } from './checkout/checkout.component'
     ProductComponent,
     BasketComponent,
     CheckoutComponent,
+    ReviewComponent,
+    DialogConfirmPaymentMethod
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,9 @@ import { CheckoutComponent } from './checkout/checkout.component'
       {path:'product/:product', component: ProductComponent},
       {path:'basket', component: BasketComponent},
       {path:'checkout', component: CheckoutComponent},
+      {path:'review', component: ReviewComponent},
     ]),
+    NgxPayPalModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -83,6 +90,7 @@ import { CheckoutComponent } from './checkout/checkout.component'
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
     MatCheckboxModule,
     SlickCarouselModule
   ],

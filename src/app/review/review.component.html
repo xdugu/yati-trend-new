@@ -1,0 +1,41 @@
+<div *ngIf="config != null && basket !=null" class="w3-container">
+    <h1 class="w3-center">Review</h1>
+    <div class="w3-row w3-container">
+        <div class="w3-col l6">
+            <div *ngFor="let item of basket.Items; index as i;" class="w3-padding w3-card">
+                <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px">
+                <span>{{item.Title.en}}</span><br>
+                <span>Qty: {{item.Quantity}}</span><br>
+                <div>{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity}}</div>
+            </div>
+
+            <div>
+                <b>Delivery:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()]}}<br>
+                <b>Discount:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()]}}<br>
+                <b>Subtotal:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()]}}<br>
+                <b>Total:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()]}}<br>
+            </div>
+
+        </div>
+        <div class="w3-col l6 w3-padding w3-card">
+            <h2>Order Details</h2> 
+            <span>{{customer.firstName}}</span><br> 
+            <span>{{customer.email}}</span><br>  
+            <span>{{customer.number}}</span><br><br>
+            
+            <span>Post To:</span><br>
+            <span>{{customer.firstName}}</span><br>
+            <span>{{customer.address1}}</span><br>
+            <span [hidden]="customer.address2 == null">{{customer.address2}}<br></span> 
+            <span>{{customer.city}}</span><br>
+            <span>{{customer.postCode}}</span><br>  
+            <span>{{customer.countryCode}}</span><br> 
+        </div>
+    </div> 
+    <div style="width: 200px overflow-hidden" class="w3-mobile w3-margin-top">
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal><br>
+        <button mat-raised-button color="primary" (click)="triggerPaymentMethod('bankTransfer')"> Pay by bank transfer</button> <br><br>
+        <button mat-raised-button color="primary" (click)="triggerPaymentMethod('payOnDelivery')"> Pay on delivery</button>
+    </div>
+    
+</div>
