@@ -2,6 +2,18 @@
     max-height: 400px;
 }
 
+/*
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1}
+  }
 div{
     margin-top: 16px !important;
 }
+
+div {
+    animation-name: appear;
+    opacity: 1;
+    animation-duration: 3s;
+  }
+*/

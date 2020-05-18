@@ -3,13 +3,15 @@ import {BasketService} from '../basket.service'
 import {ShopSpineService} from '../shop-spine.service'
 import { IPayPalConfig, ICreateOrderRequest} from 'ngx-paypal';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
+// data interface for dialogs
 export interface DialogData {
   paymentType: string;
-  costs: any;
-  countryCode: string;
-  currency: string;
-  courier:string;
+  costs ?: any;
+  countryCode ?: string;
+  currency ?: string;
+  courier ?:string;
 }
 
 @Component({
@@ -23,7 +25,8 @@ export class ReviewComponent implements OnInit {
 
   constructor(private shopService: ShopSpineService,
               private basketService: BasketService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              private router : Router) { }
   
     public payPalConfig : any;
   
@@ -53,19 +56,26 @@ export class ReviewComponent implements OnInit {
     })
  }
 
- // called by view when'bankTransfer' or 'payOnDelivery' is selected
+ // called by view when 'bankTransfer' or 'payOnDelivery' is selected
  triggerPaymentMethod(method : string){
-    const dialogRef = this.dialog.open(DialogConfirmPaymentMethod, {
+    const dialogConfirm = this.dialog.open(DialogConfirmPaymentMethod, {
       width: '250px',
       data: {paymentType: method, costs : this.basket.Costs, courier: this.config.preferences.deliveryMethod,
             countryCode: this.config.preferences.countryCode, currency: this.config.preferences.currency.chosen}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogConfirm.afterClosed().subscribe(result => {
        if(result == 'Confirmed'){
           this.basketService.order(method, 'Hello', {}).subscribe(res =>{
-             if(!res){
-                console.log("Order Fail");
+             if(res){
+               // if order payment successful
+                const dialogSuccess = this.dialog.open(DialogConfirmOrderSuccessful, {
+                  width: '250px',
+                  data: {paymentType: method}
+                });
+                dialogSuccess.afterClosed().subscribe(()=>{
+                    this.router.navigate(['/']);
+                })
              }
           })
        }
@@ -164,11 +174,29 @@ export class ReviewComponent implements OnInit {
   }
 }
 
+// component to show dialog for user to confirm order action
 @Component({
   selector: 'dialog-confirm-payment-method',
   templateUrl: 'dialog-confirm-payment-method.html',
 })
 export class DialogConfirmPaymentMethod{
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogConfirmPaymentMethod>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
+
+// component to show dialog confirming an order
+@Component({
+  selector: 'dialog-confirm-order-successful',
+  templateUrl: 'dialog-confirm-order-successful.html',
+})
+export class DialogConfirmOrderSuccessful{
 
   constructor(
     public dialogRef: MatDialogRef<DialogConfirmPaymentMethod>,

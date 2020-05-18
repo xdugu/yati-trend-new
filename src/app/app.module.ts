@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { registerLocaleData } from '@angular/common';
+import localeHu from '@angular/common/locales/hu';
+import localeHuExtra from '@angular/common/locales/extra/hu';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -27,6 +30,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatListModule} from '@angular/material/list'
 
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -40,8 +44,10 @@ import { LazyLoadDirective } from './lazy-load.directive';
 import { ProductComponent } from './product/product.component';
 import { BasketComponent } from './basket/basket.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ReviewComponent, DialogConfirmPaymentMethod } from './review/review.component'
+import { ReviewComponent, DialogConfirmPaymentMethod, DialogConfirmOrderSuccessful } from './review/review.component';
+import { SearchPipe } from './search.pipe'
 
+registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
 
 @NgModule({
@@ -58,7 +64,9 @@ import { ReviewComponent, DialogConfirmPaymentMethod } from './review/review.com
     BasketComponent,
     CheckoutComponent,
     ReviewComponent,
-    DialogConfirmPaymentMethod
+    DialogConfirmPaymentMethod,
+    DialogConfirmOrderSuccessful,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -92,7 +100,8 @@ import { ReviewComponent, DialogConfirmPaymentMethod } from './review/review.com
     MatInputModule,
     MatDialogModule,
     MatCheckboxModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    MatListModule
   ],
   providers: [ ApiManagerService, ShopSpineService],
   bootstrap: [AppComponent]

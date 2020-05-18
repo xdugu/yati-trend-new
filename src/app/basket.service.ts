@@ -7,10 +7,15 @@ import {ShopSpineService, AppEvent, APP_EVENT_TYPES} from './shop-spine.service'
 @Injectable({
   providedIn: 'root'
 })
+
+// Basket service class handles all interactions between application and server with
+// regards to the shopping basket
 export class BasketService {
-  private basket = null;
-  private basketId = null;
-  private config = null;
+
+
+  private basket = null;  // stores information on the basket
+  private basketId = null; // stored info on the basket id
+  private config = null; // stores general config info - gets the store id from this data
 
   constructor(private apiService : ApiManagerService, private shopService : ShopSpineService) { 
      this.basketId = localStorage.getItem('basketId');
@@ -80,6 +85,7 @@ export class BasketService {
 
   }
 
+  // called when an item is required to be added to the basket
   addToBasket(itemId : string, combination : any){
     return new Observable(sub =>{
       this.getConfig().subscribe((config : any) =>{
@@ -145,12 +151,11 @@ export class BasketService {
   order(paymentType : string, comments: any, details : any){
     return new Observable(sub => {
         this.shopService.getCustomerDetails().subscribe((cust : any) => {
-          cust.countryCode = this.config.preferences.countryCode;
           this.apiService.post(API_MODE.OPEN, API_METHOD.UPDATE, 'basket/order', new HttpParams(), {
              orderDetails: {
                 "contact": cust,
                 "currency": this.config.preferences.currency.chosen,
-                "paymentMethod": paymentType ? 'payOnDelivery' : 'payBeforeDelivery',
+                "paymentMethod": paymentType == 'payOnDelivery' ? 'payOnDelivery' : 'payBeforeDelivery',
                 "paymentType": paymentType, 
                 "deliveryMethod": this.config.preferences.deliveryMethod,
                 "comments": comments,
@@ -159,9 +164,18 @@ export class BasketService {
              basketId: this.basketId,
              storeId: this.config.storeId
           }).subscribe(()=>{
+            // delete all reference to the basket
+             localStorage.removeItem('basketId');
+
             // return true that success in order
-             sub.next(true);
-          }) 
+             this.basket = [];
+             this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.basketNumber, 0));
+             sub.next(true);  
+          },
+          err => {
+              console.log(err);
+              sub.next(false);
+          })
         })
         
     });

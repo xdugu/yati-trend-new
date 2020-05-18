@@ -1,5 +1,6 @@
-<div class="w3-content"  style="max-width: 1200px; overflow: hidden;" >
-    <form class="w3-center"  #checkoutForm="ngForm">
+<div  class="w3-container" style="max-width: 1200px; overflow: hidden;" 
+     *ngIf="config != null">
+    <form  #checkoutForm="ngForm">
         <h2>Contact Information</h2>
         <p>
             <mat-form-field appearance="legacy">
@@ -26,38 +27,58 @@
             </mat-form-field>
         </p>
 
-        <h2>Shipping Details</h2>
-        <p>
-            <mat-form-field appearance="legacy">
-            <mat-label>Address Line 1</mat-label>
-            <input matInput required id="address1" name="address1" type="text"
-                [(ngModel)]="customer.address1" #address1="ngModel">
-                <mat-error [hidden]="address1.valid || address1.pristine">Address is required</mat-error>
+        <div [hidden]="config.preferences.deliveryMethod == 'Foxpost-Terminal' &&
+                       foxpostTerminal.showList">
+            <h2>Shipping Details</h2>
+            <p>
+                <mat-form-field appearance="legacy">
+                <mat-label>Address Line 1</mat-label>
+                <input matInput required id="address1" name="address1" type="text"
+                    [(ngModel)]="customer.address1" #address1="ngModel">
+                    <mat-error [hidden]="address1.valid || address1.pristine">Address is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="legacy">
+                <mat-label>Address Line 2</mat-label>
+                <input matInput  id="address2" name="address2" type="text"
+                    [(ngModel)]="customer.address2">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="legacy">
+                <mat-label>City/Town</mat-label>
+                <input matInput required id="city" name="city" type="text"
+                    [(ngModel)]="customer.city" #city="ngModel">
+                    <mat-error [hidden]="city.valid || city.pristine">City is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="legacy">
+                <mat-label>PostCode</mat-label>
+                <input matInput required id="postCode" name="postCode" type="text"
+                    [(ngModel)]="customer.postCode" #postCode="ngModel">
+                    <mat-error [hidden]="postCode.valid || postCode.pristine">Post code is required</mat-error>
+                </mat-form-field>
+            </p>
+        </div>
+        <div *ngIf="foxpostTerminal.showList" >
+            <h2>Select a Foxpost pickup location</h2>
+            <mat-form-field>
+                 <mat-label>Search here</mat-label>
+                 <input matInput placeholder="e.g. Budapest" [(ngModel)]="foxpostTerminal.searchString"
+                 [ngModelOptions]="{standalone: true}">
             </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field appearance="legacy">
-            <mat-label>Address Line 2</mat-label>
-            <input matInput  id="address2" name="address2" type="text"
-                [(ngModel)]="customer.address2">
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field appearance="legacy">
-            <mat-label>City/Town</mat-label>
-            <input matInput required id="city" name="city" type="text"
-                [(ngModel)]="customer.city" #city="ngModel">
-                <mat-error [hidden]="city.valid || city.pristine">City is required</mat-error>
-            </mat-form-field>
-        </p>
-        <p>
-            <mat-form-field appearance="legacy">
-            <mat-label>PostCode</mat-label>
-            <input matInput required id="postCode" name="postCode" type="text"
-                [(ngModel)]="customer.postCode" #postCode="ngModel">
-                <mat-error [hidden]="postCode.valid || postCode.pristine">Post code is required</mat-error>
-            </mat-form-field>
-        </p>
+            <mat-list dense style="max-height: 300px; overflow-y: auto; width: 300px" class="w3-mobile">
+                <mat-list-item *ngFor="let place of foxpostTerminal.list | search : {'Name': foxpostTerminal.searchString, 'City': foxpostTerminal.searchString, 'Address': foxpostTerminal.searchString}">
+                  <h3 matLine> {{place.Name}} </h3>
+                  <p matLine> {{place.Address}}, {{place.City}}, {{place.PostCode}}</p>
+                  <mat-action-list>
+                    <button mat-list-item color="accent"> View </button>
+                  </mat-action-list>
+                </mat-list-item>
+            </mat-list>
+        </div>
         
         <mat-checkbox [hidden]="checkoutForm.invalid" [(ngModel)]="termsAccepted" [ngModelOptions]="{standalone: true}" color="primary" >I accept the terms and conditions for this sale</mat-checkbox><br><br>
         <button *ngIf="termsAccepted" mat-raised-button color="primary" (click)="proceedToPayment()">Proceed to payment</button>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, LOCALE_ID } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 
@@ -32,7 +32,7 @@ export class ShopSpineService {
   private configVersion = null;
   private customerDetails = null;
 
-  constructor(private http : HttpClient) { 
+  constructor(private http : HttpClient, @Inject(LOCALE_ID) public locale: string) { 
      let version = localStorage.getItem('version');
      if(version == null){
        this.configVersion = 0;
@@ -57,18 +57,20 @@ export class ShopSpineService {
 
       case APP_EVENT_TYPES.countryCode:
         this.shopConfig.preferences.countryCode = msg.eventValue;
+
+        // need to update this info in the customer details too as required by web api
+        this.customerDetails.countryCode = msg.eventValue;
         localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
+        localStorage.setItem('shopping', JSON.stringify(this.customerDetails));
         break;
 
       case APP_EVENT_TYPES.deliveryMethod:
           this.shopConfig.preferences.deliveryMethod = msg.eventValue;
           localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
-        break;
-      
-
-      
+        break;     
     }
     
+    // publish events to child events
     this.childEvents.next(msg)
   }
 
@@ -115,12 +117,14 @@ export class ShopSpineService {
                 // if for what ever reason the preferences don't exist
                 if(prefs == null){
                   this.shopConfig = { preferences : config.preferences};
+                  this.shopConfig.preferences.lang = this.getLang(this.locale);
                   localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
                 }else
                  this.shopConfig = {preferences : JSON.parse(prefs)};
 
               } else{ // version numbers are different
                   this.shopConfig = {preferences: config.preferences};
+                  this.shopConfig.preferences.lang = this.getLang(this.locale);
                   localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
                   localStorage.setItem('version', config.version.toString());
                   this.customerDetails = config.shopping.contact;
@@ -133,5 +137,15 @@ export class ShopSpineService {
           });
         }
     })
+  }
+
+  // gets the language of website based on given locale
+  getLang(locale : string){
+      if(locale.indexOf('hu') >= 0){
+         return 'hu'
+      }else if(locale.indexOf('en') >= 0){
+        return 'en'
+     }
+     return 'hu'
   }
 }

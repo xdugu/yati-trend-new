@@ -25,7 +25,8 @@
                 </mat-select>
             </mat-form-field><br><br>
 
-            <div *ngIf="basket.hasOwnProperty('Costs')">
+            <div *ngIf="basket.hasOwnProperty('Costs') && config.preferences.countryCode != null &&
+                        config.preferences.countryCode.length == 2">
                 <label>Choose a courier</label>
                 <mat-radio-group
                     [value]="config.preferences.deliveryMethod" (change)="onCourierChange($event)">

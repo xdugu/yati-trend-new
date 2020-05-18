@@ -35,7 +35,11 @@
     <div style="width: 200px overflow-hidden" class="w3-mobile w3-margin-top">
         <ngx-paypal [config]="payPalConfig"></ngx-paypal><br>
         <button mat-raised-button color="primary" (click)="triggerPaymentMethod('bankTransfer')"> Pay by bank transfer</button> <br><br>
-        <button mat-raised-button color="primary" (click)="triggerPaymentMethod('payOnDelivery')"> Pay on delivery</button>
+        <button mat-raised-button color="primary" 
+                (click)="triggerPaymentMethod('payOnDelivery')"
+                *ngIf="basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].hasOwnProperty('payOnDelivery')">
+                 Pay on delivery
+        </button>
     </div>
     
 </div>

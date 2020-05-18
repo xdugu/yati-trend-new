@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="HomepageHeader" datatype="html">
+        <source>
+        Welcome to the home of African-European Fashion
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Homepage welcome text</note>
+      </trans-unit>
+      <trans-unit id="ShopNow" datatype="html">
+        <source>Shop Now</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Button named as shop now</note>
+      </trans-unit>
+      <trans-unit id="Blouses" datatype="html">
+        <source>Blouses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">A button labelled as &apos;blouses&apos;</note>
+      </trans-unit>
+      <trans-unit id="Skirts" datatype="html">
+        <source>Skirts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">A button labelled as &apos;Skirts&apos;</note>
+      </trans-unit>
+      <trans-unit id="Jumpsuits" datatype="html">
+        <source>Jumpsuits</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">A button labelled as &apos;jumpsuits&apos;</note>
+      </trans-unit>
+      <trans-unit id="AboutUsShort" datatype="html">
+        <source>Yati-Trend clothes are designed to merge African and European Fashion.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.
+            Our designs are made to fuse the african flare and color into european clothing.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            The aim with the clothes we design is to encourage people to be more open to wearing coloured and patterned clothes which shows uniqueness and confidence . . .
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <note priority="1" from="description">short description about us</note>
+      </trans-unit>
+      <trans-unit id="ReadMore" datatype="html">
+        <source>Read More</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <note priority="1" from="description">A &apos;read more&apos; button</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

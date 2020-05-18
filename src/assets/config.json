@@ -20,7 +20,8 @@
         "countryCode": null,
         "paymentMethod":"payBeforeDelivery",
         "paymentType":"bankTransfer", 
-        "deliveryMethod": null
+        "deliveryMethod": null,
+        "lang" : "hu"
     },
     "homePage":[
         
