@@ -4,6 +4,7 @@ import {ShopSpineService} from '../shop-spine.service'
 import { IPayPalConfig, ICreateOrderRequest} from 'ngx-paypal';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 // data interface for dialogs
 export interface DialogData {
@@ -66,24 +67,27 @@ export class ReviewComponent implements OnInit {
        if(result == 'Confirmed'){
           this.basketService.order(method, 'Hello', {}).subscribe(res =>{
              if(res){
-               // if order payment successful
-                const dialogSuccess = this.dialog.open(DialogConfirmOrderSuccessful, {
-                  width: '250px',
-                  data: {paymentType: method}
-                });
-                dialogSuccess.afterClosed().subscribe(()=>{
-                    this.router.navigate(['/']);
-                })
+                this.confirmOrder(method);
              }
           })
        }
     });
  }
 
+   confirmOrder(paymentType : string){
+         // if order payment successful
+         const dialogSuccess = this.dialog.open(DialogConfirmOrderSuccessful, {
+          width: '250px',
+          data: {paymentType: paymentType}
+        });
+        dialogSuccess.afterClosed().subscribe(()=>{
+            this.router.navigate(['/']);
+        });
+   }
+
  // creates a paypal object that is able to make paypal payments
  private createPaypalObject(): void {
     this.payPalConfig = {
-        currency: this.config.preferences.currency.chosen,
         clientId: this.paypalIdTest,
         createOrder: (data) => < ICreateOrderRequest > {
             intent: 'CAPTURE',
@@ -139,14 +143,14 @@ export class ReviewComponent implements OnInit {
             layout: 'vertical'
         },
         onApprove: (data, actions) => {
-            console.log('onApprove - transaction was approved, but not authorized', data, actions);
-            actions.order.get().then(details => {
-                console.log('onApprove - you can get full order details inside onApprove: ', details);
+            actions.order.get().then((details : any) => {
+                this.basketService.order('paypal', 'HelloPaypal', details).subscribe(res =>{
+                  if(res){
+                    this.confirmOrder('paypal');
+                  }
+              });
             });
 
-        },
-        onClientAuthorization: (data) => {
-            console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
         },
         onError: err => {
           console.log('OnError', err); 

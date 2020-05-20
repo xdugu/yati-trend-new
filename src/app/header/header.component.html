@@ -1,5 +1,6 @@
 <header [ngSwitch]="screenState">
     <mat-toolbar color="primary" *ngSwitchCase="'wide_screen'" class="center">
+            <a [routerLink]="['/']" style="height:100%"> <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle"></a>
             <a mat-button color="accent" [routerLink]="['/category', 'Womens']">
                 Clothing
             </a>
