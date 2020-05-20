@@ -1,0 +1,20 @@
+<h1 mat-dialog-title >
+    {{data.Name}}
+</h1>
+<div mat-dialog-content>
+    {{data.Address}}<br>
+    {{data.City}}<br>
+    {{data.PostCode}}<br><br>
+    Monday: {{data.Monday}}<br>
+    Tuesday:{{data.Tuesday}}<br>
+    Wednesday: {{data.Wednesday}}<br>
+    Thursday: {{data.Thursday}}<br>
+    Friday: {{data.Friday}}<br>
+    Saturday: {{data.Saturday}}<br>
+    Sunday: {{data.Sunday}}<br><br>
+    {{data.Description}}<br>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Close</button>
+    <button mat-button  [mat-dialog-close]="'Confirmed'" cdkFocusInitial>Choose this address</button>
+</div>

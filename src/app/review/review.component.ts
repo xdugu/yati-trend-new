@@ -37,16 +37,14 @@ export class ReviewComponent implements OnInit {
   ngOnInit(): void {
     this.shopService.getConfig().subscribe(config =>{
        this.config = config;
-    })
-
-    // get basket (if exists)
-    this.basketService.getBasket().subscribe(basket =>{
-        this.basket = basket;
-        this.createPaypalObject();
-    })
-
-    this.shopService.getCustomerDetails().subscribe(details => {
-      this.customer = details;
+       this.shopService.getCustomerDetails().subscribe(details => {
+            // get basket (if exists)
+            this.basketService.getBasket().subscribe(basket =>{
+              this.basket = basket;
+              this.customer = details;
+               this.createPaypalObject();
+          }) 
+      })
     })
 
     this.shopService.childEventListener().subscribe((evt) => {
@@ -117,7 +115,17 @@ export class ReviewComponent implements OnInit {
                         }
                     }
                 },
-                items: this.getPaypalBasketItems(this.basket.Items, this.config.preferences.currency.chosen, 'en')
+                items: this.getPaypalBasketItems(this.basket.Items, this.config.preferences.currency.chosen, 'en'),
+                shipping:{
+                    name:{full_name: this.customer.firstName},
+                    address: {
+                      address_line_1: this.customer.address1,
+                      address_line_2: this.customer.address2,
+                      admin_area_2: this.customer.city,
+                      country_code: this.customer.countryCode,
+                      postal_code: this.customer.postCode,
+                    }
+                  }
             }]
         },
         payment_options: {
@@ -140,6 +148,9 @@ export class ReviewComponent implements OnInit {
         onClientAuthorization: (data) => {
             console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
         },
+        onError: err => {
+          console.log('OnError', err); 
+      },
     };
   }
 

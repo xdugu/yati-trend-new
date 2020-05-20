@@ -43,7 +43,7 @@ import { CurrencyChooserComponent } from './currency-chooser/currency-chooser.co
 import { LazyLoadDirective } from './lazy-load.directive';
 import { ProductComponent } from './product/product.component';
 import { BasketComponent } from './basket/basket.component';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutComponent, DialogShowFoxpostAddress } from './checkout/checkout.component';
 import { ReviewComponent, DialogConfirmPaymentMethod, DialogConfirmOrderSuccessful } from './review/review.component';
 import { SearchPipe } from './search.pipe'
 
@@ -66,6 +66,7 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     ReviewComponent,
     DialogConfirmPaymentMethod,
     DialogConfirmOrderSuccessful,
+    DialogShowFoxpostAddress,
     SearchPipe
   ],
   imports: [
