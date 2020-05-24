@@ -1,9 +1,18 @@
 <header [ngSwitch]="screenState">
     <mat-toolbar color="primary" *ngSwitchCase="'wide_screen'" class="center">
             <a [routerLink]="['/']" style="height:100%"> <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle"></a>
-            <a mat-button color="accent" [routerLink]="['/category', 'Womens']">
+            <mat-menu #clothingMenu yPosition="below">
+                <a mat-menu-item [routerLink]="['/category', 'Womens']">All</a>
+                <a mat-menu-item [routerLink]="['/category', 'Womens','Dresses']">Dresses</a>
+                <a mat-menu-item [routerLink]="['/category', 'Womens','Skirts']">Skirts</a>
+                <a mat-menu-item [routerLink]="['/category', 'Womens','Jumpsuits']">Jumpsuits</a>
+                <a mat-menu-item [routerLink]="['/category', 'Womens','Blouses']">Blouses</a>
+                <a mat-menu-item [routerLink]="['/category', 'Womens','Trousers']">Trousers</a>
+            </mat-menu>
+            <button mat-button color="accent" [matMenuTriggerFor]="clothingMenu">
                 Clothing
-            </a>
+            </button>
+
             <button mat-button color="accent">Accessories</button>   
             <span class="fill-remaining-space"></span>
             <a mat-icon-button [routerLink]="['/basket']">
@@ -17,6 +26,9 @@
     </mat-toolbar>
 
     <mat-toolbar color="primary" *ngSwitchCase="'tablet'">
+        <a [routerLink]="['/']" style="height:100%"> 
+            <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle">
+        </a>
         <button mat-button color="accent">Clothing</button>
         <button mat-button color="accent">Accessories</button>
         <span class="fill-remaining-space"></span> 
@@ -33,15 +45,23 @@
 
     <!-- Mobile Screens-->
     <mat-toolbar color="primary" *ngSwitchDefault>
-        <button mat-icon-button class="mobile-header-icon"><mat-icon color="accent">email</mat-icon></button>
+        <a [routerLink]="['/']" style="height:100%">
+             <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle">
+        </a>
+        <span class="fill-remaining-space"></span>
+        
         <a mat-icon-button [routerLink]="['/basket']" class="mobile-header-icon">
             <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
                 shopping_basket
             </mat-icon>
         </a>
-        <button mat-icon-button class="mobile-header-icon"><mat-icon color="accent">favorite</mat-icon></button>
-        <button mat-icon-button class="mobile-header-icon"><mat-icon color="accent" (click)="showMenu()">
-            menu</mat-icon>
+        <button mat-icon-button class="mobile-header-icon">
+            <mat-icon color="accent">email</mat-icon>
+        </button>
+        <button mat-icon-button class="mobile-header-icon">
+            <mat-icon color="accent" (click)="showMenu()">
+                menu
+            </mat-icon>
         </button>
     </mat-toolbar>
 

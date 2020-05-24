@@ -1,7 +1,10 @@
 <div *ngIf="config != null">
-<app-currency-chooser (currencyChange)="onCurrencyChange($event)"
+
+<app-currency-chooser
+                     (currencyChange)="onCurrencyChange($event)"
                       [chosen]="config.preferences.currency.chosen"
-                      [available] = "config.preferences.currency.available">
+                      [available] = "config.preferences.currency.available"
+                      position="center">
 </app-currency-chooser>
 
 <div id="product-shelf-placeholder" class="w3-container" style="padding:0;margin:0; width:100%" >
@@ -20,14 +23,18 @@
         </div>
     </ngx-slick-carousel>
     <div class="description w3-padding">{{product.Title.en}}</div>
+
+    <!-- Original prices to be shown if there is a discount-->
     <div *ngIf="product.Price.original.discountEnabled">
         <span class="price theme-color w3-small w3-text-red" style="text-decoration: line-through;">
-            {{product.Price.original.huf}}
+            {{product.Price.original[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}
         </span>
         <span class="w3-small">(-{{product.Price.original.discountPercentage}}%)</span>
     </div>
-    <div class="price w3-padding theme-color">
-        {{product.Price[config.preferences.currency.chosen.toLowerCase()]}}
+
+    <!-- Current price-->
+    <div class="price w3-padding price-total">
+        {{product.Price[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}
     </div>
 	</a>
 </div>

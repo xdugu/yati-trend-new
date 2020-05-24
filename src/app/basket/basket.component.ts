@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {BasketService} from '../basket.service'
 import {ShopSpineService, APP_EVENT_TYPES, AppEvent} from '../shop-spine.service'
 import {MatSelectChange} from '@angular/material/select'
@@ -7,12 +7,13 @@ import {MatRadioChange} from '@angular/material/radio'
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.css']
+  styleUrls: ['./basket.component.css', '../app.component.css']
 })
-export class BasketComponent implements OnInit {
+export class BasketComponent implements OnInit{
 
   basket = null;
   config = null;
+  availableQuantities = ["1", "2", "3", "4", "5"];
 
   constructor(private shopService: ShopSpineService,
               private basketService: BasketService) { }
@@ -39,14 +40,16 @@ export class BasketComponent implements OnInit {
      })
   }
 
+
   //change of quantity
-   changeQuantity(index : number, increment: number){
-      if(this.basket.Items[index].Quantity > 1 || increment > 0){
-        //call service to update basket
-        this.basketService.changeQuantity(index, increment).subscribe(basket => {
+   changeQuantity(event: any, item : any, index : number){
+      let val = parseInt(event.value);
+      let increment = val - item.Quantity;
+
+     //call service to update basket
+      this.basketService.changeQuantity(index, increment).subscribe(basket => {
          this.processBasket(basket);
       })
-    }
   }
     //remove an item from basket
    removeItem(index : number){
@@ -95,5 +98,7 @@ export class BasketComponent implements OnInit {
     onCourierChange(event : MatRadioChange){      
       this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, event.value))
    }
+
+
 
 }

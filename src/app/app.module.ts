@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, UrlSegment, UrlSegmentGroup, Route } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
@@ -31,6 +31,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list'
+import {MatChipsModule} from '@angular/material/chips';
+import {MatTreeModule} from '@angular/material/tree';
 
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -74,7 +76,7 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent },
-      {path:'category/:category', component: CategoriesComponent},
+      {matcher: AppModule.resolveRoute, component: CategoriesComponent},
       {path:'product/:product', component: ProductComponent},
       {path:'basket', component: BasketComponent},
       {path:'checkout', component: CheckoutComponent},
@@ -102,9 +104,31 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     MatDialogModule,
     MatCheckboxModule,
     SlickCarouselModule,
-    MatListModule
+    MatListModule,
+    MatChipsModule,
+    MatTreeModule
   ],
   providers: [ ApiManagerService, ShopSpineService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule { 
+
+  // custom route matching function - currentlybeing used only for category matching
+  static resolveRoute(url: UrlSegment[]) {
+      if(url[0].path.match('category'))
+      {
+        let str = url[1].path;
+
+        // concatenate the rest of the category paths together
+        for(let i = 2; i < url.length; i++){
+            str+= '>' + url[i].path;
+        }
+        return ({consumed: url, posParams: {'category' : new UrlSegment(str, {})}});
+      }else {
+        return null;
+      }
+  }
+  
+}

@@ -2,6 +2,23 @@
     max-height: 400px;
 }
 
+.mobile-menu ul,
+.mobile-menu li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.price-total ::ng-deep{
+	font-weight: bold;
+	color: goldenrod;
+}
+
+
 /*
 @keyframes appear {
     from {opacity: 0;}

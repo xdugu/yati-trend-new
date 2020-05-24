@@ -1,13 +1,6 @@
-<div class="w3-center">
-	<span class="w3-white w3-padding w3-round-large hoverable">
-        <span class="w3-button" 
-            *ngFor="let name of available; last as isLast"
-            (click)="onCurrencyChange(name)">
-            <span  [ngClass]="{'w3-tag w3-theme': name == chosen}">
-                {{name}}
-            </span>
-            <!-- Don't show seperator on last item-->
-            <span *ngIf="!isLast">|</span> 
-        </span> 
-	</span>
-</div>
+<mat-chip-list aria-label="currency choosen">
+    <mat-chip *ngFor="let name of available" 
+            [selected]="name == chosen" 
+            (click)="onCurrencyChange(name)">{{name}}
+    </mat-chip>
+</mat-chip-list>

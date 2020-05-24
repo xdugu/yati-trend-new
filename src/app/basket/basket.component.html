@@ -1,20 +1,27 @@
-<div *ngIf="config != null && basket !=null" class="w3-container">
+<div *ngIf="config != null && basket !=null">
     <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
                     [chosen]="config.preferences.currency.chosen"
                     [available] = "config.preferences.currency.available">
     </app-currency-chooser>
     <div class="w3-row w3-container">
         <div class="w3-col l6">
-            <div *ngFor="let item of basket.Items; index as i; trackBy: basketTrackFn" class="w3-padding w3-card w3-margin-top">
+            <div *ngFor="let item of basket.Items; index as i; trackBy: basketTrackFn" class="w3-padding w3-margin-top w3-border-bottom">
                 <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px">
                 <span>{{item.Title.en}}</span>
-                <div><button mat-raised-button (click)="changeQuantity(i, -1)">-</button>
-                    {{item.Quantity}}
-                    <button mat-raised-button (click)="changeQuantity(i, 1)">+</button>
-                </div>
-                <div>{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity}}</div>
+                    <span *ngFor="let variant of item.Variants.variants; index as varInd">
+                        , {{variant.text.en}} : {{item.Combination[varInd].text.en}}</span><br>
+                <div class="price-total">{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity | currency : config.preferences.currency.chosen}}</div>
+                <mat-form-field>
+                    <mat-label>Quantity</mat-label>
+                    <mat-select [value]="item.Quantity.toString()" (selectionChange)="changeQuantity($event, item, i)">
+                      <mat-option *ngFor="let quantity of availableQuantities" [value]="quantity">
+                            {{quantity}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
                 <button mat-button (click)="removeItem(i)">Remove</button>
             </div>
+        
         </div>
         <div class="w3-col l6 w3-padding" *ngIf="basket.Items.length > 0">
             <mat-form-field>

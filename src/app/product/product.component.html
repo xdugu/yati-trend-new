@@ -10,13 +10,14 @@
             </ngx-slick-carousel>
         </div>
         <div class="w3-col l4 w3-container">
-            <div class="w3-margin-top">{{product.item.Title.en}}</div>
-            <div #price>{{product.item.Price[config.preferences.currency.chosen.toLowerCase()]}} {{config.preferences.currency.chosen}}</div>
+            <h2 class="w3-margin-top">{{product.item.Title.en}}</h2>
+            <div #price>{{ product.item.Price[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</div><br>
             <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
                 [chosen]="config.preferences.currency.chosen"
-                [available] = "config.preferences.currency.available">
-            </app-currency-chooser>
-            <mat-form-field *ngFor="let variant of product.item.Variants.variants; index as i">
+                [available] = "config.preferences.currency.available"
+                position="left">
+            </app-currency-chooser><br>
+            <mat-form-field  *ngFor="let variant of product.item.Variants.variants; index as i">
                 <mat-label>{{variant.text.en}}</mat-label>
                 <mat-select matNativeControl [(value)]="pickedSpec[i]" (selectionChange)="updateProductPrice(price)">
                   <mat-option *ngFor="let option of variant.options; index as subIndex" [value]="option" 
@@ -26,8 +27,9 @@
                   </mat-option>
                 </mat-select>
             </mat-form-field><br>
-            <button mat-raised-button color="primary" (click)="addToBasket()" class="w3-margin-top">Add To Basket</button><br>
-            <div style="height: 10px"></div>
+            <button mat-raised-button color="primary"
+                    (click)="addToBasket()">Add To Basket
+            </button><br><br>
             <mat-accordion>
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>

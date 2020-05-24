@@ -7,7 +7,7 @@ import {ActivatedRoute} from '@angular/router'
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  styleUrls: ['./categories.component.css', '../app.component.css']
 })
 export class CategoriesComponent implements OnInit {
   constructor(private routeInfo: ActivatedRoute, private apiService: ApiManagerService, 
@@ -15,6 +15,7 @@ export class CategoriesComponent implements OnInit {
 
   // contains the current config
   config = null;
+  
   // store received catagory data in the 'items' property
   category = {
     category: null,
@@ -40,8 +41,12 @@ export class CategoriesComponent implements OnInit {
   
   ngOnInit(): void {
     let params = this.routeInfo.paramMap;
+
+    // will get a callback anytime there is a change in the category path
     params.subscribe(param => {
       this.category.category = param.get('category');
+      if(this.config != null)
+        this.getCategoryData();
     });
 
        // assign currency
@@ -67,16 +72,20 @@ export class CategoriesComponent implements OnInit {
 
   //This function will call the api service to get the items in the category
   private getCategoryData(){
+
+    // set header params
     let httpParams = new HttpParams()
               .set('category', this.category.category)
               .set('storeId', this.config.storeId + '>Product');
-
+    
+    // get data
     let resp = this.apiService.get(API_MODE.OPEN, API_METHOD.GET, 'category', httpParams);
     resp.subscribe(evt =>{
       this.category.items = evt;
     })
 
-
   }
+
+
 
 }
