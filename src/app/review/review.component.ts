@@ -18,7 +18,7 @@ export interface DialogData {
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
-  styleUrls: ['./review.component.css']
+  styleUrls: ['./review.component.css', '../app.component.css']
 })
 export class ReviewComponent implements OnInit {
   private paypalIdTest = "ARepdsMSrfrrl7TM-WgW3OuVO1UXOTUGzCcfIn1kHc8kZ4dS35xA5MY13sPDYtrqDdL34lukvDkrr4gk";
@@ -139,8 +139,10 @@ export class ReviewComponent implements OnInit {
         description: this.config.storeId,
 			  custom_id: this.basket.BasketId,
         style: {
-            label: 'paypal',
-            layout: 'vertical'
+            layout: 'vertical',
+            color: 'gold',
+            shape: 'pill',
+            label: 'checkout'
         },
         onApprove: (data, actions) => {
             actions.order.get().then((details : any) => {

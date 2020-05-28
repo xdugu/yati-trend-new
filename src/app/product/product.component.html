@@ -5,7 +5,7 @@
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slickConfig" 
                 style="width: 100%;" class="w3-padding" appImageSizer>
                 <div  ngxSlickItem *ngFor="let imgName of product.item.Images.list" style="width:100%; overflow-y:hidden;">
-                    <img class="shop_img" [appLazyLoad]="config.imgSrc + product.item.Images.path + imgName.name" style="width:100%; height:auto;"> 
+                    <img class="shop_img" [attr.data-lazy]="config.imgSrc + product.item.Images.path + imgName.name" style="width:100%; height:auto;"> 
                 </div>
             </ngx-slick-carousel>
         </div>

@@ -13,7 +13,7 @@ a{
   text-decoration: none;
 }
 
-.price-total ::ng-deep{
+.price-total{
 	font-weight: bold;
 	color: goldenrod;
 }

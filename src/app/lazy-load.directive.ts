@@ -14,6 +14,8 @@ export class LazyLoadDirective {
   ngAfterContentInit(){
     // get referenc to elemet
     let elem = this.elemRef.nativeElement;
+    let cssHeight = $(elem).css('height');
+    $(elem).css('height', '1000px');
 
     // set options for margins for observer
 			let options = {
@@ -33,6 +35,9 @@ export class LazyLoadDirective {
               if(change.intersectionRatio > 0){
                 if(!change.target.src.includes(privateVar.src) && privateVar.src != undefined){
                   change.target.src = privateVar.src;
+
+                  // readjust image height
+                  $(elem).css('height', cssHeight == '0px'? 'auto': cssHeight);
                   privateVar.wasVisible = true;
                   // unobserve element after setting src
                   observer.unobserve(elem);

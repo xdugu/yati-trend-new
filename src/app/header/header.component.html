@@ -1,4 +1,6 @@
 <header [ngSwitch]="screenState">
+
+    <!--Desktops-->
     <mat-toolbar color="primary" *ngSwitchCase="'wide_screen'" class="center">
             <a [routerLink]="['/']" style="height:100%"> <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle"></a>
             <mat-menu #clothingMenu yPosition="below">
@@ -20,11 +22,15 @@
                     shopping_basket
                 </mat-icon>
             </a>
-            <button mat-button color="accent">Blog</button>
+            <!--button mat-button color="accent">Blog</button -->
             <button mat-button color="accent">About Us</button>
             <button mat-button color="accent" >Contact</button>
+            <button mat-icon-button><mat-icon color="accent" [matMenuTriggerFor]="appMenu">
+                more_vert</mat-icon>
+            </button>
     </mat-toolbar>
 
+    <!-- View for tablet devices-->
     <mat-toolbar color="primary" *ngSwitchCase="'tablet'">
         <a [routerLink]="['/']" style="height:100%"> 
             <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle">
@@ -37,7 +43,7 @@
                 shopping_basket
             </mat-icon>
         </a>
-        <button mat-button color="accent">Blog</button>
+        <!--button mat-button color="accent">Blog</button-->
         <button mat-icon-button><mat-icon color="accent" [matMenuTriggerFor]="appMenu">
             more_vert</mat-icon>
         </button>
@@ -66,8 +72,8 @@
     </mat-toolbar>
 
     <mat-menu #appMenu="matMenu">
-        <button mat-menu-item>Settings</button>
-        <button mat-menu-item>Help</button>
+        <!--button mat-menu-item>Settings</button-->
+        <a mat-menu-item [routerLink]="['/legal']">Help & Legal</a>
     </mat-menu>
 
 

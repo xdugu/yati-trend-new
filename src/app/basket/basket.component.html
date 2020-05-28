@@ -3,23 +3,31 @@
                     [chosen]="config.preferences.currency.chosen"
                     [available] = "config.preferences.currency.available">
     </app-currency-chooser>
-    <div class="w3-row w3-container">
+    <div class="w3-row w3-container w3-margin-top">
         <div class="w3-col l6">
-            <div *ngFor="let item of basket.Items; index as i; trackBy: basketTrackFn" class="w3-padding w3-margin-top w3-border-bottom">
-                <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px">
-                <span>{{item.Title.en}}</span>
+            <div *ngFor="let item of basket.Items; index as i; trackBy: basketTrackFn" class="w3-display-container w3-mobile w3-card-2 w3-margin-top" 
+                style="height: 100px; width: 100%">
+                <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px"
+                    class="w3-display-left w3-padding">
+                <span class="w3-display-topmiddle">{{item.Title.en}}
                     <span *ngFor="let variant of item.Variants.variants; index as varInd">
-                        , {{variant.text.en}} : {{item.Combination[varInd].text.en}}</span><br>
-                <div class="price-total">{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity | currency : config.preferences.currency.chosen}}</div>
-                <mat-form-field>
-                    <mat-label>Quantity</mat-label>
-                    <mat-select [value]="item.Quantity.toString()" (selectionChange)="changeQuantity($event, item, i)">
-                      <mat-option *ngFor="let quantity of availableQuantities" [value]="quantity">
-                            {{quantity}}
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <button mat-button (click)="removeItem(i)">Remove</button>
+                        , {{variant.text.en}} : {{item.Combination[varInd].text.en}}</span>
+                    </span>
+                <div class="w3-display-right w3-padding" style="text-align: right;">
+                    <div class="price-total">{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity | currency : config.preferences.currency.chosen}}</div>
+                    
+                    <button mat-button  (click)="removeItem(i)">Remove</button>
+                </div>
+                <div class="w3-display-bottommiddle">
+                    <mat-form-field style="max-width: 50px">
+                        <mat-label>Quantity</mat-label>
+                        <mat-select [value]="item.Quantity.toString()" (selectionChange)="changeQuantity($event, item, i)">
+                        <mat-option *ngFor="let quantity of availableQuantities" [value]="quantity">
+                                {{quantity}}
+                        </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
             </div>
         
         </div>
@@ -34,10 +42,10 @@
 
             <div *ngIf="basket.hasOwnProperty('Costs') && config.preferences.countryCode != null &&
                         config.preferences.countryCode.length == 2">
-                <label>Choose a courier</label>
-                <mat-radio-group
+                <label>Choose a courier:</label>
+                <mat-radio-group class="radio-group"
                     [value]="config.preferences.deliveryMethod" (change)="onCourierChange($event)">
-                <mat-radio-button 
+                <mat-radio-button class="radio-button"
                     *ngFor="let courier of basket.Costs[config.preferences.countryCode] | keyvalue" 
                     [value]="courier.key">
                     {{courier.key}}
@@ -45,10 +53,10 @@
                 </mat-radio-group><br>
 
                 <div *ngIf="config.preferences.deliveryMethod != null">
-                    <b>Delivery:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()]}}<br>
-                    <b>Discount:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()]}}<br>
-                    <b>Subtotal:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()]}}<br>
-                    <b>Total:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()]}}<br>
+                    <b>Delivery:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}<br>
+                    <b>Discount:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}<br>
+                    <b>Subtotal:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}<br>
+                    <b>Total:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}<br><br>
                     <a mat-raised-button color="primary" [routerLink]="['/checkout']"> Proceed to checkout</a>
                 </div>
             </div>

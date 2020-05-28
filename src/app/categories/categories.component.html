@@ -1,10 +1,10 @@
 <div *ngIf="config != null">
 
 <app-currency-chooser
-                     (currencyChange)="onCurrencyChange($event)"
-                      [chosen]="config.preferences.currency.chosen"
-                      [available] = "config.preferences.currency.available"
-                      position="center">
+    (currencyChange)="onCurrencyChange($event)"
+    [chosen]="config.preferences.currency.chosen"
+    [available] = "config.preferences.currency.available"
+    position="center">
 </app-currency-chooser>
 
 <div id="product-shelf-placeholder" class="w3-container" style="padding:0;margin:0; width:100%" >
@@ -12,7 +12,6 @@
         [routerLink]="['/product', product.ItemId]" 
         class="w3-left w3-center w3-large w3-mobile my-product" 
 		style="margin-top:2vh;cursor:pointer; width: 50%" >
-
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="categoryConfig" 
         style="width: 100%;" class="w3-padding" appImageSizer>
         <div  ngxSlickItem style="width:100%; overflow-y:hidden;">

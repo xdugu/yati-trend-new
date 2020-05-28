@@ -33,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list'
 import {MatChipsModule} from '@angular/material/chips';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -47,7 +48,8 @@ import { ProductComponent } from './product/product.component';
 import { BasketComponent } from './basket/basket.component';
 import { CheckoutComponent, DialogShowFoxpostAddress } from './checkout/checkout.component';
 import { ReviewComponent, DialogConfirmPaymentMethod, DialogConfirmOrderSuccessful } from './review/review.component';
-import { SearchPipe } from './search.pipe'
+import { SearchPipe } from './search.pipe';
+import { HelpComponent } from './help/help.component'
 
 registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
@@ -69,7 +71,8 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     DialogConfirmPaymentMethod,
     DialogConfirmOrderSuccessful,
     DialogShowFoxpostAddress,
-    SearchPipe
+    SearchPipe,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +84,7 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
       {path:'basket', component: BasketComponent},
       {path:'checkout', component: CheckoutComponent},
       {path:'review', component: ReviewComponent},
+      {path:'legal', component: HelpComponent},
     ]),
     NgxPayPalModule,
     HttpClientModule,
@@ -106,7 +110,8 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     SlickCarouselModule,
     MatListModule,
     MatChipsModule,
-    MatTreeModule
+    MatTreeModule,
+    MatProgressSpinnerModule
   ],
   providers: [ ApiManagerService, ShopSpineService],
   bootstrap: [AppComponent]

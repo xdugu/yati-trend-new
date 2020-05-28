@@ -1,23 +1,31 @@
 <div *ngIf="config != null && basket !=null" class="w3-container">
     <h1 class="w3-center">Review</h1>
-    <div class="w3-row w3-container">
-        <div class="w3-col l6">
-            <div *ngFor="let item of basket.Items; index as i;" class="w3-padding w3-card">
-                <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px">
-                <span>{{item.Title.en}}</span><br>
-                <span>Qty: {{item.Quantity}}</span><br>
-                <div>{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity}}</div>
+    <div class="w3-row">
+        <div class="w3-col l6" >
+            <div *ngFor="let item of basket.Items; index as i;" class="w3-display-container w3-mobile w3-card" 
+                style="height: 100px; width: 100%; padding: 0px 16px">
+                <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px"
+                    class="w3-display-left w3-padding">
+                <span class="w3-display-middle">{{item.Title.en}}
+                    <span *ngFor="let variant of item.Variants.variants; index as varInd">
+                        , {{variant.text.en}} : {{item.Combination[varInd].text.en}}
+                    </span>
+                </span>
+                <span class="w3-display-right price-total w3-padding">
+                    {{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity | currency : config.preferences.currency.chosen}}
+                </span>
             </div>
 
-            <div>
-                <b>Delivery:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()]}}<br>
-                <b>Discount:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()]}}<br>
-                <b>Subtotal:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()]}}<br>
-                <b>Total:</b> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()]}}<br>
+            <div class="w3-margin-top">
+                <b>Delivery:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
+                <b>Discount:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
+                <b>Subtotal:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
+                <b>Total:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
             </div>
 
         </div>
-        <div class="w3-col l6 w3-padding w3-card">
+
+        <div class="w3-col l5 w3-padding w3-card">
             <h2>Order Details</h2> 
             <span>{{customer.firstName}}</span><br> 
             <span>{{customer.email}}</span><br>  
@@ -32,14 +40,21 @@
             <span>{{customer.countryCode}}</span><br> 
         </div>
     </div> 
-    <div style="width: 200px overflow-hidden" class="w3-mobile w3-margin-top">
-        <ngx-paypal [config]="payPalConfig"></ngx-paypal><br>
-        <button mat-raised-button color="primary" (click)="triggerPaymentMethod('bankTransfer')"> Pay by bank transfer</button> <br><br>
+    <div style="width: 300px; overflow: hidden" class="w3-mobile w3-margin-top">
+        <ngx-paypal [config]="payPalConfig" class="w3-mobile"></ngx-paypal><br>
         <button mat-raised-button color="primary" 
+                style="width: 300px" class="w3-mobile"
+                *ngIf="config.preferences.currency.chosen == 'HUF' && config.preferences.countryCode == 'HU'"
+                (click)="triggerPaymentMethod('bankTransfer')"> Pay by bank transfer
+        </button> <br><br>
+        <button mat-raised-button color="primary" 
+                style="width: 300px" class="w3-mobile"
                 (click)="triggerPaymentMethod('payOnDelivery')"
-                *ngIf="basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].hasOwnProperty('payOnDelivery')">
+                *ngIf="basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].hasOwnProperty('payOnDelivery') &&
+                    config.preferences.currency.chosen == 'HUF'">
                  Pay on delivery
         </button>
     </div>
+    <br><br><br>
     
 </div>
