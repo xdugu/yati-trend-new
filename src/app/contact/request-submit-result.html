@@ -1,0 +1,11 @@
+<h1 mat-dialog-title [ngClass]="{'w3-text-green': data.success, 'w3-text-red': !data.success}">
+    <span *ngIf="data.success">Request successfully sent</span>
+    <span *ngIf="!data.success">Request Failure</span>
+</h1>
+<div mat-dialog-content>
+    <span *ngIf="data.success">Thank you. We will reply back soon</span>
+    <span *ngIf="!data.success">Unfortunately, something went wrong. Please try again later :(</span>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Okay</button>
+</div>

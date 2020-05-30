@@ -49,7 +49,10 @@ import { BasketComponent } from './basket/basket.component';
 import { CheckoutComponent, DialogShowFoxpostAddress } from './checkout/checkout.component';
 import { ReviewComponent, DialogConfirmPaymentMethod, DialogConfirmOrderSuccessful } from './review/review.component';
 import { SearchPipe } from './search.pipe';
-import { HelpComponent } from './help/help.component'
+import { HelpComponent } from './help/help.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent, DialogDisplayRequestStatus } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component'
 
 registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
@@ -72,13 +75,19 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     DialogConfirmOrderSuccessful,
     DialogShowFoxpostAddress,
     SearchPipe,
-    HelpComponent
+    HelpComponent,
+    AboutComponent,
+    ContactComponent,
+    DialogDisplayRequestStatus,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent },
+      {path: 'about', component: AboutComponent },
+      {path: 'contact', component: ContactComponent },
       {matcher: AppModule.resolveRoute, component: CategoriesComponent},
       {path:'product/:product', component: ProductComponent},
       {path:'basket', component: BasketComponent},
@@ -128,6 +137,8 @@ export class AppModule {
 
         // concatenate the rest of the category paths together
         for(let i = 2; i < url.length; i++){
+
+          // use of '>' to match querying of database
             str+= '>' + url[i].path;
         }
         return ({consumed: url, posParams: {'category' : new UrlSegment(str, {})}});

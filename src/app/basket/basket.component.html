@@ -1,9 +1,12 @@
 <div *ngIf="config != null && basket !=null">
+
+    <!--currency chooser-->
     <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
                     [chosen]="config.preferences.currency.chosen"
                     [available] = "config.preferences.currency.available">
     </app-currency-chooser>
     <div class="w3-row w3-container w3-margin-top">
+        <!-- to be displayed left on desktops and 100% width on tablets and mobiles-->
         <div class="w3-col l6">
             <div *ngFor="let item of basket.Items; index as i; trackBy: basketTrackFn" class="w3-display-container w3-mobile w3-card-2 w3-margin-top" 
                 style="height: 100px; width: 100%">
@@ -18,6 +21,7 @@
                     
                     <button mat-button  (click)="removeItem(i)">Remove</button>
                 </div>
+                <!-- input to change quantities-->
                 <div class="w3-display-bottommiddle">
                     <mat-form-field style="max-width: 50px">
                         <mat-label>Quantity</mat-label>
@@ -28,9 +32,8 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
-            </div>
-        
-        </div>
+            </div><!-- end of one basket item-->       
+        </div><!-- Left display end-->
         <div class="w3-col l6 w3-padding" *ngIf="basket.Items.length > 0">
             <mat-form-field>
                 <mat-label>Select Country</mat-label>

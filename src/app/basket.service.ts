@@ -19,25 +19,6 @@ export class BasketService {
 
   constructor(private apiService : ApiManagerService, private shopService : ShopSpineService) { 
      this.basketId = localStorage.getItem('basketId');
-
-     this.shopService.childEventListener().subscribe(evt =>{
-
-      // changes in country code and currency should trigger an api refresh of basket
-       if(evt.eventType == APP_EVENT_TYPES.countryCode ||
-          evt.eventType == APP_EVENT_TYPES.currencyChange)
-          this.shopService.getConfig().subscribe(config =>{
-            this.config = config;
-
-            // validate country code before sending server request
-            if(this.config.preferences.countryCode != null &&
-                this.config.preferences.countryCode.length == 2){
-              this.getBasket(true).subscribe(basket => {
-                this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.newBasketData, basket))
-              })
-            } 
-
-          })
-     })
   }
 
   // gets the number of items in a basket

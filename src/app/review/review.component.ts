@@ -4,7 +4,6 @@ import {ShopSpineService} from '../shop-spine.service'
 import { IPayPalConfig, ICreateOrderRequest} from 'ngx-paypal';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
 // data interface for dialogs
 export interface DialogData {

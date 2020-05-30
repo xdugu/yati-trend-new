@@ -23,8 +23,8 @@
                 </mat-icon>
             </a>
             <!--button mat-button color="accent">Blog</button -->
-            <button mat-button color="accent">About Us</button>
-            <button mat-button color="accent" >Contact</button>
+            <a mat-button color="accent" [routerLink]="['/about']">About Us</a>
+            <a mat-button color="accent" [routerLink]="['/contact']">Contact</a>
             <button mat-icon-button><mat-icon color="accent" [matMenuTriggerFor]="appMenu">
                 more_vert</mat-icon>
             </button>
