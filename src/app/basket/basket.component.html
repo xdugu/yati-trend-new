@@ -39,7 +39,7 @@
                 <mat-label>Select Country</mat-label>
                 <mat-select matNativeControl [(value)]="config.preferences.countryCode" (selectionChange)="onCountryChange($event)">
                   <mat-option value="">Please choose a country</mat-option>
-                  <mat-option *ngFor="let countryCode of basket.Costs | keyvalue" value="{{countryCode.key}}">{{countryCode.key}}</mat-option>
+                  <mat-option *ngFor="let countryCode of basket.Costs | keyvalue" value="{{countryCode.key}}">{{commonLib.getCountry(countryCode.key, config.preferences.lang)}}</mat-option>
                 </mat-select>
             </mat-form-field><br><br>
 

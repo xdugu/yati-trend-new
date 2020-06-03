@@ -26,4 +26,26 @@ export class Common{
                   .replace(/Ü/g, 'U')
     }
 
+    //given the country code and knowing the language from preferences, this function returns the 
+   //country string
+   static getCountry(countryCode : string, lang : string){
+        let countries = {
+            HU:{
+                en:"Hungary",
+                hu:"Magyarország",
+            },
+            DE:{
+                en:"Germany",
+                hu:"Németország"
+            },
+            AT:{
+                en:"Austria",
+                hu:"Ausztria"
+            }
+        }
+
+        return(countries[countryCode][lang.toLowerCase()]);
+
+    }
+
 }

@@ -1,1 +1,18 @@
-<p>footer works!</p>
+<div style="background-color: goldenrod; height: 200px" class="w3-margin-top w3-container">
+    <span *ngIf="config != null">
+        <a *ngIf="config.preferences.lang != 'en'" href="https://fashion.yati-trend.com/en">English</a>
+        <a *ngIf="config.preferences.lang != 'hu'" href="https://fashion.yati-trend.com/hu">Magyar</a><br><br>
+    </span>
+    <a href="https://www.facebook.com/fashion.Yati/" target="_blank">
+        <mat-icon fontSet="fa" fontIcon="fa-facebook" style="font-size: 1.8em;"></mat-icon>
+    </a> 
+    <a href="https://www.instagram.com/yati_trend/" target="_blank">
+        <mat-icon fontSet="fa" fontIcon="fa-instagram" style="font-size: 1.8em;"></mat-icon>
+    </a> <br><br>
+
+    <span><mat-icon fontSet="fa" fontIcon="fa-copyright"></mat-icon>Copyright Yati-Trend 2020</span>
+
+    <br><br>
+    <a  [routerLink]="['/legal']" >Privacy Policy </a>|
+    <a  [routerLink]="['/legal']" >Terms And Conditions</a>
+</div>

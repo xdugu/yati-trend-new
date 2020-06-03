@@ -18,7 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button'
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon'
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -55,6 +55,7 @@ import { ContactComponent, DialogDisplayRequestStatus } from './contact/contact.
 import { FooterComponent } from './footer/footer.component'
 
 registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
+
 
 
 @NgModule({
@@ -94,7 +95,7 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
       {path:'checkout', component: CheckoutComponent},
       {path:'review', component: ReviewComponent},
       {path:'legal', component: HelpComponent},
-    ]),
+    ], {scrollPositionRestoration: 'enabled'}),
     NgxPayPalModule,
     HttpClientModule,
     BrowserAnimationsModule,

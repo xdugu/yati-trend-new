@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {BasketService} from '../basket.service'
 import {ShopSpineService, APP_EVENT_TYPES, AppEvent} from '../shop-spine.service'
+import {Common} from '../common'
 import {MatSelectChange} from '@angular/material/select'
 import {MatRadioChange} from '@angular/material/radio'
 
@@ -14,9 +15,11 @@ export class BasketComponent implements OnInit{
   basket = null;
   config = null;
   availableQuantities = ["1", "2", "3", "4", "5"];
+  commonLib = Common;
 
   constructor(private shopService: ShopSpineService,
               private basketService: BasketService) { }
+
 
   ngOnInit(): void {
      this.shopService.getConfig().subscribe(config =>{
@@ -98,6 +101,8 @@ export class BasketComponent implements OnInit{
     onCourierChange(event : MatRadioChange){      
       this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, event.value))
    }
+
+   
 
 
 

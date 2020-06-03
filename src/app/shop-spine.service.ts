@@ -117,14 +117,12 @@ export class ShopSpineService {
                 // if for what ever reason the preferences don't exist
                 if(prefs == null){
                   this.shopConfig = { preferences : config.preferences};
-                  this.shopConfig.preferences.lang = this.getLang(this.locale);
                   localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
                 }else
                  this.shopConfig = {preferences : JSON.parse(prefs)};
 
               } else{ // version numbers are different
                   this.shopConfig = {preferences: config.preferences};
-                  this.shopConfig.preferences.lang = this.getLang(this.locale);
                   localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
                   localStorage.setItem('version', config.version.toString());
                   this.customerDetails = config.shopping.contact;
@@ -133,6 +131,7 @@ export class ShopSpineService {
               }
               this.shopConfig['imgSrc'] = config.imgSrc;
               this.shopConfig['storeId'] = config.storeId;
+              this.shopConfig.preferences.lang = this.getLang(this.locale);
               subscriber.next(this.shopConfig);
           });
         }
@@ -140,7 +139,7 @@ export class ShopSpineService {
   }
 
   // gets the language of website based on given locale
-  getLang(locale : string){
+  private getLang(locale : string){
       if(locale.indexOf('hu') >= 0){
          return 'hu'
       }else if(locale.indexOf('en') >= 0){
