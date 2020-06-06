@@ -1,15 +1,16 @@
 <div  class="w3-content w3-padding w3-card w3-margin-top" style="max-width: 1000px; overflow: hidden;" 
      *ngIf="config != null">
-     <h2 class="w3-center">Contact Information</h2>
+     <h2 class="w3-center" i18n="Header in checkout page@@ContactInformation">Contact Information</h2>
 
     <div class="w3-row">
         <form  #checkoutForm="ngForm" class="w3-col l6">          
             <p>
                 <mat-form-field appearance="legacy">
-                <mat-label>Name</mat-label>
+                <mat-label i18n="@@Name">Name</mat-label>
                 <input matInput required id="name" name="name" type="text"
                         [(ngModel)]="customer.firstName" #name="ngModel">
-                <mat-error [hidden]="name.valid || name.pristine">Name is required</mat-error>
+                <mat-error [hidden]="name.valid || name.pristine" 
+                            i18n="@@NameIsRequired">Name is required</mat-error>
                 </mat-form-field>
             </p>
             <p>
@@ -17,22 +18,25 @@
                 <mat-label>Email</mat-label>
                 <input matInput required id="email" name="email" type="email"
                         [(ngModel)]="customer.email" #email="ngModel">
-                <mat-error [hidden]="email.valid || email.pristine">Email is required</mat-error>
+                <mat-error [hidden]="email.valid || email.pristine"
+                            i18n="@@EmailIsRequired">Email is required</mat-error>
                 </mat-form-field>
             </p>
             <p>
                 <mat-form-field appearance="legacy">
-                <mat-label>Phone Number</mat-label>
+                <mat-label i18n="@@PhoneNumber">Phone Number</mat-label>
                 <input matInput required id="number" name="number" type="tel"
                     [(ngModel)]="customer.number" #number="ngModel">
-                    <mat-error [hidden]="number.valid || number.pristine">Phone number is required</mat-error>
+                    <mat-error [hidden]="number.valid || number.pristine"
+                            i18n="@@PhoneNumberIsRequired">Phone number is required</mat-error>
                 </mat-form-field>
             </p>
 
             <div *ngIf="foxpostTerminal.showList" >
-                <h2>Select a Foxpost pickup location</h2>
+                <h2 i18n="Header to tell customer to select foxpost@@SelectFoxpost">
+                    Select a Foxpost pickup location</h2>
                 <mat-form-field>
-                    <mat-label>Search here</mat-label>
+                    <mat-label i18n="Placeholder for search input@@SearchHere">Search here</mat-label>
                     <input matInput placeholder="e.g. Budapest" [(ngModel)]="foxpostTerminal.searchString"
                     [ngModelOptions]="{standalone: true}">
                 </mat-form-field>
@@ -42,30 +46,33 @@
                     <p matLine> {{place.Address}}, {{place.City}}, {{place.PostCode}}</p>
                     <mat-action-list>
                         <button mat-list-item 
-                            (click)="triggerFoxpostAddressDialog(place)"> View </button>
+                            (click)="triggerFoxpostAddressDialog(place)"
+                            i18n="Button to view more info@@View"> View </button>
                     </mat-action-list>
                     </mat-list-item>
                 </mat-list>
             </div>
             <button mat-button
                     *ngIf="config.preferences.deliveryMethod == 'Foxpost-Terminal' && !foxpostTerminal.showList" 
-                    (click)="clearAddressData();">Select a new foxpost pickup point
+                    (click)="clearAddressData();"
+                    i18n="@@SelectFoxpost">Select a new foxpost pickup point
             </button><br><br>
             <div [hidden]="config.preferences.deliveryMethod == 'Foxpost-Terminal' &&
                         foxpostTerminal.showList">
-                <h2>Shipping Details</h2>
+                <h2 i18n="@@ShippingDetails">Shipping Details</h2>
                 <p>
                     <mat-form-field appearance="legacy">
-                    <mat-label>Address Line 1</mat-label>
+                    <mat-label i18n="@@AddressLine1">Address Line 1</mat-label>
                     <input matInput required id="address1" name="address1" type="text"
                         [(ngModel)]="customer.address1" #address1="ngModel"
                         [disabled]="config.preferences.deliveryMethod == 'Foxpost-Terminal' && !foxpostTerminal.showList">
-                        <mat-error [hidden]="address1.valid || address1.pristine">Address is required</mat-error>
+                        <mat-error [hidden]="address1.valid || address1.pristine"
+                                i18n="@@AddressIsRequired">Address is required</mat-error>
                     </mat-form-field>
                 </p>
                 <p>
                     <mat-form-field appearance="legacy">
-                    <mat-label>Address Line 2</mat-label>
+                    <mat-label i18n="@@AddressLine2">Address Line 2</mat-label>
                     <input matInput  id="address2" name="address2" type="text"
                         [(ngModel)]="customer.address2"
                         [disabled]="config.preferences.deliveryMethod == 'Foxpost-Terminal' && !foxpostTerminal.showList">
@@ -73,20 +80,22 @@
                 </p>
                 <p>
                     <mat-form-field appearance="legacy">
-                    <mat-label>City/Town</mat-label>
+                    <mat-label i18n="@@City">City/Town</mat-label>
                     <input matInput required id="city" name="city" type="text"
                         [(ngModel)]="customer.city" #city="ngModel"
                         [disabled]="config.preferences.deliveryMethod == 'Foxpost-Terminal' && !foxpostTerminal.showList">
-                        <mat-error [hidden]="city.valid || city.pristine">City is required</mat-error>
+                        <mat-error [hidden]="city.valid || city.pristine"
+                                i18n="@@CityIsRequired">City is required</mat-error>
                     </mat-form-field>
                 </p>
                 <p>
                     <mat-form-field appearance="legacy">
-                    <mat-label>PostCode</mat-label>
+                    <mat-label i18n="@@PostCode">PostCode</mat-label>
                     <input matInput required id="postCode" name="postCode" type="text"
                         [(ngModel)]="customer.postCode" #postCode="ngModel"
                         [disabled]="config.preferences.deliveryMethod == 'Foxpost-Terminal'">
-                        <mat-error [hidden]="postCode.valid || postCode.pristine">Post code is required</mat-error>
+                        <mat-error [hidden]="postCode.valid || postCode.pristine"
+                                i18n="@@PostCodeIsRequired">Post code is required</mat-error>
                     </mat-form-field>
                 </p>
             </div>
@@ -96,11 +105,14 @@
                             [disabled]="checkoutForm.invalid" [(ngModel)]="termsAccepted" 
                             color="primary" 
                             (change)="onTermsChange($event)">
-                            I accept the <a [routerLink]="['/legal']">terms and conditions</a> for this sale
+                            <a [routerLink]="['/legal']"
+                                i18n="clickable text to allow customer to read terms@@IAcceptTerms">
+                                I accept the terms and conditions </a> for this sale
             </mat-checkbox><br><br>
             <button id="proceedButton" [style.visibility]="termsAccepted ? 'visible': 'hidden'" 
                     mat-raised-button color="primary" 
-                    (click)="proceedToPayment()">
+                    (click)="proceedToPayment()"
+                    i18n="@@ProceedToPayment">
                     Proceed to payment
             </button><br><br>
         </form>

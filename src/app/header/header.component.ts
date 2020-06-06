@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   screenState = 'mobile';
   basketNumber = 0;
   // creating event emitter to parent to tell what to do with the sidenav
-  @Output() sideNavOpenEvent = new EventEmitter<boolean>();
+  @Output() sideNavToggleEvent = new EventEmitter();
 
   constructor(
     public breakpointObserver: BreakpointObserver,
@@ -65,9 +65,9 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  // function is called when menu is requested to be shown
-  showMenu(){
-    this.sideNavOpenEvent.emit(true);
+  // function to toggle the show of the menu
+  toggleMenu(){
+    this.sideNavToggleEvent.emit();
   }
 
 }

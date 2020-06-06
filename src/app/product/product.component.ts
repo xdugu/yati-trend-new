@@ -9,13 +9,16 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css', '../app.component.css']
 })
 export class ProductComponent implements OnInit {
 
   // will store the general store config
   config = null;
   customerDetails = null;
+
+  // stores the currently expanded accordion. Mainly uses to laxzy load info in accordian
+  currentlyExpanded = null;
 
   slickConfig = {
     dots: true,

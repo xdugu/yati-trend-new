@@ -4,6 +4,7 @@ import {ShopSpineService} from '../shop-spine.service'
 import { IPayPalConfig, ICreateOrderRequest} from 'ngx-paypal';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import {Common} from '../common';
 
 // data interface for dialogs
 export interface DialogData {
@@ -33,6 +34,7 @@ export class ReviewComponent implements OnInit {
   basket = null; // stores data of items in basket
   config = null; // stores config e.g. currency
   customer = null;
+  commonLib = Common;
 
   ngOnInit(): void {
     this.shopService.getConfig().subscribe(config =>{

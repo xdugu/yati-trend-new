@@ -3,6 +3,8 @@
     <!--Desktops-->
     <mat-toolbar color="primary" *ngSwitchCase="'wide_screen'" class="center">
             <a [routerLink]="['/']" style="height:100%"> <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle"></a>
+            
+            <!--Menu for clothes-->
             <mat-menu #clothingMenu yPosition="below">
                 <a mat-menu-item [routerLink]="['/category', 'Womens']">All</a>
                 <a mat-menu-item [routerLink]="['/category', 'Womens','Dresses']">Dresses</a>
@@ -14,8 +16,17 @@
             <button mat-button color="accent" [matMenuTriggerFor]="clothingMenu">
                 Clothing
             </button>
-
-            <button mat-button color="accent">Accessories</button>   
+            
+            <!-- menu for accessories-->
+            <mat-menu #accessoriesMenu yPosition="below">
+                <a mat-menu-item [routerLink]="['/category', 'Accessories']">All</a>
+                <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Necklaces']">Necklaces</a>
+                <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Bracelets']">Bracelets</a>
+                <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Earrings']">Earrings</a>
+            </mat-menu>
+            <button mat-button color="accent" [matMenuTriggerFor]="accessoriesMenu">Accessories</button>   
+            
+            
             <span class="fill-remaining-space"></span>
             <a mat-icon-button [routerLink]="['/basket']">
                 <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
@@ -65,7 +76,7 @@
             <mat-icon color="accent">email</mat-icon>
         </button>
         <button mat-icon-button class="mobile-header-icon">
-            <mat-icon color="accent" (click)="showMenu()">
+            <mat-icon color="accent" (click)="toggleMenu()">
                 menu
             </mat-icon>
         </button>

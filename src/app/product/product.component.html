@@ -3,32 +3,33 @@
     <div class="w3-row">
         <div class="w3-col l8">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slickConfig" 
-                style="width: 100%;" class="w3-padding" appImageSizer>
+                style="width: 100%; overflow: hidden" class="w3-padding" appImageSizer>
                 <div  ngxSlickItem *ngFor="let imgName of product.item.Images.list" style="width:100%; overflow-y:hidden;">
                     <img class="shop_img" [attr.data-lazy]="config.imgSrc + product.item.Images.path + imgName.name" style="width:100%; height:auto;"> 
                 </div>
             </ngx-slick-carousel>
         </div>
         <div class="w3-col l4 w3-container">
-            <h2 class="w3-margin-top">{{product.item.Title.en}}</h2>
-            <div #price>{{ product.item.Price[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</div><br>
+            <h2 class="w3-margin-top">{{product.item.Title[config.preferences.lang]}}</h2>
+            <div #price class="price-total">{{ product.item.Price[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</div><br>
             <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
                 [chosen]="config.preferences.currency.chosen"
                 [available] = "config.preferences.currency.available"
                 position="left">
             </app-currency-chooser><br>
             <mat-form-field  *ngFor="let variant of product.item.Variants.variants; index as i">
-                <mat-label>{{variant.text.en}}</mat-label>
+                <mat-label>{{variant.text[config.preferences.lang]}}</mat-label>
                 <mat-select matNativeControl [(value)]="pickedSpec[i]" (selectionChange)="updateProductPrice(price)">
                   <mat-option *ngFor="let option of variant.options; index as subIndex" [value]="option" 
                     [disabled]="product.item.TrackStock && product.item.Variants.combinations[subIndex].quantity == 0">
-                    {{option.text.en}}
+                    {{option.text[config.preferences.lang]}}
                     <span *ngIf="product.item.TrackStock && product.item.Variants.combinations[subIndex].quantity == 0">(Out Of Stock)</span>
                   </mat-option>
                 </mat-select>
             </mat-form-field><br>
             <button mat-raised-button color="primary"
-                    (click)="addToBasket()">Add To Basket
+                    (click)="addToBasket()"
+                    i18n="@@AddToBasket">Add To Basket
             </button><br><br>
             <mat-accordion>
                 <mat-expansion-panel>
@@ -37,50 +38,30 @@
                       Description
                     </mat-panel-title>
                   </mat-expansion-panel-header>
-                  <div [innerHtml]="product.item.Description.en"></div>
+                  <div [innerHtml]="product.item.Description[config.preferences.lang]"></div>
                 </mat-expansion-panel>
-                <mat-expansion-panel>
+                <mat-expansion-panel (opened)="currentlyExpanded = 'sizeChart'">
                     <mat-expansion-panel-header>
-                      <mat-panel-title>
+                      <mat-panel-title i18n="@@SizeChart">
                         Size Chart
                       </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div style="overflow-x:auto">
-                        <table class="w3-table w3-striped">
-                        <tr><th>Size</th><th>Height(cm)</th><th>Bust(cm)</th><th>Waist(cm)</th><th>Hips(cm)</th></tr>
-                        <tr><td>S</td><td>162-168</td><td>88</td><td>66</td><td>92</td> </tr>
-                        <tr><td>M</td><td>166-172</td><td>92</td><td>70</td><td>96</td> </tr>
-                        <tr><td>L</td><td>173-176</td><td>96</td><td>74</td><td>100</td> </tr>		
-                        </table>
-                    </div>
+                    <span *ngIf="currentlyExpanded == 'sizeChart'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/sizes.html'"></span>
                 </mat-expansion-panel>
-                <mat-expansion-panel>
+                <mat-expansion-panel (opened)="currentlyExpanded = 'shipping'">
                     <mat-expansion-panel-header>
-                      <mat-panel-title>Shipping</mat-panel-title>
+                      <mat-panel-title i18n="@@Shipping">Shipping</mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div>
-                        We ship our products with the help of GLS (internationally as well) and Foxpost.<br>
-                        <u>Countries we ship to:</u> Hungary, Austria, Germany, United Kingdom.
-                            In case of other countries, please contact us and we will try to find a way for you.
-                        <b>Accepted and confirmed orders are shipped between 2-5 working days.</b> If the item is
-                        out of stock, it may take 1-2 weeks to purchase.<br><br>
-                        <b> GLS:</b><br>
-                        Home delivery fee:<b>1750 Ft ~ 5,5 euro</b><br>
-                        Pay on delivery fee:<b>+445 Ft ~ 1,4 euro</b>	<br>
-                        <b>International shipping:</b><br>
-                        - Austria, Germany €11<br>
-                        - United Kingdom: €13<br><br>
-                        <b> Foxpost</b><br>
-                        Terminal delivery fee: <b>700 Ft ~ 2, 2 euro</b><br>
-                        Pay on delivery: <b>+125 Ft ~ 0,4 euro</b><br>
-                        <b>Important to note: At the terminals you can only pay by credit/debit card.</b>
-                        <b>Home delivery</b><br>
-                        Home delivery fee: <b>1250 Ft ~ 4 euro</b><br>
-                        Pay on delivery fee: <b>+125 Ft ~ 0,4 euro</b><br>
-                    </div>
+                    <div *ngIf="currentlyExpanded == 'shipping'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/shipping_min.html'"></div>
                 </mat-expansion-panel>
+                <mat-expansion-panel (opened)="currentlyExpanded = 'returns'">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title i18n="@@Returns">Returns</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div *ngIf="currentlyExpanded == 'returns'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/returns_min.html'"></div>
+              </mat-expansion-panel>
             </mat-accordion>
-            <div style="height:500px"></div>
+            <div style="height:200px"></div>
         </div>
     </div>
 

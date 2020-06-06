@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ShopSpineService} from '../shop-spine.service'
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shopService : ShopSpineService) { }
+
+  config = null;
 
   ngOnInit(): void {
+      this.shopService.getConfig().subscribe(config =>{
+        this.config = config;
+      })
   }
 
 }

@@ -21,7 +21,7 @@
             <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + product.Images.list[1].name" style="width:100%; height:auto;">
         </div>
     </ngx-slick-carousel>
-    <div class="description w3-padding">{{product.Title.en}}</div>
+    <div class="description w3-padding">{{product.Title[config.preferences.lang]}}</div>
 
     <!-- Original prices to be shown if there is a discount-->
     <div *ngIf="product.Price.original.discountEnabled">

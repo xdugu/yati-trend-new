@@ -52,7 +52,8 @@ import { SearchPipe } from './search.pipe';
 import { HelpComponent } from './help/help.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent, DialogDisplayRequestStatus } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { HtmlEmbedDirective } from './html-embed.directive'
 
 registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
@@ -80,7 +81,8 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     AboutComponent,
     ContactComponent,
     DialogDisplayRequestStatus,
-    FooterComponent
+    FooterComponent,
+    HtmlEmbedDirective
   ],
   imports: [
     BrowserModule,
@@ -130,7 +132,7 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
 export class AppModule { 
 
-  // custom route matching function - currentlybeing used only for category matching
+  // custom route matching function - currently being used only for category matching
   static resolveRoute(url: UrlSegment[]) {
       if(url[0].path.match('category'))
       {

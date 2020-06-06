@@ -1,29 +1,10 @@
-<h1 class="w3-center">About us</h1>
+<h1 class="w3-center" i18n="@@AboutUs">About us</h1>
 <div class="w3-content" style="max-width: 1200px;">
     <div class="w3-row">
         <div class="w3-col l6">
             <img src="/assets/images/home/about_pic.jpg" style="width: 100%">
         </div>
-        <div class="w3-col l6 w3-center w3-padding">		
-                Yati-Trend clothes are designed to infuse African with European Fashion.<br><br>
-                My husband, Yayra is from Ghana where wearing colourful and patterned garments are very
-                fashionable. Our designs are made to fuse the african flare and color into european clothing
-                The aim with the clothes we design is to encourage people to be more open to wearing 
-                coloured and patterned clothes which shows uniqueness and confidence. African clothes bring joy 
-                to everyday life and guarantees that its owner will always be unique as it is not a usual costume.
-                <br><br>
-        
-                In addition to colours and patterns we also find elegance and comfort very important, so we 
-                strive to design our clothes so that everyone can enjoy it. Besides, we make sure that all 
-                garments are made of quality fabrics that are gentle to the skin and wearable in the long run. 
-                African materials are made from 100% cotton and the fabrics we combine them with are mostly made 
-                of cotton as well.<br><br>
-        
-                We hope you will find clothes in our collection that you would love to wear.<br><br>
-        
-                Enjoy browsing through our site!<br>
-                <b>Patrícia & Yayra</b>
-        </div>
+        <div [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/about.html'" class="w3-col l6 w3-center w3-padding">	</div>
 
     </div>
 </div>

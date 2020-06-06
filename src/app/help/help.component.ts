@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs'
+import {ShopSpineService} from '../shop-spine.service'
 
 @Component({
   selector: 'app-help',
@@ -9,29 +8,20 @@ import {Observable} from 'rxjs'
 })
 export class HelpComponent implements OnInit {
 
-  constructor(public http : HttpClient) { }
+  constructor(private shopService : ShopSpineService) { }
 
-  cache = {};
+  config = null;
+
+  // variable to store the currently expanded accordion
+  currentExpanded = null;
 
   ngOnInit(): void {
+
+    this.shopService.getConfig().subscribe(config =>{
+      this.config = config;
+    })
   }
 
-  // called by view to get html page
-  getHtmlPage(url : string){
-    return new Observable(sub => {
-      if(this.cache[url] == null){
-      this.http.get(url, {responseType: 'text'}).subscribe(evt => {
-          this.cache[url] = evt;
-          sub.next(evt);
-        },
-          err =>{
-           console.log(err);
-        });
-      }else
-        sub.next(this.cache[url]);
-    });
-
-  }
 
 
 }

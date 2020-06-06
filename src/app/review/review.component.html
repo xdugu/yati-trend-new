@@ -1,14 +1,14 @@
 <div *ngIf="config != null && basket !=null" class="w3-container">
-    <h1 class="w3-center">Review</h1>
+    <h1 class="w3-center" i18n="Heading for final order review page@@Review">Review</h1>
     <div class="w3-row">
         <div class="w3-col l6" >
             <div *ngFor="let item of basket.Items; index as i;" class="w3-display-container w3-mobile w3-card" 
                 style="height: 100px; width: 100%; padding: 0px 16px">
                 <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px"
                     class="w3-display-left w3-padding">
-                <span class="w3-display-middle">{{item.Title.en}}
+                <span class="w3-display-middle">{{item.Title[config.preferences.lang]}}
                     <span *ngFor="let variant of item.Variants.variants; index as varInd">
-                        , {{variant.text.en}} : {{item.Combination[varInd].text.en}}
+                        , {{variant.text[config.preferences.lang]}} : {{item.Combination[varInd].text[config.preferences.lang]}}
                     </span>
                 </span>
                 <span class="w3-display-right price-total w3-padding">
@@ -17,27 +17,27 @@
             </div>
 
             <div class="w3-margin-top">
-                <b>Delivery:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
-                <b>Discount:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
-                <b>Subtotal:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
-                <b>Total:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
+                <b i18n="@@Delivery">Delivery:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
+                <b i18n="@@Discount">Discount:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.discount[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
+                <b i18n="@@Subtotal">Subtotal:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.subTotal[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
+                <b i18n="@@Total">Total:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.total[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>
             </div>
 
         </div>
 
         <div class="w3-col l5 w3-padding w3-card">
-            <h2>Order Details</h2> 
+            <h2 i18n="@@OrderDetails">Order Details</h2> 
             <span>{{customer.firstName}}</span><br> 
             <span>{{customer.email}}</span><br>  
             <span>{{customer.number}}</span><br><br>
             
-            <span>Post To:</span><br>
+            <span i18n="where to post package@@PostTo">Post To:</span><br>
             <span>{{customer.firstName}}</span><br>
             <span>{{customer.address1}}</span><br>
             <span [hidden]="customer.address2 == null">{{customer.address2}}<br></span> 
             <span>{{customer.city}}</span><br>
             <span>{{customer.postCode}}</span><br>  
-            <span>{{customer.countryCode}}</span><br> 
+            <span>{{commonLib.getCountry(customer.countryCode, config.preferences.lang)}}</span><br> 
         </div>
     </div> 
     <div style="width: 300px; overflow: hidden" class="w3-mobile w3-margin-top">
@@ -45,13 +45,15 @@
         <button mat-raised-button color="primary" 
                 style="width: 300px" class="w3-mobile"
                 *ngIf="config.preferences.currency.chosen == 'HUF' && config.preferences.countryCode == 'HU'"
-                (click)="triggerPaymentMethod('bankTransfer')"> Pay by bank transfer
+                (click)="triggerPaymentMethod('bankTransfer')"
+                i18n="@@PayByBankTransfer"> Pay by bank transfer
         </button> <br><br>
         <button mat-raised-button color="primary" 
                 style="width: 300px" class="w3-mobile"
                 (click)="triggerPaymentMethod('payOnDelivery')"
                 *ngIf="basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].hasOwnProperty('payOnDelivery') &&
-                    config.preferences.currency.chosen == 'HUF'">
+                    config.preferences.currency.chosen == 'HUF'"
+                 i18n="@@PayOnDelivery">
                  Pay on delivery
         </button>
     </div>

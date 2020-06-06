@@ -6,11 +6,14 @@
 <div [appFitToChild]="main_img" class="w3-row w3-padding">
     <img #main_img src="assets/images/home/group.jpg" class="w3-mobile w3-col" style="width:60%">
     <div class="w3-mobile w3-rest w3-center w3-display-container mat-h2 w3-theme w3-text-white">
-        <span class="w3-display-middle" style="width: 90%">	  
+        <span class="w3-display-middle" style="width: 90%">	
+            <span i18n="text which invites customer to shop@@LanderText">
             Explore Afropean fashion <br><br>
             Shop the look <br><br>
             Orders above ‎€120 get FREE Shipping in Europe<br><br>
+            </span>  
             <a  mat-raised-button color="accent" 
+                [routerLink]="['/category', 'Womens']"
                 i18n="Button named as shop now@@ShopNow">Shop Now</a>
         </span>
     </div>
@@ -46,7 +49,7 @@
 </ngx-slick-carousel>
 
 <div>
-    <h2 class="mat-h2 w3-center">About Us</h2>
+    <h2 class="mat-h2 w3-center" i18n="@@AboutUs">About Us</h2>
     <div class="w3-padding">
         <img src="assets/images/home/about_pic.jpg" style="width: 25%" class="w3-left w3-mobile">
         <p style="width: 72%;" class="w3-right w3-mobile">
