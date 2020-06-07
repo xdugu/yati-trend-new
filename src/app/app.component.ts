@@ -17,15 +17,15 @@ const TREE_DATA: ProductHeirarchy[] = [
     expanded: true,
     text:{
       en: "Womens",
-      hu: "Nok"
+      hu: "Ruházat"
     },
     sub: [
       {name: 'All',   text:{en: "All", hu: "Mind"}, link:'category/Womens'},
-      {name: 'Dresses',   text:{en: "Dresses", hu: "Ruhak"}, link:'category/Womens/Dresses'},
-      {name: 'Blouses',   text:{en: "Blouses", hu: "Bluzok"}, link:'category/Womens/Blouses'},
-      {name: 'Jumpsuits', text:{en: "Jumpsuits", hu: "Overalok"}, link:'category/Womens/Jumpsuits'},
-      {name: 'Skirts',    text:{en: "Skirts", hu: "Szoknyak"}, link:'category/Womens/Skirts'},
-      {name: 'Trousers',  text:{en: "Trousers", hu: "Nadragok"}, link:'category/Womens/Trousers'},
+      {name: 'Dresses',   text:{en: "Dresses", hu: "Ruhák"}, link:'category/Womens/Dresses'},
+      {name: 'Blouses',   text:{en: "Blouses", hu: "Blúzok"}, link:'category/Womens/Blouses'},
+      {name: 'Jumpsuits', text:{en: "Jumpsuits", hu: "Overálok"}, link:'category/Womens/Jumpsuits'},
+      {name: 'Skirts',    text:{en: "Skirts", hu: "Szoknyák"}, link:'category/Womens/Skirts'},
+      {name: 'Trousers',  text:{en: "Trousers", hu: "Nadrágok"}, link:'category/Womens/Trousers'},
     ]
   },
    {

@@ -1,53 +1,53 @@
-<h1 class="w3-center" i18n="heading in legal/help page@@LegalInformation">Legal Information</h1>
+<h1 class="w3-center mat-title" i18n="heading in legal/help page@@LegalInformation">Legal Information</h1>
 <div class="w3-content w3-mobile" style="max-width: 1000px">
   <mat-accordion>
     <mat-expansion-panel (opened)="currentExpanded = 'generalTerms'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@TermsAndConditions">General terms and conditions</mat-panel-title>
       </mat-expansion-panel-header>
-      <p *ngIf="currentExpanded == 'generalTerms'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/general_terms.html'"></p>
+      <p *ngIf="currentExpanded == 'generalTerms'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/general_terms.html'"></p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="currentExpanded = 'privacyPolicy'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@PrivacyPolicy">Privacy Policy</mat-panel-title>
       </mat-expansion-panel-header>
-      <p  *ngIf="currentExpanded == 'privacyPolicy'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/privacy_policy.html'"></p>
+      <p  *ngIf="currentExpanded == 'privacyPolicy'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/privacy_policy.html'"></p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="currentExpanded = 'shipping'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@ShippingAndDelivery">Shipping & Delivery</mat-panel-title>
       </mat-expansion-panel-header>
-      <p  *ngIf="currentExpanded == 'shipping'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/shipping.html'"></p>
+      <p  *ngIf="currentExpanded == 'shipping'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/shipping.html'"></p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="currentExpanded = 'priceAndPayment'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@PriceAndPayment">Price and Payment</mat-panel-title>
       </mat-expansion-panel-header>
-      <p  *ngIf="currentExpanded == 'priceAndPayment'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/price_and_payment.html'"></p>
+      <p  *ngIf="currentExpanded == 'priceAndPayment'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/price_and_payment.html'"></p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="currentExpanded = 'contact'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@ContactUs">Contact Us</mat-panel-title>
       </mat-expansion-panel-header>
-      <p  *ngIf="currentExpanded == 'contact'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/contact_us.html'"></p>
+      <p  *ngIf="currentExpanded == 'contact'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/contact_us.html'"></p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="currentExpanded = 'returns'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@ReturnsAndExchanges">Returns & Exchanges</mat-panel-title>
       </mat-expansion-panel-header>
-      <p  *ngIf="currentExpanded == 'returns'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/returns.html'"></p>
+      <p  *ngIf="currentExpanded == 'returns'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/returns.html'"></p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="currentExpanded = 'sizeChart'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@SizeChart">Size chart</mat-panel-title>
       </mat-expansion-panel-header>
-        <span  *ngIf="currentExpanded == 'sizeChart'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/sizes.html'"></span>
+        <span  *ngIf="currentExpanded == 'sizeChart'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/sizes.html'"></span>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="currentExpanded = 'faqs'">
       <mat-expansion-panel-header>
         <mat-panel-title i18n="@@FAQs">FAQs</mat-panel-title>
       </mat-expansion-panel-header>
-      <p  *ngIf="currentExpanded == 'faqs'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/FAQ.html'"></p>
+      <p  *ngIf="currentExpanded == 'faqs'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/FAQ.html'"></p>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

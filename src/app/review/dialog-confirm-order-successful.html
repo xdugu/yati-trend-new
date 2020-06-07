@@ -1,19 +1,19 @@
-<h1 mat-dialog-title class="w3-text-green">
+<h1 mat-dialog-title class="w3-text-green" i18n="Title to confirm successful order@@OrderSuccessful">
     Order Successful
 </h1>
 <div mat-dialog-content>
     <span [ngSwitch]="data.paymentType">
-        <span *ngSwitchCase= "'bankTransfer'">
+        <span *ngSwitchCase= "'bankTransfer'" i18n="@@SuccessfulBankTransfer">
             We have sent you an email with our account details. We will ship you item
             as soon as the stated amount is credited to our account. Thank you for shopping 
             with us
         </span>
-        <span *ngSwitchDefault>
+        <span *ngSwitchDefault i18n="@@SuccessfulOrder">
             Thank you for your order. We will ship your item as soon as we can. 
             Thank you for shopping with us
         </span>
     </span> 
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button (click)="onNoClick()" i18n="@@Close">Close</button>
 </div>

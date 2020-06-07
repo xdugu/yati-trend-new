@@ -93,7 +93,8 @@ export class ProductComponent implements OnInit {
   addToBasket(){
      this.basketService.addToBasket(this.product.item.ItemId, this.pickedSpec).subscribe(
        ()=> {
-          this.snackBar.open('Item added successfully', '',{
+          let msg = {en: "Item added successfully", hu:"A termék a kosaradba került"}
+          this.snackBar.open(msg[this.config.preferences.lang], '',{
               duration: 2000
           });
        }

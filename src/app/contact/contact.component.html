@@ -1,12 +1,12 @@
-<h1 class="w3-center"> Contact Us </h1>
+<h1 class="w3-center" i18n="@@ContactUs"> Contact Us </h1>
 
 <form  #contactForm="ngForm" class="w3-content w3-padding" style="max-width: 800px">  
     <p>
         <mat-form-field appearance="legacy">
-        <mat-label>Name</mat-label>
+        <mat-label i18n="@@Name">Name</mat-label>
         <input matInput required id="name" name="name" type="text"
                 [(ngModel)]="user.name" #name="ngModel">
-        <mat-error [hidden]="name.valid || name.pristine">Name is required</mat-error>
+        <mat-error [hidden]="name.valid || name.pristine" i18n="@@NameIsRequired">Name is required</mat-error>
         </mat-form-field>
     </p>
 
@@ -15,12 +15,12 @@
         <mat-label>Email</mat-label>
         <input matInput required id="email" name="email" type="email"
                 [(ngModel)]="user.email" #email="ngModel">
-        <mat-error [hidden]="email.valid || email.pristine">Email is required</mat-error>
+        <mat-error [hidden]="email.valid || email.pristine" i18n="@@EmailIsRequired">Email is required</mat-error>
         </mat-form-field>
     </p>
 
     <mat-form-field  style="width: 100%">
-        <mat-label>Comment : Max length: {{user.comments.length}}/500</mat-label>
+        <mat-label><span i18n="@@Comment">Comment</span>: {{user.comments.length}}/500</mat-label>
         <textarea
             name="comments" required [(ngModel)]="user.comments" 
             matInput row="5" maxlength="500">
@@ -29,6 +29,6 @@
 
     <button mat-raised-button color="primary" 
             [disabled]="contactForm.invalid"
-            (click)="onRequestSubmit()">Send</button>
+            (click)="onRequestSubmit()" i18n="@@SendRequest">Send</button>
 
 </form>

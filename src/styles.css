@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/css/w3.css'; 
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -25,4 +24,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .slick-next {
   z-index: 1;
   right: 10px;
+}
+
+.price-total{
+	font-weight: bold;
+	color: goldenrod;
+}
+
+.price{
+	color: goldenrod;
 }

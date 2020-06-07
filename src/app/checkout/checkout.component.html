@@ -107,7 +107,7 @@
                             (change)="onTermsChange($event)">
                             <a [routerLink]="['/legal']"
                                 i18n="clickable text to allow customer to read terms@@IAcceptTerms">
-                                I accept the terms and conditions </a> for this sale
+                                I accept the terms and conditions for this sale</a> 
             </mat-checkbox><br><br>
             <button id="proceedButton" [style.visibility]="termsAccepted ? 'visible': 'hidden'" 
                     mat-raised-button color="primary" 
@@ -117,7 +117,7 @@
             </button><br><br>
         </form>
         <div class="w3-col l6 w3-hide-small w3-hide-medium">
-            <img [appLazyLoad]="'/assets/images/checkout/main_skirt.jpg'" style="width: 100%">
+            <img [appLazyLoad]="'assets/images/checkout/main_skirt.jpg'" style="width: 100%">
         </div>
     </div>
 </div>

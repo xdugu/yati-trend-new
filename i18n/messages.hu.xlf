@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="hu">
+    <body>
+      <trans-unit id="All" datatype="html">
+        <source>All</source><target state="new">Mind</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit><trans-unit id="Dresses" datatype="html">
+        <source>Dresses</source><target state="new">Ruhák</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit><trans-unit id="HomepageHeader" datatype="html">
+        <source>Welcome to the home of African-European Fashion
+</source><target state="new">
+        Üdvözlünk a Yati-Trend oldalán – Az afro-európai divat hazájá</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Homepage welcome text</note>
+      </trans-unit>
+      <trans-unit id="LanderText" datatype="html">
+        <source>
+            Explore Afropean fashion <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            Shop the look <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            Orders above ‎€120 get FREE Shipping in Europe<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            </source><target state="new">
+            Tedd magad még egyedibbé ruháink által, hiszen az egyediség, az elegancia és a színek nálunk kéz a kézben járnak. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            Vásárolj 25.000 Ft felett és a szállítást mi álljuk Magyarország egész területén <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            14 napos visszaküldési garancia!<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            </target>
+        
+        <note priority="1" from="description">text which invites customer to shop</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">11</context></context-group></trans-unit>
+      <trans-unit id="ShopNow" datatype="html">
+        <source>Shop Now</source><target state="new">Vásárolj most</target>
+        
+        <note priority="1" from="description">Button named as shop now</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit>
+    
+<trans-unit id="Necklaces" datatype="html">
+        <source>Necklaces</source><target state="new">Nyakláncok</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit><trans-unit id="Bracelets" datatype="html">
+        <source>Bracelets</source><target state="new">Karkötők</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit><trans-unit id="Earrings" datatype="html">
+        <source>Earrings</source><target state="new">Fülbevalók</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit><trans-unit id="Accessories" datatype="html">
+        <source>Accessories</source><target state="new">Kiegészítők</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Skirts" datatype="html">
+        <source>Skirts</source><target state="new">
+            Szoknyák
+        </target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">39</context></context-group></trans-unit>
+      <trans-unit id="Jumpsuits" datatype="html">
+        <source>Jumpsuits</source><target state="new">Overálok
+    </target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">47</context></context-group></trans-unit><trans-unit id="Blouses" datatype="html">
+        <source>Blouses</source><target state="new">Blúzok</target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">13</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">31</context></context-group></trans-unit><trans-unit id="Trousers" datatype="html">
+        <source>Trousers</source><target state="new">Nadrágok</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AboutUs" datatype="html">
+        <source>About Us</source><target state="new">Rólunk</target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">48</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">53</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/about/about.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit>
+      <trans-unit id="AboutUsShort" datatype="html">
+        <source>Yati-Trend clothes are designed to merge African and European Fashion.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.
+            Our designs are made to fuse the african flare and color into european clothing.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            The aim with the clothes we design is to encourage people to be more open to wearing coloured and patterned clothes which shows uniqueness and confidence . . .
+            </source><target state="new">A Yati-Trendet azért hoztuk létre, hogy az itt élő emberek is megismerhessék az afrikai ruhákat
+              és megtapasztalhassák milyen érzés is ilyen ruhákat hordani.
+              Férjem, Yayra Ghánából származik, ahol nagy divatnak örvend a színes és mintás ruhák viselete. . .
+            </target>
+        
+        <note priority="1" from="description">short description about us</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">57</context></context-group></trans-unit>
+      <trans-unit id="ReadMore" datatype="html">
+        <source>Read More</source><target state="new">Tovább olvasom</target>
+        
+        <note priority="1" from="description">A 'read more' button</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">63</context></context-group></trans-unit><trans-unit id="OutOfStock" datatype="html">
+        <source>Out Of Stock</source><target state="new">Nincs készleten</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddToBasket" datatype="html">
+        <source>Add To Basket
+            </source><target state="new">Kosárba rakom
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit><trans-unit id="Description" datatype="html">
+        <source>
+                      Description
+                    </source><target state="new">
+                      Leírás
+                    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SizeChart" datatype="html">
+        <source>
+                        Size Chart
+                      </source><target state="new">
+                        Mérettáblázat
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Shipping" datatype="html">
+        <source>Shipping</source><target state="new">Szállítás</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Returns" datatype="html">
+        <source>Returns</source><target state="new">Áruvisszaküldés</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit><trans-unit id="Basket" datatype="html">
+        <source>Basket</source><target state="new">Kosár tartalma</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit><trans-unit id="BasketIsEmpty" datatype="html">
+        <source>Your basket is empty</source><target state="new">A kosarad jelenleg még üres</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Remove" datatype="html">
+        <source>Remove</source><target state="new">Eltávolít</target>
+        
+        <note priority="1" from="description">Text to remove from basket</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">29</context></context-group></trans-unit>
+      <trans-unit id="Quantity" datatype="html">
+        <source>Quantity</source><target state="new">Mennyiség</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">34</context></context-group></trans-unit>
+      <trans-unit id="SelectCountry" datatype="html">
+        <source>Select Country</source><target state="new">Válassz országot</target>
+        
+        <note priority="1" from="description">Static text to tell customer to select country</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">46</context></context-group></trans-unit>
+      <trans-unit id="ChooseCountry" datatype="html">
+        <source>Please choose a country</source><target state="new">Kérjük válassz országot a szállítási költség kalkulálásához</target>
+        
+        <note priority="1" from="description">First option of country chooser</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">48</context></context-group></trans-unit>
+      <trans-unit id="ChooseCourier" datatype="html">
+        <source>Choose a courier:</source><target state="new">Kérjük válassz a szállítási módok közül:</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">55</context></context-group></trans-unit>
+      <trans-unit id="Delivery" datatype="html">
+        <source>Delivery:</source><target state="new">Szállítás:</target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">66</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">20</context></context-group></trans-unit>
+      <trans-unit id="Discount" datatype="html">
+        <source>Discount:</source><target state="new">Kedvezmény:</target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">68</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit>
+      <trans-unit id="Subtotal" datatype="html">
+        <source>Subtotal:</source><target state="new">Részösszeg:</target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">71</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">22</context></context-group></trans-unit>
+      <trans-unit id="Total" datatype="html">
+        <source>Total:</source><target state="new">Végösszeg:</target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">72</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">23</context></context-group></trans-unit><trans-unit id="ProceedToCheckout" datatype="html">
+        <source> Proceed to checkout</source><target state="new">Tovább a fizetéshez</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">73</context></context-group></trans-unit>
+      <trans-unit id="ContactInformation" datatype="html">
+        <source>Contact Information</source><target state="new">Kapcsolati információk</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Header in checkout page</note>
+      </trans-unit>
+      <trans-unit id="Name" datatype="html">
+        <source>Name</source><target state="new">Név</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/checkout/checkout.component.html</context><context context-type="linenumber">9</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/contact/contact.component.html</context><context context-type="linenumber">6</context></context-group></trans-unit>
+      <trans-unit id="NameIsRequired" datatype="html">
+        <source>Name is required</source><target state="new">Név megadása szükséges</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/checkout/checkout.component.html</context><context context-type="linenumber">13</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/contact/contact.component.html</context><context context-type="linenumber">9</context></context-group></trans-unit>
+      <trans-unit id="EmailIsRequired" datatype="html">
+        <source>Email is required</source><target state="new">Email megadása szükséges</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/checkout/checkout.component.html</context><context context-type="linenumber">22</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/contact/contact.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit>
+      <trans-unit id="PhoneNumber" datatype="html">
+        <source>Phone Number</source><target state="new">Telefonszám</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PhoneNumberIsRequired" datatype="html">
+        <source>Phone number is required</source><target state="new">Telefonszám megadása szükséges</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SelectFoxpost" datatype="html">
+        <source>
+                    Select a Foxpost pickup location</source><target state="new">
+                    Válassz egy foxpost címet </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <note priority="1" from="description">Header to tell customer to select foxpost</note>
+      </trans-unit>
+      <trans-unit id="SearchHere" datatype="html">
+        <source>Search here</source><target state="new">Itt keress</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Placeholder for search input</note>
+      </trans-unit>
+      <trans-unit id="View" datatype="html">
+        <source> View </source><target state="new">Mutass többet</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">Button to view more info</note>
+      </trans-unit>
+      <trans-unit id="ShippingDetails" datatype="html">
+        <source>Shipping Details</source><target state="new">Szállítási információk</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddressLine1" datatype="html">
+        <source>Address Line 1</source><target state="new">Cím</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddressIsRequired" datatype="html">
+        <source>Address is required</source><target state="new">Cím megadása szükséges</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddressLine2" datatype="html">
+        <source>Address Line 2</source><target state="new">Cím 2</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="City" datatype="html">
+        <source>City/Town</source><target state="new">Város</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CityIsRequired" datatype="html">
+        <source>City is required</source><target state="new">Város megadása szükséges</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PostCode" datatype="html">
+        <source>PostCode</source><target state="new">Irányítószám</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PostCodeIsRequired" datatype="html">
+        <source>Post code is required</source><target state="new">Irányítószám megadása szükséges</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IAcceptTerms" datatype="html">
+        <source>
+                                I accept the terms and conditions for this sale</source><target state="new">
+                                Elfogadom az általános szerződési feltételeket </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <note priority="1" from="description">clickable text to allow customer to read terms</note>
+      </trans-unit>
+      <trans-unit id="ProceedToPayment" datatype="html">
+        <source>
+                    Proceed to payment
+            </source><target state="new">
+                    Tovább a fizetéshez
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit><trans-unit id="Monday" datatype="html">
+        <source>Monday</source><target state="new">Hétfő</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit><trans-unit id="Tuesday" datatype="html">
+        <source>Tuesday</source><target state="new">Kedd</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit><trans-unit id="Wednesday" datatype="html">
+        <source>Wednesday</source><target state="new">Szerda</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit><trans-unit id="Thursday" datatype="html">
+        <source>Thursday</source><target state="new">Csütörtök</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit><trans-unit id="Friday" datatype="html">
+        <source>Friday</source><target state="new">Péntek</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit><trans-unit id="Saturday" datatype="html">
+        <source>Saturday</source><target state="new">Szombat</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit><trans-unit id="Sunday" datatype="html">
+        <source>Sunday</source><target state="new">Vasárnap</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit><trans-unit id="Close" datatype="html">
+        <source>Close</source><target state="new">Lezárás</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit><trans-unit id="ChooseThisAddress" datatype="html">
+        <source>Choose this address
+        </source><target state="new">Megerősítés
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Review" datatype="html">
+        <source>Review</source><target state="new">Rendelés áttekintése</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Heading for final order review page</note>
+      </trans-unit>
+      <trans-unit id="OrderDetails" datatype="html">
+        <source>Order Details</source><target state="new">Rendelés részletei</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PostTo" datatype="html">
+        <source>Post To:</source><target state="new">Címzett:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">where to post package</note>
+      </trans-unit>
+      <trans-unit id="PayByBankTransfer" datatype="html">
+        <source> Pay by bank transfer
+        </source><target state="new"> Banki átutalás
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PayOnDelivery" datatype="html">
+        <source>
+                 Pay on delivery
+        </source><target state="new">
+                 Utánvét
+        </target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">56</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context><context context-type="linenumber">3</context></context-group></trans-unit><trans-unit id="BankTransfer" datatype="html">
+        <source>Bank Transfer</source><target state="new">Banki átutalás</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit><trans-unit id="ConfirmBankTransfer" datatype="html">
+        <source>
+       Please confirm that you want to pay by bank transfer. We will send an email
+       to confirm our bank details. On receipt of the payment, your ordered items
+       will be shipped to you
+   </source><target state="new">
+       Kérjük erősítsd meg, hogy valóban banki átutalással szeretnél fizetni. 
+       Amennyiben igen,email-en elküldjük neked az utaláshoz szükséges adatokat.
+   </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit><trans-unit id="ComfirmPayOnDelivery" datatype="html">
+        <source>Please confirm that you want to pay on delivery of the item(s). payment on delivery
+       incurs an additional delivery cost of</source><target state="new">
+       Kérjük erősítsd meg, hogy valóban az utánvétes fizetést válsztod. A megerősítésről emailt kapsz tőlünk.
+			 Kérjük vedd figyelembe, hogy ez a fizetési mód extra költséggel jár, melynek összege
+   </target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context><context context-type="linenumber">12</context></context-group></trans-unit><trans-unit id="Cancel" datatype="html">
+        <source>Cancel</source><target state="new">Törlés</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context><context context-type="linenumber">21</context></context-group></trans-unit><trans-unit id="Confirm" datatype="html">
+        <source>Confirm</source><target state="new">Megerősítés</target>
+        
+        <note priority="1" from="description">Button to confirm text</note>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context><context context-type="linenumber">22</context></context-group></trans-unit><trans-unit id="OrderSuccessful" datatype="html">
+        <source>
+    Order Successful
+</source><target state="new">
+    Megrendelés megerősítése
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Title to confirm successful order</note>
+      </trans-unit><trans-unit id="SuccessfulBankTransfer" datatype="html">
+        <source>
+            We have sent you an email with our account details. We will ship you item
+            as soon as the stated amount is credited to our account. Thank you for shopping 
+            with us
+        </source><target state="new">
+            Sikeresen elküldtük a banki utaláshoz szükséges adatokat az email címedre
+			Kérjük, hogy saját érdekedben az utalást minél előbb tedd meg, hogy mi is minél hamarabb előkészíthessük és kézbesíthessük számodra a megrendelt terméket/termékeket.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit><trans-unit id="SuccessfulOrder" datatype="html">
+        <source>
+            Thank you for your order. We will ship your item as soon as we can. 
+            Thank you for shopping with us
+        </source><target state="new">
+            Köszönjük megrendelésed. Igyekszünk, hogy csomagod minél előbb megérkezzen hozzád.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LegalInformation" datatype="html">
+        <source>Help &amp; Legal</source><target state="new">Jogi információk</target>
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">101</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit>
+      <trans-unit id="TermsAndConditions" datatype="html">
+        <source>General terms and conditions</source><target state="new">Általános Szerződési Feltételek</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">6</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/footer/footer.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit>
+      <trans-unit id="PrivacyPolicy" datatype="html">
+        <source>Privacy Policy</source><target state="new">Adatvédelmi tájékoztató</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ShippingAndDelivery" datatype="html">
+        <source>Shipping &amp; Delivery</source><target state="new">Szállítás</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PriceAndPayment" datatype="html">
+        <source>Price and Payment</source><target state="new">Árak és fizetési módok</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ContactUs" datatype="html">
+        <source>Contact</source><target state="new">Kapcsolat</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">49</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">30</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/contact/contact.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit>
+      <trans-unit id="Clothing" datatype="html">
+        <source>Clothing</source><target state="new">Ruházat</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">17</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">60</context></context-group></trans-unit>
+      <trans-unit id="ReturnsAndExchanges" datatype="html">
+        <source>Returns &amp; Exchanges</source><target state="new">Áruvisszaküldés és csere</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FAQs" datatype="html">
+        <source>FAQs</source><target state="new">Gyakori kérdések</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit><trans-unit id="Comment" datatype="html">
+        <source>Comment</source><target state="new">Megjegyzés</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit><trans-unit id="SendRequest" datatype="html">
+        <source>Send</source><target state="new">Küldés</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      
+    </body>
+  </file>
+</xliff>

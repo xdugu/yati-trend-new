@@ -89,7 +89,7 @@ export class ReviewComponent implements OnInit {
  // creates a paypal object that is able to make paypal payments
  private createPaypalObject(): void {
     this.payPalConfig = {
-        clientId: this.paypalIdTest,
+        clientId: this.paypalIdLive,
         createOrder: (data) => < ICreateOrderRequest > {
             intent: 'CAPTURE',
             payer:{

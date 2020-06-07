@@ -5,16 +5,18 @@
     {{data.Address}}<br>
     {{data.City}}<br>
     {{data.PostCode}}<br><br>
-    Monday: {{data.Monday}}<br>
-    Tuesday:{{data.Tuesday}}<br>
-    Wednesday: {{data.Wednesday}}<br>
-    Thursday: {{data.Thursday}}<br>
-    Friday: {{data.Friday}}<br>
-    Saturday: {{data.Saturday}}<br>
-    Sunday: {{data.Sunday}}<br><br>
+    <span i18n="@@Monday" >Monday</span>: {{data.Monday}}<br>
+    <span i18n="@@Tuesday">Tuesday</span>:{{data.Tuesday}}<br>
+    <span i18n="@@Wednesday">Wednesday</span>: {{data.Wednesday}}<br>
+    <span i18n="@@Thursday">Thursday</span>: {{data.Thursday}}<br>
+    <span i18n="@@Friday">Friday</span>: {{data.Friday}}<br>
+    <span i18n="@@Saturday">Saturday</span>: {{data.Saturday}}<br>
+    <span i18n="@@Sunday">Sunday</span>: {{data.Sunday}}<br><br>
     {{data.Description}}<br>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Close</button>
-    <button mat-button  [mat-dialog-close]="'Confirmed'" cdkFocusInitial>Choose this address</button>
+    <button mat-button (click)="onNoClick()" i18n="@@Close">Close</button>
+    <button mat-button  [mat-dialog-close]="'Confirmed'" 
+            cdkFocusInitial i18n="@@ChooseThisAddress">Choose this address
+        </button>
 </div>

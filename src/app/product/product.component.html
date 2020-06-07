@@ -23,7 +23,7 @@
                   <mat-option *ngFor="let option of variant.options; index as subIndex" [value]="option" 
                     [disabled]="product.item.TrackStock && product.item.Variants.combinations[subIndex].quantity == 0">
                     {{option.text[config.preferences.lang]}}
-                    <span *ngIf="product.item.TrackStock && product.item.Variants.combinations[subIndex].quantity == 0">(Out Of Stock)</span>
+                    <span *ngIf="product.item.TrackStock && product.item.Variants.combinations[subIndex].quantity == 0">(<span i18n="@@OutOfStock">Out Of Stock</span>)</span>
                   </mat-option>
                 </mat-select>
             </mat-form-field><br>
@@ -34,7 +34,7 @@
             <mat-accordion>
                 <mat-expansion-panel>
                   <mat-expansion-panel-header>
-                    <mat-panel-title>
+                    <mat-panel-title i18n="@@Description">
                       Description
                     </mat-panel-title>
                   </mat-expansion-panel-header>
@@ -46,19 +46,19 @@
                         Size Chart
                       </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <span *ngIf="currentlyExpanded == 'sizeChart'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/sizes.html'"></span>
+                    <span *ngIf="currentlyExpanded == 'sizeChart'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/sizes.html'"></span>
                 </mat-expansion-panel>
                 <mat-expansion-panel (opened)="currentlyExpanded = 'shipping'">
                     <mat-expansion-panel-header>
                       <mat-panel-title i18n="@@Shipping">Shipping</mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div *ngIf="currentlyExpanded == 'shipping'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/shipping_min.html'"></div>
+                    <div *ngIf="currentlyExpanded == 'shipping'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/shipping_min.html'"></div>
                 </mat-expansion-panel>
                 <mat-expansion-panel (opened)="currentlyExpanded = 'returns'">
                   <mat-expansion-panel-header>
                     <mat-panel-title i18n="@@Returns">Returns</mat-panel-title>
                   </mat-expansion-panel-header>
-                  <div *ngIf="currentlyExpanded == 'returns'" [appHtmlEmbed]="'/assets/html/' + config.preferences.lang + '/returns_min.html'"></div>
+                  <div *ngIf="currentlyExpanded == 'returns'" [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/returns_min.html'"></div>
               </mat-expansion-panel>
             </mat-accordion>
             <div style="height:200px"></div>

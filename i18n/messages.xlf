@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="All" datatype="html">
+        <source>All</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Dresses" datatype="html">
+        <source>Dresses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Skirts" datatype="html">
+        <source>Skirts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Jumpsuits" datatype="html">
+        <source>Jumpsuits</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Blouses" datatype="html">
+        <source>Blouses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Trousers" datatype="html">
+        <source>Trousers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Clothing" datatype="html">
+        <source>Clothing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Necklaces" datatype="html">
+        <source>Necklaces</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Bracelets" datatype="html">
+        <source>Bracelets</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Earrings" datatype="html">
+        <source>Earrings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Accessories" datatype="html">
+        <source>Accessories</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AboutUs" datatype="html">
+        <source>About Us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/about/about.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ContactUs" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LegalInformation" datatype="html">
+        <source>Help &amp; Legal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="HomepageHeader" datatype="html">
+        <source>
+        Welcome to the home of African-European Fashion
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Homepage welcome text</note>
+      </trans-unit>
+      <trans-unit id="LanderText" datatype="html">
+        <source>
+            Explore Afropean fashion <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            Shop the look <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            Orders above ‎€120 get FREE Shipping in Europe<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">text which invites customer to shop</note>
+      </trans-unit>
+      <trans-unit id="ShopNow" datatype="html">
+        <source>Shop Now</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Button named as shop now</note>
+      </trans-unit>
+      <trans-unit id="AboutUsShort" datatype="html">
+        <source>Yati-Trend clothes are designed to merge African and European Fashion.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.
+            Our designs are made to fuse the african flare and color into european clothing.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            The aim with the clothes we design is to encourage people to be more open to wearing coloured and patterned clothes which shows uniqueness and confidence . . .
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">short description about us</note>
+      </trans-unit>
+      <trans-unit id="ReadMore" datatype="html">
+        <source>Read More</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <note priority="1" from="description">A &apos;read more&apos; button</note>
+      </trans-unit>
+      <trans-unit id="OutOfStock" datatype="html">
+        <source>Out Of Stock</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddToBasket" datatype="html">
+        <source>Add To Basket
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Description" datatype="html">
+        <source>
+                      Description
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SizeChart" datatype="html">
+        <source>
+                        Size Chart
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Shipping" datatype="html">
+        <source>Shipping</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Returns" datatype="html">
+        <source>Returns</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/product/product.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Basket" datatype="html">
+        <source>Basket</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="BasketIsEmpty" datatype="html">
+        <source>Your basket is empty</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Remove" datatype="html">
+        <source>Remove</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">Text to remove from basket</note>
+      </trans-unit>
+      <trans-unit id="Quantity" datatype="html">
+        <source>Quantity</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SelectCountry" datatype="html">
+        <source>Select Country</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">Static text to tell customer to select country</note>
+      </trans-unit>
+      <trans-unit id="ChooseCountry" datatype="html">
+        <source>Please choose a country</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <note priority="1" from="description">First option of country chooser</note>
+      </trans-unit>
+      <trans-unit id="ChooseCourier" datatype="html">
+        <source>Choose a courier:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Delivery" datatype="html">
+        <source>Delivery:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Discount" datatype="html">
+        <source>Discount:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Subtotal" datatype="html">
+        <source>Subtotal:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Total" datatype="html">
+        <source>Total:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ProceedToCheckout" datatype="html">
+        <source> Proceed to checkout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/basket/basket.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ContactInformation" datatype="html">
+        <source>Contact Information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Header in checkout page</note>
+      </trans-unit>
+      <trans-unit id="Name" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="NameIsRequired" datatype="html">
+        <source>Name is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="EmailIsRequired" datatype="html">
+        <source>Email is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PhoneNumber" datatype="html">
+        <source>Phone Number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PhoneNumberIsRequired" datatype="html">
+        <source>Phone number is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SelectFoxpost" datatype="html">
+        <source>
+                    Select a Foxpost pickup location</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <note priority="1" from="description">Header to tell customer to select foxpost</note>
+      </trans-unit>
+      <trans-unit id="SearchHere" datatype="html">
+        <source>Search here</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Placeholder for search input</note>
+      </trans-unit>
+      <trans-unit id="View" datatype="html">
+        <source> View </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">Button to view more info</note>
+      </trans-unit>
+      <trans-unit id="ShippingDetails" datatype="html">
+        <source>Shipping Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddressLine1" datatype="html">
+        <source>Address Line 1</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddressIsRequired" datatype="html">
+        <source>Address is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddressLine2" datatype="html">
+        <source>Address Line 2</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="City" datatype="html">
+        <source>City/Town</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CityIsRequired" datatype="html">
+        <source>City is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PostCode" datatype="html">
+        <source>PostCode</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PostCodeIsRequired" datatype="html">
+        <source>Post code is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="IAcceptTerms" datatype="html">
+        <source>
+                                I accept the terms and conditions for this sale</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <note priority="1" from="description">clickable text to allow customer to read terms</note>
+      </trans-unit>
+      <trans-unit id="ProceedToPayment" datatype="html">
+        <source>
+                    Proceed to payment
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/checkout.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Monday" datatype="html">
+        <source>Monday</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Tuesday" datatype="html">
+        <source>Tuesday</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Wednesday" datatype="html">
+        <source>Wednesday</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Thursday" datatype="html">
+        <source>Thursday</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Friday" datatype="html">
+        <source>Friday</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Saturday" datatype="html">
+        <source>Saturday</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Sunday" datatype="html">
+        <source>Sunday</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Close" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ChooseThisAddress" datatype="html">
+        <source>Choose this address
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/checkout/dialog-foxpost-address-viewer.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Review" datatype="html">
+        <source>Review</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Heading for final order review page</note>
+      </trans-unit>
+      <trans-unit id="OrderDetails" datatype="html">
+        <source>Order Details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PostTo" datatype="html">
+        <source>Post To:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">where to post package</note>
+      </trans-unit>
+      <trans-unit id="PayByBankTransfer" datatype="html">
+        <source> Pay by bank transfer
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PayOnDelivery" datatype="html">
+        <source>
+                 Pay on delivery
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/review.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="BankTransfer" datatype="html">
+        <source>Bank Transfer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ConfirmBankTransfer" datatype="html">
+        <source>
+       Please confirm that you want to pay by bank transfer. We will send an email
+       to confirm our bank details. On receipt of the payment, your ordered items
+       will be shipped to you
+   </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ComfirmPayOnDelivery" datatype="html">
+        <source>Please confirm that you want to pay on delivery of the item(s). payment on delivery
+       incurs an additional delivery cost of</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Cancel" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Confirm" datatype="html">
+        <source>Confirm</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-payment-method.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Button to confirm text</note>
+      </trans-unit>
+      <trans-unit id="OrderSuccessful" datatype="html">
+        <source>
+    Order Successful
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Title to confirm successful order</note>
+      </trans-unit>
+      <trans-unit id="SuccessfulBankTransfer" datatype="html">
+        <source>
+            We have sent you an email with our account details. We will ship you item
+            as soon as the stated amount is credited to our account. Thank you for shopping 
+            with us
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SuccessfulOrder" datatype="html">
+        <source>
+            Thank you for your order. We will ship your item as soon as we can. 
+            Thank you for shopping with us
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/review/dialog-confirm-order-successful.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="TermsAndConditions" datatype="html">
+        <source>General terms and conditions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PrivacyPolicy" datatype="html">
+        <source>Privacy Policy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ShippingAndDelivery" datatype="html">
+        <source>Shipping &amp; Delivery</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="PriceAndPayment" datatype="html">
+        <source>Price and Payment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ReturnsAndExchanges" datatype="html">
+        <source>Returns &amp; Exchanges</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FAQs" datatype="html">
+        <source>FAQs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/help/help.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Comment" datatype="html">
+        <source>Comment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SendRequest" datatype="html">
+        <source>Send</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

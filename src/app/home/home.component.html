@@ -1,5 +1,5 @@
 
-<h1 class="mat-h1 w3-center" 
+<h1 class="mat-title w3-center" 
         i18n="Homepage welcome text@@HomepageHeader">
         Welcome to the home of African-European Fashion
 </h1>
@@ -7,7 +7,8 @@
     <img #main_img src="assets/images/home/group.jpg" class="w3-mobile w3-col" style="width:60%">
     <div class="w3-mobile w3-rest w3-center w3-display-container mat-h2 w3-theme w3-text-white">
         <span class="w3-display-middle" style="width: 90%">	
-            <span i18n="text which invites customer to shop@@LanderText">
+            <span i18n="text which invites customer to shop@@LanderText"
+            class="mat-subheading-2">
             Explore Afropean fashion <br><br>
             Shop the look <br><br>
             Orders above ‎€120 get FREE Shipping in Europe<br><br>
@@ -25,25 +26,25 @@
         <img src="assets/images/home/main_blouse.jpg" style="width: 100%">
         <a  class="w3-display-bottommiddle" 
             style="margin-bottom: 30px;"
-            i18n="A button labelled as 'blouses'@@Blouses"
             [routerLink]="['/category', 'Womens', 'Blouses']">
-            <button mat-raised-button color="primary">Blouses</button>
+            <button mat-raised-button color="primary"
+                i18n="A button labelled as 'blouses'@@Blouses">Blouses</button>
         </a>
     </div>
     <div ngxSlickItem class="w3-display-container">
         <img src="assets/images/home/main_skirt.jpg"  style="width: 100%">
         <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
-            i18n="A button labelled as 'Skirts'@@Skirts"
             [routerLink]="['/category', 'Womens', 'Skirts']">
-            <button mat-raised-button color="primary">Skirts</button>
+            <button mat-raised-button color="primary"
+                i18n="A button labelled as 'Skirts'@@Skirts">Skirts</button>
         </a>
     </div>
     <div ngxSlickItem class="w3-display-container" >
         <img src="assets/images/home/main_jumpsuit.jpg" style="width: 100%">
         <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
-            i18n="A button labelled as 'jumpsuits'@@Jumpsuits"
             [routerLink]="['/category', 'Womens', 'Jumpsuits']">
-        <button mat-raised-button color="primary">Jumpsuits</button>
+        <button mat-raised-button color="primary"
+            i18n="A button labelled as 'jumpsuits'@@Jumpsuits">Jumpsuits</button>
     </a>
     </div>
 </ngx-slick-carousel>
@@ -53,7 +54,7 @@
     <div class="w3-padding">
         <img src="assets/images/home/about_pic.jpg" style="width: 25%" class="w3-left w3-mobile">
         <p style="width: 72%;" class="w3-right w3-mobile">
-            <ng-container i18n="short description about us@@AboutUsShort">Yati-Trend clothes are designed to merge African and European Fashion.<br><br>
+            <ng-container i18n="short description about us@@AboutUsShort" class="mat-body">Yati-Trend clothes are designed to merge African and European Fashion.<br><br>
             My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.
             Our designs are made to fuse the african flare and color into european clothing.<br><br>
             The aim with the clothes we design is to encourage people to be more open to wearing coloured and patterned clothes which shows uniqueness and confidence . . .
