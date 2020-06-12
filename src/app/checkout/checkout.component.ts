@@ -34,7 +34,7 @@ export class CheckoutComponent implements OnInit {
        this.config = config;
        if(config.preferences.deliveryMethod == 'Foxpost-Terminal'){
           this.clearAddressData();
-          this.http.get('/assets/Foxpost-Delivery.json').subscribe(evt =>{
+          this.http.get('assets/Foxpost-Delivery.json').subscribe(evt =>{
             this.foxpostTerminal.list = evt;
             this.foxpostTerminal.showList = true;
           })

@@ -8,7 +8,8 @@
 <div *ngIf="config != null && basket !=null">
 
     <!--currency chooser-->
-    <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
+    <app-currency-chooser *ngIf="basket.Items.length > 0" 
+                    (currencyChange)="onCurrencyChange($event)"
                     [chosen]="config.preferences.currency.chosen"
                     [available] = "config.preferences.currency.available">
     </app-currency-chooser>

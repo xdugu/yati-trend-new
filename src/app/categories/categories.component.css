@@ -3,3 +3,6 @@ a{
 }
 
 
+#product-shelf-placeholder>a:nth-child(odd) {
+    clear:left;
+ }

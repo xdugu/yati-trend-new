@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { GoogleAnalyticsModule, GA_TOKEN } from 'angular-ga';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,7 +54,9 @@ import { HelpComponent } from './help/help.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent, DialogDisplayRequestStatus } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
-import { HtmlEmbedDirective } from './html-embed.directive'
+import { HtmlEmbedDirective } from './html-embed.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
@@ -86,6 +89,7 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
   ],
   imports: [
     BrowserModule,
+    GoogleAnalyticsModule.forRoot(),
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent },
@@ -123,9 +127,10 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     MatListModule,
     MatChipsModule,
     MatTreeModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ ApiManagerService, ShopSpineService],
+  providers: [ ApiManagerService, ShopSpineService,  {provide: GA_TOKEN, useValue: 'UA-131830139-1'}],
   bootstrap: [AppComponent]
 })
 

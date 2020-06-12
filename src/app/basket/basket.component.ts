@@ -63,7 +63,7 @@ export class BasketComponent implements OnInit{
 
    // processBasket - called to update delivery courier based on receiving a new basket
    private processBasket(basket : any){
-       if(basket!= null && basket.hasOwnProperty('Costs') && this.config.preferences.countryCode != null &&
+       if(basket!= null && basket.Items.length > 0 && this.config.preferences.countryCode != null &&
                this.config.preferences.countryCode.length == 2){
            this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.deliveryMethod, Object.keys(basket.Costs[this.config.preferences.countryCode])[0]))
        }

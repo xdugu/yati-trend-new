@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
-import {ShopSpineService} from './shop-spine.service'
+import {ShopSpineService} from './shop-spine.service';
 
 interface ProductHeirarchy {
   name: string;
@@ -82,11 +82,6 @@ export class AppComponent {
   sideNavEvent(){
      this.sideNav.opened = !this.sideNav.opened;
   }
-
- 
-  
-  
-  
 
 
 }

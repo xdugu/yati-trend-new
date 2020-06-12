@@ -14,10 +14,10 @@
 		style="margin-top:2vh;cursor:pointer; width: 50%" >
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="categoryConfig" 
         style="width: 100%;" class="w3-padding" appImageSizer>
-        <div  ngxSlickItem style="width:100%; overflow-y:hidden;">
+        <div  ngxSlickItem style="width:100%; overflow-y:hidden;" *ngIf="product.Images.list.length > 0">
             <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + product.Images.list[0].name" style="width:100%; height:auto;"> 
         </div>
-        <div  ngxSlickItem style="width:100%; overflow-y:hidden;">
+        <div  ngxSlickItem style="width:100%; overflow-y:hidden;" *ngIf="product.Images.list.length > 1">
             <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + product.Images.list[1].name" style="width:100%; height:auto;">
         </div>
     </ngx-slick-carousel>

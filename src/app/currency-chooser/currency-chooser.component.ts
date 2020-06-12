@@ -35,9 +35,9 @@ export class CurrencyChooserComponent implements OnInit {
       let chips = $(chipList).find('mat-chip');  
       let totalWidth = 0;
       for(let i = 0; i < chips.length; i++){
-        totalWidth += $(chips[i]).outerWidth();
+        totalWidth += $(chips[i]).outerWidth() + 30;
       }
-      $($(chips[0]).parent()).css({'width': totalWidth + 30, 'margin': '0px auto'});
+      $($(chips[0]).parent()).css({'width': totalWidth, 'margin': '0px auto'});
     }
   }
 

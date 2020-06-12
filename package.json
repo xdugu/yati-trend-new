@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "extract-i18n": "ng xi18n yati-trend --i18n-format xlf --output-path i18n --i18n-locale en && ng run yati-trend:xliffmerge",
     "start-hu": "ng serve --configuration=hu",
-    "build-final":"ng build --configuration=production --localize"
+    "build-final": "ng build --configuration=production --localize"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +25,9 @@
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
+    "@angular/service-worker": "~9.1.0",
     "@ngx-i18nsupport/tooling": "^8.0.3",
+    "angular-ga": "^2.0.1",
     "jquery": "^3.4.1",
     "ngx-paypal": "^6.1.0",
     "ngx-slick-carousel": "^0.5.0",
@@ -57,5 +59,4 @@
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
   }
- 
 }
