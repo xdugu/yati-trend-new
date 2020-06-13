@@ -37,7 +37,7 @@ export class CurrencyChooserComponent implements OnInit {
       for(let i = 0; i < chips.length; i++){
         totalWidth += $(chips[i]).outerWidth() + 30;
       }
-      $($(chips[0]).parent()).css({'width': totalWidth, 'margin': '0px auto'});
+      $($(chips[0]).parent()).css({'width': totalWidth - 30, 'margin': '0px auto'});
     }
   }
 

@@ -5,6 +5,7 @@ import {BasketService} from '../basket.service';
 import {ActivatedRoute} from '@angular/router';
 import {HttpParams} from '@angular/common/http';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Common} from '../common'
 
 @Component({
   selector: 'app-product',
@@ -44,6 +45,7 @@ export class ProductComponent implements OnInit {
     item: null // will contain the data directly from the server
   }
   pickedSpec = [];
+  commonFunc = Common;
 
   constructor(private shopService : ShopSpineService, 
               private apiService : ApiManagerService,

@@ -15,10 +15,12 @@
     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="categoryConfig" 
         style="width: 100%;" class="w3-padding" appImageSizer>
         <div  ngxSlickItem style="width:100%; overflow-y:hidden;" *ngIf="product.Images.list.length > 0">
-            <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + product.Images.list[0].name" style="width:100%; height:auto;"> 
+            <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + commonFunc.removeExtension(product.Images.list[0].name) + '_500w.jpg'" 
+                    style="width:100%; height:auto;"> 
         </div>
         <div  ngxSlickItem style="width:100%; overflow-y:hidden;" *ngIf="product.Images.list.length > 1">
-            <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + product.Images.list[1].name" style="width:100%; height:auto;">
+            <img class="shop_img" [appLazyLoad]="config.imgSrc + product.Images.path + commonFunc.removeExtension(product.Images.list[1].name) + '_500w.jpg'"
+                 style="width:100%; height:auto;">
         </div>
     </ngx-slick-carousel>
     <div class="description w3-padding">{{product.Title[config.preferences.lang]}}</div>

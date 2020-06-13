@@ -4,7 +4,7 @@
         <div class="w3-col l6" >
             <div *ngFor="let item of basket.Items; index as i;" class="w3-display-container w3-mobile w3-card" 
                 style="height: 100px; width: 100%; padding: 0px 16px">
-                <img [appLazyLoad]="config.imgSrc + item.Images.path + item.Images.list[0].name" style="height: 80px"
+                <img [appLazyLoad]="config.imgSrc + item.Images.path + commonLib.removeExtension(item.Images.list[0].name) + '_100w.jpg'" style="height: 80px"
                     class="w3-display-left w3-padding">
                 <span class="w3-display-middle">{{item.Title[config.preferences.lang]}}
                     <span *ngFor="let variant of item.Variants.variants; index as varInd">

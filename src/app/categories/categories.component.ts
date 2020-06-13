@@ -3,6 +3,7 @@ import {ApiManagerService, API_MODE, API_METHOD} from '../api-manager.service';
 import {ShopSpineService, APP_EVENT_TYPES, AppEvent} from '../shop-spine.service'
 import {HttpParams} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router'
+import {Common} from '../common'
 
 @Component({
   selector: 'app-categories',
@@ -15,6 +16,7 @@ export class CategoriesComponent implements OnInit {
 
   // contains the current config
   config = null;
+  commonFunc = Common;
   
   // store received catagory data in the 'items' property
   category = {

@@ -48,4 +48,17 @@ export class Common{
 
     }
 
+    // given a full filename, this function returns the full filename without the extension
+    static removeExtension(name){
+    
+        // search for beginning of extension index
+        let extInd = name.search(/\.[a-z]{2,}$/i);
+        
+        if(extInd >= 0){
+            return name.substring(0, extInd);
+        }
+        else
+            return name;
+    }    
+
 }
