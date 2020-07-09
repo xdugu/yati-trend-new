@@ -16,7 +16,7 @@ export enum API_METHOD {
   providedIn: 'root'
 })
 export class ApiManagerService {
-  private endPoint = "https://h0jg4s8gpa.execute-api.eu-central-1.amazonaws.com/test";
+  private endPoint = "https://h0jg4s8gpa.execute-api.eu-central-1.amazonaws.com/v1";
 
 
   constructor(private http: HttpClient) { }
