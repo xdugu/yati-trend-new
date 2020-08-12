@@ -1,53 +1,55 @@
 <header [ngSwitch]="screenState">
 
+    <!--Menu for clothes-->
+    <mat-menu #clothingMenu yPosition="below">
+        <a mat-menu-item [routerLink]="['/category', 'Womens']" i18n="@@All">All</a>
+        <a mat-menu-item [routerLink]="['/category', 'Womens','Dresses']" i18n="@@Dresses">Dresses</a>
+        <a mat-menu-item [routerLink]="['/category', 'Womens','Skirts']" i18n="@@Skirts">Skirts</a>
+        <a mat-menu-item [routerLink]="['/category', 'Womens','Jumpsuits']" i18n="@@Jumpsuits">Jumpsuits</a>
+        <a mat-menu-item [routerLink]="['/category', 'Womens','Blouses']" i18n="@@Blouses">Blouses</a>
+        <a mat-menu-item [routerLink]="['/category', 'Womens','Trousers']" i18n="@@Trousers">Trousers</a>
+    </mat-menu>
+
+    <!-- menu for accessories-->
+    <mat-menu #accessoriesMenu yPosition="below">
+        <a mat-menu-item [routerLink]="['/category', 'Accessories']" i18n="@@All">All</a>
+        <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Necklaces']" 
+            i18n="@@Necklaces">Necklaces</a>
+        <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Bracelets']"
+            i18n="@@Bracelets">Bracelets</a>
+        <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Earrings']"
+            i18n="@@Earrings">Earrings</a>
+    </mat-menu>
+
     <!--Desktops-->
     <mat-toolbar color="primary" *ngSwitchCase="'wide_screen'" class="center">
             <a [routerLink]="['/']" style="height:100%"> <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle"></a>
             
-            <!--Menu for clothes-->
-            <mat-menu #clothingMenu yPosition="below">
-                <a mat-menu-item [routerLink]="['/category', 'Womens']" i18n="@@All">All</a>
-                <a mat-menu-item [routerLink]="['/category', 'Womens','Dresses']" i18n="@@Dresses">Dresses</a>
-                <a mat-menu-item [routerLink]="['/category', 'Womens','Skirts']" i18n="@@Skirts">Skirts</a>
-                <a mat-menu-item [routerLink]="['/category', 'Womens','Jumpsuits']" i18n="@@Jumpsuits">Jumpsuits</a>
-                <a mat-menu-item [routerLink]="['/category', 'Womens','Blouses']" i18n="@@Blouses">Blouses</a>
-                <a mat-menu-item [routerLink]="['/category', 'Womens','Trousers']" i18n="@@Trousers">Trousers</a>
-            </mat-menu>
+            
             <button mat-button color="accent" [matMenuTriggerFor]="clothingMenu">
                 <span i18n="@@Clothing">Clothing</span>
                 <mat-icon color="accent">
                     keyboard_arrow_down
                 </mat-icon>
-            </button>
+            </button>         
             
-            <!-- menu for accessories-->
-            <mat-menu #accessoriesMenu yPosition="below">
-                <a mat-menu-item [routerLink]="['/category', 'Accessories']" i18n="@@All">All</a>
-                <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Necklaces']" 
-                    i18n="@@Necklaces">Necklaces</a>
-                <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Bracelets']"
-                    i18n="@@Bracelets">Bracelets</a>
-                <a mat-menu-item [routerLink]="['/category', 'Accessories', 'Earrings']"
-                    i18n="@@Earrings">Earrings</a>
-            </mat-menu>
             <button mat-button color="accent" [matMenuTriggerFor]="accessoriesMenu"
                     ><span i18n="@@Accessories">Accessories</span>
                     <mat-icon color="accent">
                         keyboard_arrow_down
                     </mat-icon>
             </button>   
-            
-            
+                       
             <span class="fill-remaining-space"></span>
-            <a mat-icon-button [routerLink]="['/basket']">
-                <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
+            <a mat-icon-button [routerLink]="['/basket']" >
+                <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" class="basketNum">
                     shopping_basket
                 </mat-icon>
             </a>
             <!--button mat-button color="accent">Blog</button -->
             <a mat-button color="accent" [routerLink]="['/about']" i18n="@@AboutUs">About Us</a>
             <a mat-button color="accent" [routerLink]="['/contact']" i18n="@@ContactUs">Contact</a>
-            <button mat-icon-button><mat-icon color="accent" [matMenuTriggerFor]="appMenu">
+            <button mat-icon-button [matMenuTriggerFor]="appMenu"><mat-icon color="accent" >
                 more_vert</mat-icon>
             </button>
     </mat-toolbar>
@@ -57,11 +59,22 @@
         <a [routerLink]="['/']" style="height:100%"> 
             <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle">
         </a>
-        <button mat-button color="accent" i18n="@@Clothing">Clothing</button>
-        <button mat-button color="accent" i18n="@@Accessories">Accessories</button>
+        <button mat-button color="accent" [matMenuTriggerFor]="clothingMenu">
+            <span i18n="@@Clothing">Clothing</span>
+            <mat-icon color="accent">
+                keyboard_arrow_down
+            </mat-icon>
+        </button>
+
+        <button mat-button color="accent" [matMenuTriggerFor]="accessoriesMenu">
+            <span i18n="@@Accessories">Accessories</span>
+                <mat-icon color="accent">
+                    keyboard_arrow_down
+                </mat-icon>
+        </button>
         <span class="fill-remaining-space"></span> 
         <a mat-icon-button [routerLink]="['/basket']">
-            <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
+            <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" class="basketNum">
                 shopping_basket
             </mat-icon>
         </a>
@@ -69,7 +82,7 @@
             <mat-icon color="accent">email</mat-icon>
         </a>
         <!--button mat-button color="accent">Blog</button-->
-        <button mat-icon-button><mat-icon color="accent" [matMenuTriggerFor]="appMenu">
+        <button mat-icon-button  [matMenuTriggerFor]="appMenu"><mat-icon color="accent">
             more_vert</mat-icon>
         </button>
     </mat-toolbar>
@@ -81,16 +94,16 @@
         </a>
         <span class="fill-remaining-space"></span>
         
-        <a mat-icon-button [routerLink]="['/basket']" class="mobile-header-icon">
-            <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" >
+        <a mat-icon-button [routerLink]="['/basket']" class="mobile-header-icon" >
+            <mat-icon color="accent" [matBadge]="basketNumber" matBadgePosition="below after" class="basketNum">
                 shopping_basket
             </mat-icon>
         </a>
         <a mat-icon-button class="mobile-header-icon" [routerLink]="['/contact']">
             <mat-icon color="accent">email</mat-icon>
         </a>
-        <button mat-icon-button class="mobile-header-icon">
-            <mat-icon color="accent" (click)="toggleMenu()">
+        <button mat-icon-button class="mobile-header-icon test_menu_icon" (click)="toggleMenu()">
+            <mat-icon color="accent">
                 menu
             </mat-icon>
         </button>

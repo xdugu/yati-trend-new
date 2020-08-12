@@ -1,25 +1,54 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {asyncData} from '../../testing/async-observable-helpers'
 
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+  let breakpointSpy: { observe: jasmine.Spy};
+  let shopSpy: { childEventListener: jasmine.Spy};
+  let basketSpy: {getBasketCount : jasmine.Spy};
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  // setup mocks before each test
+  beforeEach(()=>{
+     breakpointSpy = jasmine.createSpyObj('breakpointObserver', ['observe']);
+     shopSpy = jasmine.createSpyObj('ShopSpineService', ['childEventListener']);
+     basketSpy = jasmine.createSpyObj('BasketService', ['getBasketCount']);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  // test that event is emitted toggle menu button is pressed
+  it('raises the selected event when clicked', () => {
+      breakpointSpy.observe.and.returnValue(asyncData({matches: false}));
+      component = new HeaderComponent(breakpointSpy as any, shopSpy as any, basketSpy as any);
+      spyOn(component.sideNavToggleEvent, 'emit');
+      component.toggleMenu();
+      expect(component.sideNavToggleEvent.emit).toHaveBeenCalled();
   });
+
+  it('should set screen state to "mobile"', () =>{
+      breakpointSpy.observe.and.returnValues(asyncData({matches: true}), asyncData({matches: false}), asyncData({matches: false}));
+      component = new HeaderComponent(breakpointSpy as any, shopSpy as any, basketSpy as any);
+      
+      // need to give time to resolve screen state
+      setTimeout(()=>{ expect(component.screenState).toBe('mobile')}, 1);
+  });
+
+   it('should set screen state to "tablet"', () =>{
+      breakpointSpy.observe.and.returnValues(asyncData({matches: false}), asyncData({matches: true}), asyncData({matches: false}));
+      component = new HeaderComponent(breakpointSpy as any, shopSpy as any, basketSpy as any);
+
+      // need to give time to resolve screen state
+      setTimeout(()=>{ expect(component.screenState).toBe('tablet')}, 1);
+     
+   });
+
+   it('should set screen state to "wide_screen"', () =>{
+      breakpointSpy.observe.and.returnValues(asyncData({matches: false}), asyncData({matches: false}), asyncData({matches: true}));
+      component = new HeaderComponent(breakpointSpy as any, shopSpy as any, basketSpy as any);
+      
+      // need to give time to resolve screen state
+      setTimeout(()=>{ expect(component.screenState).toBe('wide_screen')}, 1);
+   });
+   
+
 });

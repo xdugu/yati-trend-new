@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpEvent } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export enum API_MODE {
@@ -37,6 +37,7 @@ export class ApiManagerService {
     
     let resp = this.http.post(`${this.endPoint}/${mode}/${method}/${restOfPath}`, JSON.stringify(body), {
         headers: header,
+        params
     });
 
     return resp;

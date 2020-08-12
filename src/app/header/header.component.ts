@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
         }
       });
 
-    // Check for tablets in protrait mode
+    // Check for tablets in portrait mode
       breakpointObserver.observe([
         Breakpoints.Tablet,
         Breakpoints.TabletPortrait
