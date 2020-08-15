@@ -123,7 +123,7 @@ export class BasketService {
     }
   
   // final step to be called to process customer order
-  order(paymentType : string, comments: any, details : any){
+  order(paymentType : string, comments: string, details : any){
     return new Observable(sub => {
         this.shopService.getCustomerDetails().subscribe((cust : any) => {
           this.getConfig().subscribe((config: any) =>{

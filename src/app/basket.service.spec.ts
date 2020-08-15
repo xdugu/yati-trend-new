@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import {asyncData} from '../testing/async-observable-helpers'
 import { BasketService } from './basket.service';
+import { API_METHOD, API_MODE } from './api-manager.service';
 
 describe('BasketService', () => {
 
@@ -22,7 +23,7 @@ describe('BasketService', () => {
 
     // set the mock test config
     shopServiceSpy.getConfig.and.returnValue(asyncData({
-      'StoreId': 'YatiTrend',
+      storeId: 'TestStore',
       preferences: {
         countryCode: 'HU',
         currency: {
@@ -118,13 +119,33 @@ describe('BasketService', () => {
       });
     });
 
+    // This testcase checks that calling the 'order' function correctly attempts to place an order
     it('should place order', (done)=>{
 
       shopServiceSpy.getCustomerDetails.and.returnValue(asyncData({'name': 'Fake Name'}));
-      // instantiate service and check
+      
+      //Check the inputs of the call to the service
+      apiManagerSpy.post.and.callFake((apiMode, apiMethod, pathRest, _, msg)=>{
+          expect(apiMode).toBe(API_MODE.OPEN);
+          expect(apiMethod).toBe(API_METHOD.UPDATE);
+          expect(pathRest).toEqual('basket/order');
+
+          expect(msg.basketId).toEqual('FAKEBASKETID');
+          expect(msg.storeId).toEqual('TestStore');
+          expect(msg.hasOwnProperty('orderDetails')).toBeTrue();
+
+          expect(msg.orderDetails.hasOwnProperty('contact')).toBeTrue();
+          expect(msg.orderDetails.currency).toEqual('huf');
+          expect(msg.orderDetails.paymentMethod).toEqual('payBeforeDelivery');
+          expect(msg.orderDetails.comments).toEqual('TestComment');
+          return asyncData(true);
+      });
+
+      //instantiate service
       service = new BasketService(apiManagerSpy as any, shopServiceSpy as any, storageSpy as any);
 
-      service.order('paypal', null, {}).subscribe(res=>{
+      // perform order and test results
+      service.order('paypal', 'TestComment', {}).subscribe(res=>{
           expect(res).toBeTrue();
           expect(apiManagerSpy.post.calls.count()).toBe(1);
           expect(storageSpy.removeItem.calls.count()).toBe(1);

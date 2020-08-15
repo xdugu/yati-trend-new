@@ -25,29 +25,29 @@ describe('HeaderComponent', () => {
       expect(component.sideNavToggleEvent.emit).toHaveBeenCalled();
   });
 
-  it('should set screen state to "mobile"', () =>{
+  it('should set screen state to "mobile"', (done) =>{
       breakpointSpy.observe.and.returnValues(asyncData({matches: true}), asyncData({matches: false}), asyncData({matches: false}));
       component = new HeaderComponent(breakpointSpy as any, shopSpy as any, basketSpy as any);
       
       // need to give time to resolve screen state
-      setTimeout(()=>{ expect(component.screenState).toBe('mobile')}, 1);
+      setTimeout(()=>{ expect(component.screenState).toBe('mobile'); done();}, 1);
   });
 
-   it('should set screen state to "tablet"', () =>{
+   it('should set screen state to "tablet"', (done) =>{
       breakpointSpy.observe.and.returnValues(asyncData({matches: false}), asyncData({matches: true}), asyncData({matches: false}));
       component = new HeaderComponent(breakpointSpy as any, shopSpy as any, basketSpy as any);
 
       // need to give time to resolve screen state
-      setTimeout(()=>{ expect(component.screenState).toBe('tablet')}, 1);
+      setTimeout(()=>{ expect(component.screenState).toBe('tablet'); done();}, 1);
      
    });
 
-   it('should set screen state to "wide_screen"', () =>{
+   it('should set screen state to "wide_screen"', (done) =>{
       breakpointSpy.observe.and.returnValues(asyncData({matches: false}), asyncData({matches: false}), asyncData({matches: true}));
       component = new HeaderComponent(breakpointSpy as any, shopSpy as any, basketSpy as any);
       
       // need to give time to resolve screen state
-      setTimeout(()=>{ expect(component.screenState).toBe('wide_screen')}, 1);
+      setTimeout(()=>{ expect(component.screenState).toBe('wide_screen'); done();}, 1);
    });
    
 
