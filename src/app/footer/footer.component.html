@@ -1,8 +1,8 @@
 <div style="background-color: goldenrod; height: 200px" class="w3-margin-top w3-container">
-    <span *ngIf="config != null">
+    <span *ngIf="config != null" id="lang-selection">
         <a *ngIf="config.preferences.lang != 'en'" href="https://fashion.yati-trend.com/en">English</a>
-        <a *ngIf="config.preferences.lang != 'hu'" href="https://fashion.yati-trend.com/hu">Magyar</a><br><br>
-    </span>
+        <a *ngIf="config.preferences.lang != 'hu'" href="https://fashion.yati-trend.com/hu">Magyar</a>
+    </span><br><br>
     <a href="https://www.facebook.com/fashion.Yati/" target="_blank">
         <mat-icon fontSet="fa" fontIcon="fa-facebook" style="font-size: 1.8em;"></mat-icon>
     </a> 

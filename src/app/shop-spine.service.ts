@@ -1,6 +1,7 @@
 import { Injectable, Inject, LOCALE_ID } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import { HttpClient} from '@angular/common/http';
+import {BehaviorSubject, Observable, interval} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {TokenStorageService} from './token-storage.service';
 
 export enum APP_EVENT_TYPES{
   none,
@@ -31,47 +32,52 @@ export class ShopSpineService {
   private shopConfig = null;
   private configVersion = null;
   private customerDetails = null;
+  private loadingConfig = false;
 
-  constructor(private http : HttpClient, @Inject(LOCALE_ID) public locale: string) { 
-     let version = localStorage.getItem('version');
+  constructor(private http : HttpClient, 
+              private storageService: TokenStorageService,
+              @Inject(LOCALE_ID) public locale: string) { 
+     let version = storageService.getString('version');
      if(version == null){
        this.configVersion = 0;
      }
      else
        this.configVersion = parseInt(version);
 
-    let cust = localStorage.getItem('shopping');
-    if( cust != null){
-       this.customerDetails = JSON.parse(cust);
-    }
+    this.customerDetails = this.storageService.getObj('shopping');
   }
 
   // function called by children to register event
   emitEvent(msg: AppEvent){
-    switch(msg.eventType){
 
-      case APP_EVENT_TYPES.currencyChange:
-        this.shopConfig.preferences.currency.chosen = msg.eventValue;
-        localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
-        break;
+    this.getConfig().subscribe(() => {
+      switch(msg.eventType){
 
-      case APP_EVENT_TYPES.countryCode:
-        this.shopConfig.preferences.countryCode = msg.eventValue;
+        case APP_EVENT_TYPES.currencyChange:
+          this.shopConfig.preferences.currency.chosen = msg.eventValue;
+          this.storageService.setObj('preferences', this.shopConfig.preferences);
+          break;
+  
+        case APP_EVENT_TYPES.countryCode:
+          this.shopConfig.preferences.countryCode = msg.eventValue;
+  
+          // need to update this info in the customer details too as required by web api
+          this.customerDetails.countryCode = msg.eventValue;
+          this.storageService.setObj('preferences', this.shopConfig.preferences);
+          this.storageService.setObj('shopping', this.customerDetails);
+          break;
+  
+        case APP_EVENT_TYPES.deliveryMethod:
+            this.shopConfig.preferences.deliveryMethod = msg.eventValue;
+            this.storageService.setObj('preferences', this.shopConfig.preferences);
+          break;     
+      }
+      
+      // publish events to child events
+      this.childEvents.next(msg)
 
-        // need to update this info in the customer details too as required by web api
-        this.customerDetails.countryCode = msg.eventValue;
-        localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
-        localStorage.setItem('shopping', JSON.stringify(this.customerDetails));
-        break;
-
-      case APP_EVENT_TYPES.deliveryMethod:
-          this.shopConfig.preferences.deliveryMethod = msg.eventValue;
-          localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
-        break;     
-    }
+    })
     
-    // publish events to child events
-    this.childEvents.next(msg)
   }
 
   // function called to subscribe to events
@@ -97,41 +103,63 @@ export class ShopSpineService {
     //sets the customer details
     setCustomerDetails(details : any){
       this.customerDetails = details;
-      localStorage.setItem('shopping', JSON.stringify(details));
+      this.storageService.setObj('shopping', details);
     }
-
-
 
   // returns the current config and preferences
   getConfig(){
     return new Observable(subscriber =>{
+        // check to see if we are already loading the config from a previous request
+        if(this.loadingConfig){
+           let counter = 0;
+
+           // set interval to check for a loaded config every 50ms
+           let interval = setInterval(()=>{
+              if(this.shopConfig != null){
+                subscriber.next(this.shopConfig);
+
+                // clear interval once we get the config
+                clearInterval(interval);
+              }else{
+                 counter++;
+
+                 // give up on waiting for interval
+                 if(counter >= 10){
+                  clearInterval(interval);
+                  return null;
+                 }
+              }
+           }, 50);
+        }
         if(this.shopConfig != null){
           subscriber.next(this.shopConfig);
         } else{
            // get configuration file (which is a json)
+            this.loadingConfig = true;
             this.http.get('assets/config.json').subscribe((resp : any)=>{
               let config = resp;
               if(config.version == this.configVersion){
-                let prefs = localStorage.getItem('preferences');
+                let prefs = this.storageService.getObj('preferences');
 
                 // if for what ever reason the preferences don't exist
                 if(prefs == null){
                   this.shopConfig = { preferences : config.preferences};
-                  localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
+                  this.storageService.setObj('preferences', this.shopConfig.preferences);
                 }else
-                 this.shopConfig = {preferences : JSON.parse(prefs)};
+                 this.shopConfig = {preferences : prefs};
 
               } else{ // version numbers are different
                   this.shopConfig = {preferences: config.preferences};
-                  localStorage.setItem('preferences', JSON.stringify(this.shopConfig.preferences));
-                  localStorage.setItem('version', config.version.toString());
+                  this.storageService.setObj('preferences', this.shopConfig.preferences);
+                  this.storageService.setString('version', config.version.toString());
                   this.customerDetails = config.shopping.contact;
-                  localStorage.setItem('shopping', JSON.stringify(config.shopping.contact));
+                  this.storageService.setObj('shopping', config.shopping.contact);
                   this.configVersion = config.version;
               }
               this.shopConfig['imgSrc'] = config.imgSrc;
               this.shopConfig['storeId'] = config.storeId;
               this.shopConfig.preferences.lang = this.getLang(this.locale);
+              this.loadingConfig = false;
               subscriber.next(this.shopConfig);
           });
         }
