@@ -1,5 +1,5 @@
 // This file tests the ui interaction of the header component
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed } from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import { HeaderComponent } from './header.component';
 import { ComponentFixtureAutoDetect } from '@angular/core/testing';
@@ -7,9 +7,9 @@ import { ShopSpineService, AppEvent } from '../shop-spine.service';
 import {asyncData} from '../../testing/async-observable-helpers';
 import {APP_EVENT_TYPES} from'../shop-spine.service';
 import { BasketService } from '../basket.service';
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderUITest', () => {
 
@@ -28,7 +28,7 @@ describe('HeaderUITest', () => {
 
     beforeEach((async () => {
         TestBed.configureTestingModule({
-          imports: [MatMenuModule, MatBadgeModule],
+          imports: [MatMenuModule, MatBadgeModule, RouterTestingModule],
           declarations: [ HeaderComponent],
           providers: [
             { provide: ComponentFixtureAutoDetect, useValue: true }, // auto draw ui after change in variables
@@ -73,7 +73,7 @@ describe('HeaderUITest', () => {
         spyOn(component, 'toggleMenu');
         elem.triggerEventHandler('click', null);
         expect(component.toggleMenu).toHaveBeenCalled(); 
-    })
+    });
 
     it('should check that all buttons have listeners', ()=>{
 
@@ -81,13 +81,32 @@ describe('HeaderUITest', () => {
 
         viewsToTest.forEach(view =>{        
             component.screenState = view;
-            fixture.detectChanges();
             let elems = fixture.debugElement.queryAll(By.css('button'));
             expect(elems.length).toBeGreaterThan(0);
             elems.forEach((elem, index) =>{
                 expect(elem.listeners.length).toBeGreaterThan(0, view + ' ' + index.toString());
             });
         })
+    });
+
+    // This test is to check that all links have a href element
+    it('should check that all links are correct', ()=>{
+        let viewsToTest = ['mobile', 'tablet', 'wide_screen'];
+
+        viewsToTest.forEach(view =>{        
+            component.screenState = view;
+            let links =  fixture.debugElement.queryAll(By.css('a')); 
+            links.forEach((link, index) =>{
+                expect(link.nativeElement.href).not.toBeNull(view + ' ' + index.toString());
+            });
+
+            // check that these two important links always appear
+            let linksToFind = ['basket', 'contact']
+            linksToFind.forEach(toFind =>{
+                let index = links.findIndex(el => el.nativeElement.href.search(toFind) >= 0);
+                expect(index).toBeGreaterThanOrEqual(0, 'Cannot find important links');
+            });
+        });
     })
 });
 

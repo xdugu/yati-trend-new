@@ -9,7 +9,6 @@ describe('ApiManagerService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    //service = TestBed.inject(ApiManagerService);
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get', 'post']);
     service = new ApiManagerService(httpClientSpy as any);
   });

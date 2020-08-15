@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {ShopSpineService} from './shop-spine.service';
 
+// creating an interface to fix how product heirarchy looks like
 interface ProductHeirarchy {
   name: string;
   text ?: {en?: string, hu?: string}
@@ -66,12 +67,13 @@ export class AppComponent {
     });
 
     // get config
-    shopService.getConfig().subscribe(config =>{
+    this.shopService.getConfig().subscribe(config =>{
        this.config = config;
     })
     
   }
 
+  // A function called to indicate if current node has children - called from view
   hasChild = (_: number, node: ProductHeirarchy) => !!node.sub && node.sub.length > 0;
 
   title = 'yati-trend';
