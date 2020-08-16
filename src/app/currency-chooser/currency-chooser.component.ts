@@ -14,30 +14,43 @@ export class CurrencyChooserComponent implements OnInit {
  @Input() chosen: string;
  // available is a string array of available currencies e.g. ['HUF', 'GBP']
  @Input() available: string[];
-
+// available is a string with the options: 'center'(default), 'left', 'right'
  @Input() position: string;
 // We emit this event when user changes the currency they prefer
  @Output() currencyChange = new EventEmitter();
 
 
   constructor(private el: ElementRef) {
-   }
+  }
 
   ngOnInit():void{
   }
 
   // we need to better position the position of the currency chooser
   ngAfterViewInit(): void {
+    this.checkContentAlignment();
+  }
+
+  ngOnChanges():void{
+    this.checkContentAlignment();
+  }
+  
+  //aligns the position of the currency selection list
+  checkContentAlignment(){
     let elem = this.el.nativeElement;
     let chipList = $(elem).find('mat-chip-list')[0];
 
-    if(this.position == null || this.position == undefined || this.position == 'center'){       
-      let chips = $(chipList).find('mat-chip');  
-      let totalWidth = 0;
-      for(let i = 0; i < chips.length; i++){
-        totalWidth += $(chips[i]).outerWidth() + 30;
-      }
-      $($(chips[0]).parent()).css({'width': totalWidth - 30, 'margin': '0px auto'});
+    switch(this.position.toLowerCase()){
+      case 'left':
+        $(chipList).css({'justify-content': 'left'});
+        break;
+
+      case 'right':
+        $(chipList).css({'justify-content': 'right'});
+        break;
+
+      default:
+        $(chipList).css({'justify-content': 'center'});
     }
   }
 

@@ -5,7 +5,7 @@ import { HttpClient} from '@angular/common/http';
   selector: '[appHtmlEmbed]'
 })
 
-// This class takes in a url path to an html file and embded the result inside
+// This class takes in a url path to an html file and embeds the result inside
 // the called element
 export class HtmlEmbedDirective {
 
