@@ -1,7 +1,9 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {NestedTreeControl} from '@angular/cdk/tree';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 import {ShopSpineService} from './shop-spine.service';
+import {TrackingService} from './tracking.service'
+
 
 // creating an interface to fix how product heirarchy looks like
 interface ProductHeirarchy {
@@ -51,13 +53,18 @@ const TREE_DATA: ProductHeirarchy[] = [
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   treeControl = new NestedTreeControl<ProductHeirarchy>(node => node.sub);
   dataSource = new MatTreeNestedDataSource<ProductHeirarchy>();
   config = null;
 
-  constructor(private shopService : ShopSpineService) {
+  ngOnInit(){
+    this.tracking.run();
+  }
+
+  constructor(private shopService : ShopSpineService,
+              private tracking: TrackingService) {
     this.dataSource.data = TREE_DATA;
 
     // check which nodes should be expanded by default
@@ -84,6 +91,18 @@ export class AppComponent {
   sideNavEvent(){
      this.sideNav.opened = !this.sideNav.opened;
   }
+
+  // called when a tree node is clicked
+  // ensures that only one tree and its branches are visible at any time
+  toggleTreeNodes(node : ProductHeirarchy){
+     if(this.treeControl.isExpanded(node)){
+        this.treeControl.collapse(node);
+     }else{
+       this.treeControl.collapseAll();
+       this.treeControl.expand(node);
+     }
+  }
+
 
 
 }

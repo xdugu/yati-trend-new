@@ -27,7 +27,7 @@ export class ImageSizerDirective {
           // if images have not been loaded, we cannot know their size
 				  if(!images[i].complete)
 					  return;
-				  if(images[i].height < shortestHeight && images[i].src.indexOf('loading') < 0)
+				  if(images[i].height < shortestHeight && images[i].src != null)
 				  {
 					  shortestHeight = images[i].height;
 					  indexOfShortestImage = i;

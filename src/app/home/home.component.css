@@ -1,0 +1,23 @@
+/*Main Page content i.e. image on left and text on right*/
+#main-img-desc{
+    display: flex;
+    align-items: stretch;
+}
+
+#main-desc{
+    display: flex;
+    align-items: center;
+}
+
+/*For mobile only, we want the image on top of text*/
+@media (max-width:600px){
+    #main-img-desc{
+        display: block;
+    }
+
+    #main-img-desc > *{
+        display: block;
+        width: 100% !important;
+        margin-top: 8px;
+    }
+}

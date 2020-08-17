@@ -1,4 +1,4 @@
-<div style="background-color: goldenrod; height: 200px" class="w3-margin-top w3-container">
+<div style="background-color: goldenrod" class="w3-margin-top w3-container">
     <span *ngIf="config != null" id="lang-selection">
         <a *ngIf="config.preferences.lang != 'en'" href="https://fashion.yati-trend.com/en">English</a>
         <a *ngIf="config.preferences.lang != 'hu'" href="https://fashion.yati-trend.com/hu">Magyar</a>
@@ -11,7 +11,10 @@
     </a> <br><br>
 
     <span><mat-icon fontSet="fa" fontIcon="fa-copyright"></mat-icon>Copyright Yati-Trend 2020</span>
-
+    <br><br>
+    <span i18n="@@CookieTextToClick">We use cookies to understand how our website is being used. To disable all cookies, please
+        <a [routerLink]="['/settings']">follow this link</a> to our website settings
+    </span>
     <br><br>
     <a  [routerLink]="['/legal']" i18n="@@PrivacyPolicy">Privacy Policy </a>|
     <a  [routerLink]="['/legal']" i18n="@@TermsAndConditions">Terms And Conditions</a>

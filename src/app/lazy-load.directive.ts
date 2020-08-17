@@ -9,13 +9,17 @@ export class LazyLoadDirective {
   constructor(private elemRef : ElementRef) { }
   // input to real img src to lazy load
   @Input('appLazyLoad') src : string;
+  @Input() keepSizing: boolean;//inicator to know if we need to change height for every image not loaded
+
   private wasVisible = false;
 
   ngAfterContentInit(){
     // get referenc to elemet
     let elem = this.elemRef.nativeElement;
     let cssHeight = $(elem).css('height');
-    $(elem).css('height', '1000px');
+
+    if(!this.keepSizing)
+      $(elem).css('height', '1000px');
 
     // set options for margins for observer
 			let options = {

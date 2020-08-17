@@ -40,17 +40,19 @@ export class CurrencyChooserComponent implements OnInit {
     let elem = this.el.nativeElement;
     let chipList = $(elem).find('mat-chip-list')[0];
 
-    switch(this.position.toLowerCase()){
-      case 'left':
-        $(chipList).css({'justify-content': 'left'});
-        break;
+    if(this.position != undefined || this.position != null){
+      switch(this.position.toLowerCase()){
+        case 'left':
+          $(chipList).css({'justify-content': 'left'});
+          break;
 
-      case 'right':
-        $(chipList).css({'justify-content': 'right'});
-        break;
+        case 'right':
+          $(chipList).css({'justify-content': 'right'});
+          break;
 
-      default:
-        $(chipList).css({'justify-content': 'center'});
+        default:
+          $(chipList).css({'justify-content': 'center'});
+      }
     }
   }
 

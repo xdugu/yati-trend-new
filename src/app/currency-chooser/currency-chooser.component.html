@@ -1,4 +1,4 @@
-<mat-chip-list aria-label="currency choosen">
+<mat-chip-list aria-label="currency choosen" >
     <mat-chip *ngFor="let name of available" 
             [selected]="name == chosen" 
             (click)="onCurrencyChange(name)">{{name}}

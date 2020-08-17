@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { GoogleAnalyticsModule, GA_TOKEN } from 'angular-ga';
-
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouterModule, UrlSegment, UrlSegmentGroup, Route } from '@angular/router';
+import { RouterModule, UrlSegment} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
@@ -39,7 +38,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {ImageSizerDirective} from './image-sizer.directive';
-import { FitToChildDirective } from './fit-to-child.directive';
 import { CategoriesComponent } from './categories/categories.component'
 import {ApiManagerService} from './api-manager.service';
 import {ShopSpineService} from './shop-spine.service'
@@ -56,7 +54,8 @@ import { ContactComponent, DialogDisplayRequestStatus } from './contact/contact.
 import { FooterComponent } from './footer/footer.component';
 import { HtmlEmbedDirective } from './html-embed.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
+import { SettingsComponent } from './settings/settings.component'
 
 registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
@@ -68,7 +67,6 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     HeaderComponent,
     HomeComponent,
     ImageSizerDirective,
-    FitToChildDirective,
     CategoriesComponent,
     CurrencyChooserComponent,
     LazyLoadDirective,
@@ -85,11 +83,11 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     ContactComponent,
     DialogDisplayRequestStatus,
     FooterComponent,
-    HtmlEmbedDirective
+    HtmlEmbedDirective,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
-    GoogleAnalyticsModule.forRoot(),
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent },
@@ -101,6 +99,7 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
       {path:'checkout', component: CheckoutComponent},
       {path:'review', component: ReviewComponent},
       {path:'legal', component: HelpComponent},
+      {path:'settings', component: SettingsComponent}
     ], {scrollPositionRestoration: 'enabled'}),
     NgxPayPalModule,
     HttpClientModule,
@@ -128,9 +127,10 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     MatChipsModule,
     MatTreeModule,
     MatProgressSpinnerModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    NgxGoogleAnalyticsModule.forRoot('UA-131830139-1')
   ],
-  providers: [ ApiManagerService, ShopSpineService,  {provide: GA_TOKEN, useValue: 'UA-131830139-1'}],
+  providers: [ ApiManagerService, ShopSpineService],
   bootstrap: [AppComponent]
 })
 

@@ -27,13 +27,12 @@ export class ProductComponent implements OnInit {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: false,
-    lazyLoad: 'ondemand',
     arrows: true,
     responsive: [
     {
       breakpoint: 600, // mobile breakpoint
       settings: {
-        slidesToShow: 1
+        slidesToShow: 1,
       }
     }
     ]	

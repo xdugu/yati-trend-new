@@ -21,6 +21,16 @@
             i18n="@@Earrings">Earrings</a>
     </mat-menu>
 
+    <!-- menu for accessing more functions-->
+    <mat-menu #appMenu="matMenu">
+        <!--button mat-menu-item>Settings</button-->
+        <a mat-menu-item [routerLink]="['/legal']" i18n="@@LegalInformation">Help & Legal</a>
+        <a mat-menu-item [routerLink]="['/settings']" i18n="@@Settings">Settings</a>
+    </mat-menu>
+
+
+
+
     <!--Desktops-->
     <mat-toolbar color="primary" *ngSwitchCase="'wide_screen'" class="center">
             <a [routerLink]="['/']" style="height:100%"> <img src="assets/images/logo.jpg" style="height: 100%" class="w3-padding w3-circle"></a>
@@ -108,13 +118,5 @@
             </mat-icon>
         </button>
     </mat-toolbar>
-
-    <mat-menu #appMenu="matMenu">
-        <!--button mat-menu-item>Settings</button-->
-        <a mat-menu-item [routerLink]="['/legal']" i18n="@@LegalInformation">Help & Legal</a>
-    </mat-menu>
-
-
-
 </header>
 

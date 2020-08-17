@@ -2,7 +2,7 @@
   <app-header (sideNavToggleEvent)=sideNavEvent()></app-header>
 </header>
 <mat-sidenav-container *ngIf="config != null">
-  <mat-sidenav class="sideNav-container" [(opened)]="sideNav.opened">
+  <mat-sidenav class="sideNav-container" [(opened)]="sideNav.opened" [position]="'end'">
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="mobile-menu w3-padding">
       <!-- This is the tree nodes that don't have children-->
       <mat-tree-node *matTreeNodeDef="let node">
@@ -13,7 +13,7 @@
       <!-- This is the tree nodes that have children -->
       <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild" >
         <li>
-          <div class="mat-tree-node"  matTreeNodeToggle>
+          <div class="mat-tree-node"  (click)="toggleTreeNodes(node)">
             <button mat-icon-button>
               <mat-icon>
                 {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
