@@ -41,6 +41,10 @@ export class Common{
             AT:{
                 en:"Austria",
                 hu:"Ausztria"
+            },
+            GB:{
+                en:"United Kingdom",
+                hu:"Egyesült Királyság"
             }
         }
 

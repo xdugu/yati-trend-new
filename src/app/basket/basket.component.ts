@@ -95,6 +95,7 @@ export class BasketComponent implements OnInit{
     onCountryChange(event : MatSelectChange){
        
             this.shopService.emitEvent(new AppEvent(APP_EVENT_TYPES.countryCode, event.value))
+            this.processBasket(this.basket);
     }
 
     // called when there is a change in the selected courier

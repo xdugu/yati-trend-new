@@ -1,5 +1,8 @@
 <div *ngIf="config != null">
 
+<h1 class="mat-title w3-center" *ngIf="category.title != null">
+    {{category.title[config.preferences.lang]}}
+</h1>
 <app-currency-chooser
     (currencyChange)="onCurrencyChange($event)"
     [chosen]="config.preferences.currency.chosen"

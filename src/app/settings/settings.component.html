@@ -1,10 +1,11 @@
 
 <div *ngIf="config != null" style="max-width: 1200px" class="w3-padding">
-    <h1 class="mat-title">Cookie Settings</h1>
+    <h1 class="mat-title" i18n="@@CookieSettings">Cookie Settings</h1>
     <mat-checkbox  name="acceptCheckbox" 
                     color="primary" 
                     [(ngModel)]="trackingState" 
-                    (change)="onTrackingChange($event)">
+                    (change)="onTrackingChange($event)"
+                    i18n="@@EnableTrackingCookie">
                     Enable tracking cookie
     </mat-checkbox><br><br>
     <p [appHtmlEmbed]="'assets/html/' + config.preferences.lang + '/cookie_policy.html'"></p>

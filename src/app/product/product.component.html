@@ -5,9 +5,17 @@
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slickConfig" 
                 style="width: 100%; overflow: hidden" class="w3-padding">
                 <div  ngxSlickItem *ngFor="let imgName of product.item.Images.list" style="width:100%; overflow-y:hidden;">
-                    <img class="shop_img" [appLazyLoad]="config.imgSrc + product.item.Images.path + commonFunc.removeExtension(imgName.name) + '_700w.jpg'" 
+                    <!-- Show higher quality images for desktops-->
+                    <img  class="shop_img w3-hide-medium w3-hide-large" 
+                          [appLazyLoad]="config.imgSrc + product.item.Images.path + commonFunc.removeExtension(imgName.name) + '_700w.jpg'" 
                           keepSizing="true"
                           style="width:100%; height:auto;"> 
+                    
+                    <!--show normal quality for mobiles-->
+                    <img  class="shop_img w3-hide-small" 
+                          [appLazyLoad]="config.imgSrc + product.item.Images.path + commonFunc.removeExtension(imgName.name) + '_1000w.jpg'" 
+                          keepSizing="true"
+                          style="width:100%; height:auto;">
                 </div>
             </ngx-slick-carousel>
         </div>

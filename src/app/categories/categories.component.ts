@@ -21,7 +21,8 @@ export class CategoriesComponent implements OnInit {
   // store received catagory data in the 'items' property
   category = {
     category: null,
-    items: null
+    items: null,
+    title: null
   }
   categoryConfig = {
         dots: false,
@@ -84,6 +85,16 @@ export class CategoriesComponent implements OnInit {
     let resp = this.apiService.get(API_MODE.OPEN, API_METHOD.GET, 'category', httpParams);
     resp.subscribe(evt =>{
       this.category.items = evt;
+      
+      let level = this.category.items[0].Category.split('>');
+
+      // looping through the product hierarchy to get the displayable name of the category
+      let category = this.category.items[0].ProductHierarchy.find(item => item.name == level[0]);
+      for(let i = 1; i < level.length; i++){
+        category = category.sub.find(item => item.name == level[i]);
+      }
+      
+      this.category.title = category.text;
     })
 
   }
