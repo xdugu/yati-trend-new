@@ -25,6 +25,10 @@
                         , {{variant.text[config.preferences.lang]}} : {{item.Combination[varInd].text[config.preferences.lang]}}</span>
                     </span>
                 <div class="w3-display-right w3-padding" style="text-align: right;">
+                    <div *ngIf="item.Price.original.discountEnabled"
+                        class="discount">
+                        {{item.Price.original[config.preferences.currency.chosen.toLowerCase()] * item.Quantity | currency : config.preferences.currency.chosen}}
+                    </div>
                     <div class="price-total">{{item.Price[config.preferences.currency.chosen.toLowerCase()] * item.Quantity | currency : config.preferences.currency.chosen}}</div>
                     
                     <button mat-button  (click)="removeItem(i)" i18n="Text to remove from basket@@Remove">Remove</button>

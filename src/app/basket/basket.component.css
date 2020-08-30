@@ -7,3 +7,7 @@
 .radio-button {
     margin: 3px;
 }
+
+.discount{
+    text-decoration: line-through;
+}
