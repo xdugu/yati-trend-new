@@ -44,6 +44,14 @@ const TREE_DATA: ProductHeirarchy[] = [
       {name: 'Necklaces', text:{en: "Necklaces", hu: "Nyakláncok"}, link:'category/Accessories/Necklaces'},
     ]
   },
+  {
+    name: 'Blog',
+    text:{
+      en: "Blog",
+      hu: "Blog"
+    },
+    link: 'blog/list'
+  }
 ];
 
 @Component({

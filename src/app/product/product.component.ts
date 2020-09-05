@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
     {
       breakpoint: 600, // mobile breakpoint
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 1
       }
     }
     ]	

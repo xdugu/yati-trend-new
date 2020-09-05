@@ -55,7 +55,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HtmlEmbedDirective } from './html-embed.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { SettingsComponent } from './settings/settings.component'
+import { SettingsComponent } from './settings/settings.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogViewComponent } from './blog-view/blog-view.component';
+import { ObjectFilterPipe } from './object-filter.pipe'
 
 registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
 
@@ -84,7 +87,10 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
     DialogDisplayRequestStatus,
     FooterComponent,
     HtmlEmbedDirective,
-    SettingsComponent
+    SettingsComponent,
+    BlogListComponent,
+    BlogViewComponent,
+    ObjectFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -99,7 +105,9 @@ registerLocaleData(localeHu, 'hu-Hu', localeHuExtra);
       {path:'checkout', component: CheckoutComponent},
       {path:'review', component: ReviewComponent},
       {path:'legal', component: HelpComponent},
-      {path:'settings', component: SettingsComponent}
+      {path:'settings', component: SettingsComponent},
+      {path: 'blog/list', component: BlogListComponent},
+      {path: 'blog/:blogId', component: BlogViewComponent}
     ], {scrollPositionRestoration: 'enabled'}),
     NgxPayPalModule,
     HttpClientModule,
