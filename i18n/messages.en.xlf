@@ -59,7 +59,7 @@
         <source>Accessories</source><target state="final">Accessories</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">47</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">80</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">44</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">78</context></context-group></trans-unit>
       <trans-unit id="Skirts" datatype="html">
         <source>Skirts</source><target state="final">Skirts</target>
         
@@ -74,7 +74,7 @@
         <source>About Us</source><target state="final">About Us</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">60</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">53</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/about/about.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">58</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">70</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/about/about.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit>
       <trans-unit id="AboutUsShort" datatype="html">
         <source>Yati-Trend clothes are designed to merge African and European Fashion.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
             My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.
@@ -87,28 +87,28 @@
             </target>
         
         <note priority="1" from="description">short description about us</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">57</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">74</context></context-group></trans-unit>
       <trans-unit id="ReadMore" datatype="html">
         <source>Read More</source><target state="final">Read More</target>
         
         <note priority="1" from="description">A 'read more' button</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">63</context></context-group></trans-unit><trans-unit id="OutOfStock" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">63</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">80</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/blog-list/blog-list.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit><trans-unit id="OutOfStock" datatype="html">
         <source>Out Of Stock</source><target state="final">Out Of Stock</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">28</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">36</context></context-group></trans-unit>
       <trans-unit id="AddToBasket" datatype="html">
         <source>Add To Basket
             </source><target state="final">Add To Basket
             </target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">34</context></context-group></trans-unit><trans-unit id="Description" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">42</context></context-group></trans-unit><trans-unit id="Description" datatype="html">
         <source>
                       Description
                     </source><target state="final">
                       Description
                     </target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">39</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">47</context></context-group></trans-unit>
       <trans-unit id="SizeChart" datatype="html">
         <source>
                         Size Chart
@@ -117,15 +117,15 @@
                       </target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">47</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">42</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">55</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">42</context></context-group></trans-unit>
       <trans-unit id="Shipping" datatype="html">
         <source>Shipping</source><target state="final">Shipping</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">55</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">63</context></context-group></trans-unit>
       <trans-unit id="Returns" datatype="html">
         <source>Returns</source><target state="final">Returns</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">61</context></context-group></trans-unit><trans-unit id="Basket" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">69</context></context-group></trans-unit><trans-unit id="Basket" datatype="html">
         <source>Basket</source><target state="final">Basket</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/basket/basket.component.html</context>
@@ -142,48 +142,48 @@
         <source>Remove</source><target state="final">Remove</target>
         
         <note priority="1" from="description">Text to remove from basket</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">30</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">34</context></context-group></trans-unit>
       <trans-unit id="Quantity" datatype="html">
         <source>Quantity</source><target state="final">Quantity</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">35</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">39</context></context-group></trans-unit>
       <trans-unit id="SelectCountry" datatype="html">
         <source>Select Country</source><target state="final">Select Country</target>
         
         <note priority="1" from="description">Static text to tell customer to select country</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">47</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">51</context></context-group></trans-unit>
       <trans-unit id="ChooseCountry" datatype="html">
         <source>Please choose a country</source><target state="final">Please choose a country</target>
         
         <note priority="1" from="description">First option of country chooser</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">49</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">53</context></context-group></trans-unit>
       <trans-unit id="ChooseCourier" datatype="html">
         <source>Choose a courier:</source><target state="final">Choose a courier:</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">56</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">60</context></context-group></trans-unit>
       <trans-unit id="Delivery" datatype="html">
         <source>Delivery:</source><target state="final">Delivery:</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">67</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">20</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">71</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">20</context></context-group></trans-unit>
       <trans-unit id="Discount" datatype="html">
         <source>Discount:</source><target state="final">Discount:</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">69</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">73</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit>
       <trans-unit id="Subtotal" datatype="html">
         <source>Subtotal:</source><target state="final">Subtotal:</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">72</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">22</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">76</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">22</context></context-group></trans-unit>
       <trans-unit id="Total" datatype="html">
         <source>Total:</source><target state="final">Total:</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">73</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">23</context></context-group></trans-unit><trans-unit id="ProceedToCheckout" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">77</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/review/review.component.html</context><context context-type="linenumber">23</context></context-group></trans-unit><trans-unit id="ProceedToCheckout" datatype="html">
         <source> Proceed to checkout</source><target state="final"> Proceed to checkout</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">74</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/basket/basket.component.html</context><context context-type="linenumber">78</context></context-group></trans-unit>
       <trans-unit id="ContactInformation" datatype="html">
         <source>Contact Information</source><target state="final">Contact Information</target>
         <context-group purpose="location">
@@ -531,10 +531,10 @@
       <trans-unit id="ContactUs" datatype="html">
         <source>Contact</source><target state="final">Contact</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">61</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">30</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/contact/contact.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit><trans-unit id="Clothing" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">59</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">30</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/contact/contact.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit><trans-unit id="Clothing" datatype="html">
         <source>Clothing</source><target state="final">Clothing</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">40</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">73</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">37</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">71</context></context-group></trans-unit>
       <trans-unit id="ReturnsAndExchanges" datatype="html">
         <source>Returns &amp; Exchanges</source><target state="final">Returns &amp; Exchanges</target>
         <context-group purpose="location">
@@ -586,7 +586,10 @@
           <context context-type="sourcefile">src/app/settings/settings.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
-      </trans-unit>
+      </trans-unit><trans-unit id="Published" datatype="html">
+        <source>Published</source><target state="final">Published</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/blog-list/blog-list.component.html</context><context context-type="linenumber">9</context></context-group></trans-unit>
       
     </body>
   </file>

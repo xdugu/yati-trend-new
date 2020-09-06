@@ -5,8 +5,13 @@
             <img matListAvatar [alt]="item.Info.title"
                 [src]="config.imgSrc + config.storeId + '/blogs/' + item.ItemId + '/preview_100w.jpg'" >
             <h3 matLine> <b>{{item.Info.title}} </b></h3>
-            <p matLine><span class="w3-text-grey" i18n="@@Published">Published<span>: {{item.PublishDate | date : 'medium'}} </span></span></p>
-            <p matLine><span> {{item.Info.previewText}} </span><br></p>
+            <p matLine class="w3-text-grey">
+                <span  i18n="@@Published">Published</span>: 
+                    {{item.PublishDate | date : 'medium'}}</p>
+            <p matLine>
+                <span> {{item.Info.previewText}} </span>
+                <br>
+            </p>
             <p matLine>
                 <a mat-button color="primary" [routerLink]="['/blog', item.ItemId]"
                     i18n="A 'read more' button@@ReadMore">

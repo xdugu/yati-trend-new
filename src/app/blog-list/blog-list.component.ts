@@ -20,11 +20,12 @@ export class BlogListComponent implements OnInit {
           this.config = evt;
           let httpParams = new HttpParams()
             .set('storeId', this.config.storeId)
+            .set('lang', this.config.preferences.lang)
       
           // get list of blogs
           apiManager.get(API_MODE.OPEN, API_METHOD.GET, 'blogs', httpParams).subscribe((res : any) =>{
               this.list = res;
-          })
+          });
           
       });
   }

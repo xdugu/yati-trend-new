@@ -49,6 +49,23 @@
     </div>
 </ngx-slick-carousel>
 
+<div class="w3-padding">
+    <h1 class="w3-center mat-title">Blog</h1>
+    <div id="blog-container">
+        <div *ngFor="let item of blogList">
+            <div class="w3-center">
+                <img [src]="config.imgSrc + config.storeId + '/blogs/' + item.ItemId + '/preview_400w.jpg'" 
+                    style="width: 100%; height: auto">
+            </div>
+            <h3>{{item.Info.title}}</h3>
+            <span>{{item.Info.previewText}}</span><br>
+            <a mat-button color="primary" [routerLink]="['/blog', item.ItemId]"
+                    i18n="A 'read more' button@@ReadMore">
+                    Read More
+            </a>
+        </div>
+    </div>
+</div>
 <div>
     <h2 class="mat-h2 w3-center" i18n="@@AboutUs">About Us</h2>
     <div class="w3-padding">

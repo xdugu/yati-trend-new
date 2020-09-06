@@ -13,6 +13,11 @@ a{
   text-decoration: none;
 }
 
+/* done to prevent flickering of height on changes of views */
+mat-sidenav-content{
+  min-height: 600px;
+}
+
 
 
 
