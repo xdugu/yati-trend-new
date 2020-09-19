@@ -11,7 +11,7 @@
                 class="mat-subheading-2">
             Explore Afropean fashion <br><br>
             Shop the look <br><br>
-            Orders above ‎€120 get FREE Shipping in Europe<br><br>
+            Orders above ‎€65 get FREE Shipping in Europe<br><br>
             </span>  
             <a  mat-raised-button color="accent" 
                 [routerLink]="['/category', 'Womens']"
@@ -20,41 +20,87 @@
     </div>
 </div>
 
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="homeSlidesConfig.slick" 
-    style="overflow: hidden;"  class="w3-padding" appImageSizer>
-    <div ngxSlickItem class="w3-display-container" >
-        <img src="assets/images/home/main_blouse.jpg" style="width: 100%">
-        <a  class="w3-display-bottommiddle" 
-            style="margin-bottom: 30px;"
-            [routerLink]="['/category', 'Womens', 'Blouses']">
+<!-- Clothes category-->
+<div class="w3-padding">
+    <h1 class="w3-center mat-title" i18n="@@Clothes">Clothing</h1>
+    <div class="flex-container">
+        <div class="w3-display-container">
+            <img [appLazyLoad]="'assets/images/home/main_blouse.jpg'" style="width: 100%" alt="African blouse">
+            <a  class="w3-display-bottommiddle" 
+                style="margin-bottom: 30px;"
+                [routerLink]="['/category', 'Womens', 'Blouses']">
+                <button mat-raised-button color="primary"
+                    i18n="A button labelled as 'blouses'@@Blouses">Blouses</button>
+            </a>
+        </div>
+        <div class="w3-display-container">
+            <img [appLazyLoad]="'assets/images/home/main_skirt.jpg'"  style="width: 100%" alt="african skirt">
+            <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
+                [routerLink]="['/category', 'Womens', 'Skirts']">
+                <button mat-raised-button color="primary"
+                    i18n="A button labelled as 'Skirts'@@Skirts">Skirts</button>
+            </a>
+        </div>
+        <div class="w3-display-container" >
+            <img [appLazyLoad]="'assets/images/home/main_jumpsuit.jpg'" style="width: 100%" alt="african jumpsuit">
+            <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
+                [routerLink]="['/category', 'Womens', 'Jumpsuits']">
             <button mat-raised-button color="primary"
-                i18n="A button labelled as 'blouses'@@Blouses">Blouses</button>
-        </a>
-    </div>
-    <div ngxSlickItem class="w3-display-container">
-        <img src="assets/images/home/main_skirt.jpg"  style="width: 100%">
-        <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
-            [routerLink]="['/category', 'Womens', 'Skirts']">
+                i18n="A button labelled as 'jumpsuits'@@Jumpsuits">Jumpsuits</button>
+            </a>
+        </div>
+        <div class="w3-display-container" >
+            <img [appLazyLoad]="'assets/images/home/main_trouser.jpg'" style="width: 100%" alt="african trouser">
+            <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
+                [routerLink]="['/category', 'Womens', 'Trousers']">
             <button mat-raised-button color="primary"
-                i18n="A button labelled as 'Skirts'@@Skirts">Skirts</button>
-        </a>
+                i18n="A button labelled as 'Trousers'@@Trousers">Trousers</button>
+            </a>
+        </div>
     </div>
-    <div ngxSlickItem class="w3-display-container" >
-        <img src="assets/images/home/main_jumpsuit.jpg" style="width: 100%">
-        <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
-            [routerLink]="['/category', 'Womens', 'Jumpsuits']">
-        <button mat-raised-button color="primary"
-            i18n="A button labelled as 'jumpsuits'@@Jumpsuits">Jumpsuits</button>
-    </a>
-    </div>
-</ngx-slick-carousel>
 
+</div>
+
+<!-- Accessories-->
+<div class="w3-padding">
+    <h1 class="w3-center mat-title" i18n="@@Accessories">Accessories</h1>
+    <div class="flex-container">
+        <div class="w3-display-container">
+            <img [appLazyLoad]="'assets/images/home/main_necklace.jpg'" style="width: 100%" alt="necklace">
+            <a  class="w3-display-bottommiddle" 
+                style="margin-bottom: 30px;"
+                [routerLink]="['/category', 'Accessories', 'Necklaces']">
+                <button mat-raised-button color="primary"
+                    i18n="@@Necklaces">Necklaces</button>
+            </a>
+        </div>
+        <div class="w3-display-container">
+            <img [appLazyLoad]="'assets/images/home/main_earring.jpg'"  style="width: 100%" alt="earring">
+            <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
+                [routerLink]="['/category', 'Accessories', 'Earrings']">
+                <button mat-raised-button color="primary"
+                    i18n="@@Earrings">Earrings</button>
+            </a>
+        </div>
+        <div class="w3-display-container" >
+            <img [appLazyLoad]="'assets/images/home/main_bracelet.jpg'" style="width: 100%" alt="african jumpsuit">
+            <a class="w3-display-bottommiddle" style="margin-bottom: 30px;"
+                [routerLink]="['/category', 'Accessories', 'Bracelets']">
+            <button mat-raised-button color="primary"
+                i18n="@@Bracelets">Bracelets</button>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Blog list-->
 <div class="w3-padding">
     <h1 class="w3-center mat-title">Blog</h1>
-    <div id="blog-container">
+    <div class="flex-container">
         <div *ngFor="let item of blogList">
             <div class="w3-center">
-                <img [src]="config.imgSrc + config.storeId + '/blogs/' + item.ItemId + '/preview_400w.jpg'" 
+                <img [appLazyLoad]="config.imgSrc + config.storeId + '/blogs/' + item.ItemId + '/preview_400w.jpg'" 
                     style="width: 100%; height: auto">
             </div>
             <h3>{{item.Info.title}}</h3>
@@ -66,10 +112,12 @@
         </div>
     </div>
 </div>
+
+<!--About us-->
 <div>
     <h2 class="mat-h2 w3-center" i18n="@@AboutUs">About Us</h2>
     <div class="w3-padding">
-        <img src="assets/images/home/about_pic.jpg" style="width: 25%" class="w3-left w3-mobile">
+        <img [appLazyLoad]="'assets/images/home/about_pic.jpg'" style="width: 25%" class="w3-left w3-mobile">
         <p style="width: 72%;" class="w3-right w3-mobile">
             <ng-container i18n="short description about us@@AboutUsShort" class="mat-body">Yati-Trend clothes are designed to merge African and European Fashion.<br><br>
             My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.

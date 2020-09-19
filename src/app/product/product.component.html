@@ -21,7 +21,13 @@
         </div>
         <div class="w3-col l4 w3-container">
             <h2 class="w3-margin-top">{{product.item.Title[config.preferences.lang]}}</h2>
-            <div #price class="price-total">{{ product.item.Price[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</div><br>
+            <div>
+              <div *ngIf="product.item.Price.original.discountEnabled" 
+                    style="text-decoration: line-through;">
+                    {{ product.item.Price.original[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}
+              </div>
+            <div #price class="price-total">{{ product.item.Price[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</div>
+            </div><br>
             <app-currency-chooser (currencyChange)="onCurrencyChange($event)"
                 [chosen]="config.preferences.currency.chosen"
                 [available] = "config.preferences.currency.available"

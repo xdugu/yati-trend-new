@@ -19,7 +19,7 @@ export class LazyLoadDirective {
     let cssHeight = $(elem).css('height');
 
     if(!this.keepSizing)
-      $(elem).css('height', '1000px');
+      $(elem).css('height', '500px');
 
     // set options for margins for observer
 			let options = {

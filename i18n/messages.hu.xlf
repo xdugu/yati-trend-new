@@ -23,7 +23,7 @@
         <source>
             Explore Afropean fashion <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
             Shop the look <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
-            Orders above ‎€120 get FREE Shipping in Europe<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+            Orders above ‎€65 get FREE Shipping in Europe<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
             </source><target state="new">
             Tedd magad még egyedibbé ruháink által, hiszen az egyediség, az elegancia és a színek nálunk kéz a kézben járnak. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
             Vásárolj 25.000 Ft felett és a szállítást mi álljuk Magyarország egész területén <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
@@ -36,47 +36,53 @@
         <source>Shop Now</source><target state="new">Vásárolj most</target>
         
         <note priority="1" from="description">Button named as shop now</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">18</context></context-group></trans-unit><trans-unit id="Clothes" datatype="html">
+        <source>Clothing</source><target state="new">Ruházat</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
     
 <trans-unit id="Necklaces" datatype="html">
         <source>Necklaces</source><target state="new">Nyakláncok</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit><trans-unit id="Bracelets" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">17</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">74</context></context-group></trans-unit><trans-unit id="Bracelets" datatype="html">
         <source>Bracelets</source><target state="new">Karkötők</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">19</context></context-group></trans-unit><trans-unit id="Earrings" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">19</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">90</context></context-group></trans-unit><trans-unit id="Earrings" datatype="html">
         <source>Earrings</source><target state="new">Fülbevalók</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">21</context></context-group></trans-unit><trans-unit id="Accessories" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">21</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">82</context></context-group></trans-unit><trans-unit id="Accessories" datatype="html">
         <source>Accessories</source><target state="new">Kiegészítők</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">44</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">78</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">44</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">78</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">66</context></context-group></trans-unit>
       <trans-unit id="Skirts" datatype="html">
         <source>Skirts</source><target state="new">
             Szoknyák
         </target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">7</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">39</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">7</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">41</context></context-group></trans-unit>
       <trans-unit id="Jumpsuits" datatype="html">
         <source>Jumpsuits</source><target state="new">Overálok
     </target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">8</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">47</context></context-group></trans-unit><trans-unit id="Blouses" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">8</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">49</context></context-group></trans-unit><trans-unit id="Blouses" datatype="html">
         <source>Blouses</source><target state="new">Blúzok</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">9</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">31</context></context-group></trans-unit><trans-unit id="Trousers" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">9</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">33</context></context-group></trans-unit><trans-unit id="Trousers" datatype="html">
         <source>Trousers</source><target state="new">Nadrágok</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">10</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">10</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">57</context></context-group></trans-unit>
       <trans-unit id="AboutUs" datatype="html">
         <source>About Us</source><target state="new">Rólunk</target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">58</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">70</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/about/about.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/header/header.component.html</context><context context-type="linenumber">58</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">118</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/about/about.component.html</context><context context-type="linenumber">1</context></context-group></trans-unit>
       <trans-unit id="AboutUsShort" datatype="html">
         <source>Yati-Trend clothes are designed to merge African and European Fashion.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
             My husband, Yayra is from Ghana where wearing colourful and patterned garments are very fashionable.
@@ -88,28 +94,28 @@
             </target>
         
         <note priority="1" from="description">short description about us</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">74</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">122</context></context-group></trans-unit>
       <trans-unit id="ReadMore" datatype="html">
         <source>Read More</source><target state="new">Tovább olvasom</target>
         
         <note priority="1" from="description">A 'read more' button</note>
-      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">63</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">80</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/blog-list/blog-list.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit><trans-unit id="OutOfStock" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">109</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/home/home.component.html</context><context context-type="linenumber">128</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/blog-list/blog-list.component.html</context><context context-type="linenumber">17</context></context-group></trans-unit><trans-unit id="OutOfStock" datatype="html">
         <source>Out Of Stock</source><target state="new">Nincs készleten</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">36</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">42</context></context-group></trans-unit>
       <trans-unit id="AddToBasket" datatype="html">
         <source>Add To Basket
             </source><target state="new">Kosárba rakom
             </target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">42</context></context-group></trans-unit><trans-unit id="Description" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">48</context></context-group></trans-unit><trans-unit id="Description" datatype="html">
         <source>
                       Description
                     </source><target state="new">
                       Leírás
                     </target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">47</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">53</context></context-group></trans-unit>
       <trans-unit id="SizeChart" datatype="html">
         <source>
                         Size Chart
@@ -118,15 +124,15 @@
                       </target>
         
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">55</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">42</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">61</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/help/help.component.html</context><context context-type="linenumber">42</context></context-group></trans-unit>
       <trans-unit id="Shipping" datatype="html">
         <source>Shipping</source><target state="new">Szállítás</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">63</context></context-group></trans-unit>
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">69</context></context-group></trans-unit>
       <trans-unit id="Returns" datatype="html">
         <source>Returns</source><target state="new">Áruvisszaküldés</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">69</context></context-group></trans-unit><trans-unit id="Basket" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">src/app/product/product.component.html</context><context context-type="linenumber">75</context></context-group></trans-unit><trans-unit id="Basket" datatype="html">
         <source>Basket</source><target state="new">Kosár tartalma</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/basket/basket.component.html</context>

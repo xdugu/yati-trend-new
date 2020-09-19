@@ -1,4 +1,4 @@
-/* Blog positioning */
+
 #main-img-desc{
     display: flex;
     align-items: stretch;
@@ -9,14 +9,14 @@
     align-items: center;
 }
 
-/*For mobile only, we want the image on top of text*/
-#blog-container{
+/* Blog and show items positioning */
+.flex-container{
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
 }
 
-#blog-container > div{
+.flex-container > div{
     flex: 0 0 25%;
     white-space: normal;
     padding: 0% 0.5%;
@@ -33,7 +33,7 @@
         margin-top: 8px;
     }
 
-    #blog-container > div{
+    .flex-container > div{
         flex: 0 0 75%;
     }
 }

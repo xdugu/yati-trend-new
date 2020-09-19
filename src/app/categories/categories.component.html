@@ -11,7 +11,7 @@
 </app-currency-chooser>
 
 <div id="product-shelf-placeholder" class="w3-container" style="padding:0;margin:0; width:100%" >
-    <a  *ngFor="let product of category.items" 
+    <a  *ngFor="let product of category.items | objectFilter : {'Enabled': true}" 
         [routerLink]="['/product', product.ItemId]" 
         class="w3-left w3-center w3-large w3-mobile my-product" 
 		style="margin-top:2vh;cursor:pointer; width: 50%" >
