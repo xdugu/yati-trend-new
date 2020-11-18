@@ -5,7 +5,7 @@
         "contact":{
         "firstName": null ,"lastName":null, "email":null, "address1":null, "address2":null, "city":null,
         "country":"default", "number":null, "postCode":null, "countryCode":null, 
-        "lang":"hu"
+        "lang":"en"
         },
         "currency": "",
         "paymentMethod":"payBeforeDelivery",
@@ -14,8 +14,8 @@
     },
     "preferences":{
         "currency":{
-			"chosen": "HUF",
-			"available": ["HUF", "EUR"]
+			"chosen": "EUR",
+			"available": ["EUR", "HUF"]
         },
         "countryCode": null,
         "paymentMethod":"payBeforeDelivery",
@@ -26,5 +26,5 @@
     "homePage":[
         
     ],
-    "version": 8
+    "version": 9
 }
