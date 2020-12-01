@@ -63,6 +63,11 @@ export class Common{
         }
         else
             return name;
-    }    
+    }
+    
+    static getKeyCount(obj: object){
+        const keys =  Object.keys(obj);
+        return keys.length;
+    }
 
 }

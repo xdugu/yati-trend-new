@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ApiManagerService, API_MODE, API_METHOD} from '../api-manager.service';
 import { ShopSpineService } from '../shop-spine.service';
 import { HttpParams } from '@angular/common/http';
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
                             .set('lang', this.config.preferences.lang)
        this.apiManager.get(API_MODE.OPEN, API_METHOD.GET, 'blogs', httpParams).subscribe((list : any) =>{
           // get list of first four item in blog
-          this.blogList = list.filter((_, index) => index < 4);
+          this.blogList = list.filter((_, index:number) => index < 4);
        })
     })
      

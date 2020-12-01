@@ -14,15 +14,26 @@
           "/*.js"
         ]
       }
-    }, {
+    }, 
+    {
       "name": "assets",
       "installMode": "lazy",
-      "updateMode": "prefetch",
+      "updateMode": "lazy",
       "resources": {
         "files": [
           "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani|mp4)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "apis",
+      "urls": ["https://3j1b7pw3nd.execute-api.eu-central-1.amazonaws.com/*"],
+      "cacheConfig": {
+        "maxSize": 50,
+        "maxAge": "10m"
       }
     }
   ]

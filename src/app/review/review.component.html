@@ -41,7 +41,8 @@
         </div>
     </div> 
     <div style="width: 300px; overflow: hidden" class="w3-mobile w3-margin-top">
-        <ngx-paypal [config]="payPalConfig" class="w3-mobile"></ngx-paypal><br>
+
+        <div #paypalContainer class="w3-mobile"></div><br>
         <button mat-raised-button color="primary" 
                 style="width: 300px" class="w3-mobile"
                 *ngIf="config.preferences.currency.chosen == 'HUF' && config.preferences.countryCode == 'HU'"

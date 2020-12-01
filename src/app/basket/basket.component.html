@@ -57,15 +57,18 @@
 
             <div *ngIf="basket.hasOwnProperty('Costs') && config.preferences.countryCode != null &&
                         config.preferences.countryCode.length == 2">
-                <label i18n="@@ChooseCourier">Choose a courier:</label>
-                <mat-radio-group class="radio-group"
-                    [value]="config.preferences.deliveryMethod" (change)="onCourierChange($event)">
-                <mat-radio-button class="radio-button"
-                    *ngFor="let courier of basket.Costs[config.preferences.countryCode] | keyvalue" 
-                    [value]="courier.key">
-                    {{courier.key}}
-                </mat-radio-button>
-                </mat-radio-group><br>
+                
+                <div *ngIf="commonLib.getKeyCount(basket.Costs[config.preferences.countryCode]) > 1">
+                    <label i18n="@@ChooseCourier">Choose a courier:</label>
+                    <mat-radio-group class="radio-group"
+                        [value]="config.preferences.deliveryMethod" (change)="onCourierChange($event)">
+                    <mat-radio-button class="radio-button"
+                        *ngFor="let courier of basket.Costs[config.preferences.countryCode] | keyvalue" 
+                        [value]="courier.key">
+                        {{courier.key}}
+                    </mat-radio-button>
+                    </mat-radio-group><br>
+                </div>
 
                 <div *ngIf="config.preferences.deliveryMethod != null">
                     <b i18n="@@Delivery">Delivery:</b> <span class="price-total"> {{basket.Costs[config.preferences.countryCode][config.preferences.deliveryMethod].payBeforeDelivery.delivery[config.preferences.currency.chosen.toLowerCase()] | currency : config.preferences.currency.chosen}}</span><br>

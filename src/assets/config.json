@@ -15,7 +15,7 @@
     "preferences":{
         "currency":{
 			"chosen": "EUR",
-			"available": ["EUR", "HUF"]
+			"available": ["GBP", "EUR", "HUF"]
         },
         "countryCode": null,
         "paymentMethod":"payBeforeDelivery",
@@ -26,5 +26,5 @@
     "homePage":[
         
     ],
-    "version": 9
+    "version": 10
 }

@@ -22,6 +22,14 @@
     padding: 0% 0.5%;
 }
 
+.lander-video{
+    overflow: hidden;
+}
+.lander-video *{
+    object-fit: cover;
+    width: 100%;
+}
+
 @media (max-width:600px){
     #main-img-desc{
         display: block;
@@ -36,4 +44,9 @@
     .flex-container > div{
         flex: 0 0 75%;
     }
+
+    .lander-video *{
+        width: 100%;
+    }
+
 }
