@@ -29,7 +29,7 @@
     "@ngx-i18nsupport/tooling": "^8.0.3",
     "@types/scriptjs": "0.0.2",
     "angular-ga": "^2.0.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-google-analytics": "^9.0.0",
     "ngx-paypal": "^6.1.0",
     "ngx-slick-carousel": "^0.5.0",
